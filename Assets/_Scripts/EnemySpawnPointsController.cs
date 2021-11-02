@@ -5,11 +5,10 @@ namespace _Scripts
 	public class EnemySpawnPointsController : MonoBehaviour
 	{
 		[SerializeField] private SpawnPoint[] _enemySpawnPoints;
-		[SerializeField] private GameObject _enemyPrefab;
 
-		public void Spawn(int spawnPointIndex)
+		public void SpawnEnemy(int spawnPointIndex)
 		{
-			_enemySpawnPoints[spawnPointIndex].Spawn(_enemyPrefab);
+			_enemySpawnPoints[spawnPointIndex].Spawn<Enemy>();
 		}
 	}
 }

@@ -1,13 +1,21 @@
 ﻿using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace _Scripts
 {
 	public class SpawnPoint : MonoBehaviour
 	{
-		public T Spawn<T>(T pawn)
+		[SerializeField] private GameObject _prefab;
+		public T Spawn<T>()
 		where T : Object
 		{
-			return Instantiate(pawn, transform.position, Quaternion.identity);
+			return Instantiate(_prefab, transform.position, Quaternion.identity).GetComponent<T>();
+		}
+
+		private void OnDrawGizmos()
+		{
+			Gizmos.color = Color.red;
+			Gizmos.DrawWireCube(transform.position, transform.localScale);
 		}
 	}
 }
