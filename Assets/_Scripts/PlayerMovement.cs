@@ -1,34 +1,36 @@
+using System.Collections.Generic;
 using UnityEngine;
 using Spine.Unity;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(Rigidbody2D))]
 public class PlayerMovement : MonoBehaviour
 {
+    [Header("Main")]
     [SerializeField, Range(0.1f, 10f)] private float movementSpeed = 2.5f;
-    
     private Rigidbody2D rigidBody;
     private Vector2 movementDirection = Vector2.zero;
     private bool faceLeft = true;
-
+ 
+    [Header("Animations")]
     [SerializeField] private SkeletonAnimation skeletonAnimation;
-
-    [SerializeField] private AnimationReferenceAsset idle;
-    [SerializeField] private AnimationReferenceAsset smoke;
-    [SerializeField] private AnimationReferenceAsset startWalking;
-    [SerializeField] private AnimationReferenceAsset walking;
-    [SerializeField] private AnimationReferenceAsset stopWalking;
-
-    [SerializeField] private string currentState; // TODO - заменить на enum
-
+    [SerializeField] private List<AnimationReferenceAsset> animationAssets;
+    [SerializeField] private string currentState;
+    private AnimationReferenceAsset idle;
     private string currentAnimation;
 
     private void Start()
     {
         rigidBody = GetComponent<Rigidbody2D>();
 
-        currentState = "idle";
-        SetCharacterState(currentState);
+        if (animationAssets?.Count > 0)
+        {
+            idle = animationAssets.Find(x => x.name.Equals("idle"));
+            if (idle != null)
+            {
+                currentState = idle.name;
+                SetCharacterState(currentState);
+            }
+        }
     }
     
     private void Update()
@@ -70,11 +72,24 @@ public class PlayerMovement : MonoBehaviour
     {
         if (movementDirection != Vector2.zero)
         {
-            SetCharacterState("walking");
+            // TODO - добавить выбор анимации в зависимости от направления движения
+            
+            if (movementDirection.x >= 0 && movementDirection.y > 0)
+            {
+                SetCharacterState("back_walk");
+            }
+            else if (movementDirection.x >= 0 && movementDirection.y < 0)
+            {
+                SetCharacterState("front_walk");
+            }
+            else if (movementDirection.y == 0)
+            {
+                SetCharacterState("walking");
+            }
         }
         else
         {
-            SetCharacterState("idle");
+            SetCharacterState(idle.name);
         }
     }
 
@@ -97,13 +112,22 @@ public class PlayerMovement : MonoBehaviour
 
     private void SetCharacterState(string state)
     {
-        if (state.Equals("idle"))
+        if (animationAssets?.Count > 0)
+        {
+            var currentAnimation = animationAssets.Find(x => x.name.Equals(state));
+            if (currentAnimation != null)
+            {
+                SetAnimation(currentAnimation, true, currentAnimation.name.Equals("idle") ? 0.7f : 1.5f);
+            }
+        }
+        
+        /*if (state.Equals("idle"))
         {
             SetAnimation(idle, true, 0.7f);
         }
         else if (state.Equals("walking"))
         {
             SetAnimation(walking, true, 1.5f);
-        }
+        }*/
     }
 }
