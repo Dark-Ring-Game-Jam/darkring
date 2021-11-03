@@ -2699,7 +2699,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 456
-        y: 764
+        y: 766
         width: 76
         height: 76
       alignment: 0
@@ -3437,7 +3437,7 @@ TextureImporter:
         y: 536
         width: 76
         height: 76
-      alignment: 0
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
@@ -5180,7 +5180,7 @@ TextureImporter:
         y: 80
         width: 76
         height: 76
-      alignment: 0
+      alignment: 9
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
