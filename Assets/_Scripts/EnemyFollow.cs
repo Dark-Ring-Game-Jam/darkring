@@ -3,7 +3,7 @@ using UnityEngine;
 [RequireComponent(typeof(Transform))]
 public class EnemyFollow : MonoBehaviour
 {
-    [SerializeField] private float movementSpeed = 3f;
+    [SerializeField] private float movementSpeed;
     [SerializeField] private GameObject player;
     [SerializeField] private float stoppingDistance;
     
