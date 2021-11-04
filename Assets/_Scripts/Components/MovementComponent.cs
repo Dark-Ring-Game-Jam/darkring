@@ -8,6 +8,8 @@ namespace Components
 		[SerializeField, Range(0.1f, 10f)] private float _speed;
 		[SerializeField] private Rigidbody2D _rigidbody2D;
 
+		public float Speed => _speed;
+
 		public void Move(Vector2 normalizeDirection)
 		{
 			_rigidbody2D.MovePosition(_rigidbody2D.position + normalizeDirection * _speed * Time.fixedDeltaTime);

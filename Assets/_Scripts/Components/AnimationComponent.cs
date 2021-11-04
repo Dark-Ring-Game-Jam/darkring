@@ -7,17 +7,16 @@ using UnityEngine;
 public class AnimationComponent : MonoBehaviour
 {
     [Serializable] public class AnimationDurationDictionary : SerializableDictionary<AnimationReferenceAsset, float> {}
-    
-    [SerializeField] private SkeletonAnimation _skeletonAnimation;
-    [SerializeField] AnimationDurationDictionary _animationsWithDuration;
+
+    [SerializeField] protected SkeletonAnimation _skeletonAnimation;
+    [SerializeField] protected AnimationDurationDictionary _animationsWithDuration;
 
     public IDictionary<AnimationReferenceAsset, float> AnimationsWithDuration => _animationsWithDuration;
-
-    private AnimationReferenceAsset _idleAnimation;
     public AnimationReferenceAsset IdleAnimation => _idleAnimation;
 
+    private AnimationReferenceAsset _idleAnimation;
     private AnimationReferenceAsset _currentAnimation;
-    
+
     public void Init(string idleAnimationName)
     {
         _idleAnimation = AnimationsWithDuration.Keys.FirstOrDefault(x => x.name.Equals(idleAnimationName));
@@ -27,12 +26,17 @@ public class AnimationComponent : MonoBehaviour
         }
     }
 
-    public void SetAnimationState(string state)
+    public void SetAnimationState(string state, bool loop = true, float timeScale = -1)
     {
         var currentAnimation = AnimationsWithDuration.Keys.FirstOrDefault(x => x.name.Equals(state));
         if (currentAnimation != null)
         {
-            SetAnimation(currentAnimation, true, AnimationsWithDuration[currentAnimation]);
+            if (Mathf.Approximately(timeScale, -1))
+            {
+                timeScale = AnimationsWithDuration[currentAnimation];
+            }
+
+            SetAnimation(currentAnimation, loop, timeScale);
         }
         else
         {
@@ -40,14 +44,14 @@ public class AnimationComponent : MonoBehaviour
             SetAnimation(_idleAnimation, true, AnimationsWithDuration[_idleAnimation]);
         }
     }
-    
+
     private void SetAnimation(AnimationReferenceAsset animation, bool loop, float timeScale)
     {
         if (animation.Equals(_currentAnimation))
         {
             return;
         }
-        
+
         _skeletonAnimation.state.SetAnimation(0, animation, loop).TimeScale = timeScale;
         _currentAnimation = animation;
     }
