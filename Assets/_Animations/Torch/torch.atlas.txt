@@ -1,0 +1,16 @@
+torch.png
+size:342,278
+filter:Linear,Linear
+pma:true
+Fire
+bounds:296,206,44,70
+Fire2
+bounds:296,206,44,70
+light 2
+bounds:2,2,292,274
+light
+bounds:2,2,292,274
+wall lamp
+bounds:296,149,34,55
+wall lamp2
+bounds:296,106,25,41
