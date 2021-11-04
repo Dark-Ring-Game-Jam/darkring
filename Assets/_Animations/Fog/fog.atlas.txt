@@ -1,0 +1,6 @@
+fog.png
+size:1560,1009
+filter:Linear,Linear
+pma:true
+1
+bounds:2,2,1556,1005
