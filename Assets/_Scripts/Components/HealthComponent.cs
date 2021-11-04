@@ -8,6 +8,7 @@ namespace Components
 		[SerializeField] private int _initHealth;
 
 		public int Health {get; private set;}
+		public bool IsDead => Health == 0;
 		public event Action OnDeath;
 
 		private void Start()

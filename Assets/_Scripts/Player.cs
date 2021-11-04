@@ -1,13 +1,14 @@
+using _Scripts;
 using Components;
 using UnityEngine;
 
+[RequireComponent(typeof(HealthComponent))]
 [RequireComponent(typeof(MovementComponent))]
 [RequireComponent(typeof(MainCharacterAnimationComponent))]
 [RequireComponent(typeof(AttackComponent))]
+[RequireComponent(typeof(SmokeComponent))]
 public class Player : MonoBehaviour
 {
-    private const string IdleAnimationName = "idle";
-    
     #region Fields
     
     private Vector2 _movementDirection = Vector2.zero;
@@ -17,6 +18,10 @@ public class Player : MonoBehaviour
     private MovementComponent _movementComponent;
     private MainCharacterAnimationComponent _animationComponent;
     private AttackComponent _attackComponent;
+    private SmokeComponent _smokeComponent;
+
+    // TODO - для теста (потом выбирать динамически ближайшего врага)
+    [SerializeField] private Enemy _targetEnemy;
     
     #endregion Fields
 
@@ -28,18 +33,26 @@ public class Player : MonoBehaviour
         _movementComponent = GetComponent<MovementComponent>();
         _animationComponent = GetComponent<MainCharacterAnimationComponent>();
         _attackComponent = GetComponent<AttackComponent>();
+        _smokeComponent = GetComponent<SmokeComponent>();
         
-        _animationComponent.InitMainCharacterAnimation(2f);
+        _animationComponent.InitMainCharacterAnimation(2f, 2f);
         
         _healthComponent.OnDeath += Die;
         _attackComponent.OnAttack += _animationComponent.Attack;
+        _smokeComponent.OnSmoke += _animationComponent.Smoke;
     }
     
     private void Update()
     {
-        ProcessInputs();
-        ProcessOthers();
-        ProcessAnimation();
+        if (!_healthComponent.IsDead)
+        {
+            ProcessInputs();
+            ProcessInteractions();
+        }
+        else
+        {
+            // TODO - закончить игру (через GameComponent?)
+        }
     }
 
     private void FixedUpdate()
@@ -75,31 +88,54 @@ public class Player : MonoBehaviour
         transform.localScale = scale;
     }
     
-    private void ProcessOthers()
+    private void ProcessInteractions()
     {
-        
+        if (_attackComponent.CanAttack(_targetEnemy.transform.position) && _attackComponent.IsAttacking == false)
+        {
+            if (Input.GetKey(KeyCode.E))
+            {
+                _attackComponent.Attack(_targetEnemy.HealthComponent);
+            }
+        }
+        else if (_attackComponent.IsAttacking == false)
+        {
+            if (_smokeComponent.CanSmoke() && _smokeComponent.IsSmoking == false)
+            {
+                if (Input.GetKey(KeyCode.X))
+                {
+                    _smokeComponent.Smoke();
+                }
+                else
+                {
+                    ProcessAnimation();
+                }
+            }
+            else if (_smokeComponent.IsSmoking == false)
+            {
+                ProcessAnimation();
+            }
+        }
     }
 
     private void ProcessAnimation()
     {
         if (_movementDirection == Vector2.zero)
         {
-            _animationComponent.SetAnimationState(IdleAnimationName);
+            _animationComponent.Idle();
             return;
         }
 
-        // TODO - добавить выбор анимации в зависимости от направления движения (продумать как)
         if (_movementDirection.x >= 0 && _movementDirection.y > 0)
         {
-            _animationComponent.SetAnimationState("back_walk");
+            _animationComponent.BackWalk();
         }
         else if (_movementDirection.x >= 0 && _movementDirection.y < 0)
         {
-            _animationComponent.SetAnimationState("front_walk");
+            _animationComponent.FrontWalk();
         }
         else if (_movementDirection.y == 0)
         {
-            _animationComponent.SetAnimationState("walking");
+            _animationComponent.SideWalk();
         }
     }
     
@@ -108,5 +144,6 @@ public class Player : MonoBehaviour
         _animationComponent.Die();
         _healthComponent.OnDeath -= Die;
         _attackComponent.OnAttack -= _animationComponent.Attack;
+        _smokeComponent.OnSmoke -= _animationComponent.Smoke;
     }
 }

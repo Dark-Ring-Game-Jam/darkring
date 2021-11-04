@@ -39358,6 +39358,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9605ed29df431bc42b7d42ec1e6dee40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _targetEnemy: {fileID: 1744153995}
 --- !u!50 &891376677
 Rigidbody2D:
   serializedVersion: 4
@@ -52158,6 +52159,17 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!114 &1744153995 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 468711869770476518, guid: a9945195504acb542814471f20de7abe, type: 3}
+  m_PrefabInstance: {fileID: 1481500116}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 45fba4d4a4514b6aa971abfe10c26d38, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1875679949
 GameObject:
   m_ObjectHideFlags: 0
