@@ -46,8 +46,11 @@ public class Player : MonoBehaviour
     {
         if (!_healthComponent.IsDead)
         {
-            ProcessInputs();
-            ProcessInteractions();
+            if (IsBusy() == false)
+            {
+                ProcessInputs();
+                ProcessInteractions();
+            }
         }
         else
         {
@@ -57,11 +60,19 @@ public class Player : MonoBehaviour
 
     private void FixedUpdate()
     {
-        _movementComponent.Move(_movementDirection);
+        if (IsBusy() == false)
+        {
+            _movementComponent.Move(_movementDirection);
+        }
     }
     
     #endregion Default
 
+    private bool IsBusy()
+    {
+        return _attackComponent.IsAttacking || _smokeComponent.IsSmoking || _healthComponent.IsDead;
+    }
+    
     private void ProcessInputs()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
@@ -90,35 +101,31 @@ public class Player : MonoBehaviour
     
     private void ProcessInteractions()
     {
-        if (_attackComponent.CanAttack(_targetEnemy.transform.position) && _attackComponent.IsAttacking == false)
+        if (Input.GetKey(KeyCode.E))
         {
-            if (Input.GetKey(KeyCode.E))
+            if (_targetEnemy != null && _attackComponent.CanAttack(_targetEnemy.transform.position) && _attackComponent.IsAttacking == false)
             {
                 _attackComponent.Attack(_targetEnemy.HealthComponent);
             }
         }
-        else if (_attackComponent.IsAttacking == false)
+        else if (Input.GetKey(KeyCode.X))
         {
             if (_smokeComponent.CanSmoke() && _smokeComponent.IsSmoking == false)
             {
-                if (Input.GetKey(KeyCode.X))
-                {
-                    _smokeComponent.Smoke();
-                }
-                else
-                {
-                    ProcessAnimation();
-                }
-            }
-            else if (_smokeComponent.IsSmoking == false)
-            {
-                ProcessAnimation();
+                _smokeComponent.Smoke();
             }
         }
+
+        ProcessAnimation();
     }
 
     private void ProcessAnimation()
     {
+        if (IsBusy())
+        {
+            return;
+        }
+        
         if (_movementDirection == Vector2.zero)
         {
             _animationComponent.Idle();

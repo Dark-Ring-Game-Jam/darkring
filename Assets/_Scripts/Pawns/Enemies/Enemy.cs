@@ -45,7 +45,7 @@ namespace _Scripts
 			_animationComponent.Die();
 			_healthComponent.OnDeath -= Die;
 			_attackComponent.OnAttack -= _animationComponent.Attack;
-
+			Destroy(this);
 		}
 	}
 }
