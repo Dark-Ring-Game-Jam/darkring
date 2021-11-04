@@ -3,41 +3,49 @@ using UnityEngine;
 
 namespace _Scripts
 {
-	[RequireComponent(typeof(HealthComponent), typeof(MovementComponent))]
 	public class Enemy : MonoBehaviour
 	{
-		[SerializeField] private Collider2D _collider2D;
 		[Header("Components")]
 		[SerializeField] private HealthComponent _healthComponent;
 		[SerializeField] private MovementComponent _movementComponent;
-		[SerializeField] private AnimatorComponent _animatorComponent;
+		[SerializeField] private EnemyAnimationComponent _animationComponent;
 		[SerializeField] private AttackComponent _attackComponent;
+		[SerializeField] private AiComponent _aiComponent;
 
 		public HealthComponent HealthComponent => _healthComponent;
 		public MovementComponent MovementComponent => _movementComponent;
 
 		private HealthComponent _heroHealthComponent;
 
-		private void Awake()
+		private void Start()
 		{
-			//_heroHealthComponent = GameObject.FindGameObjectWithTag("hero").GetComponent<HealthComponent>();
+			_heroHealthComponent = GameObject.FindGameObjectWithTag("hero").GetComponent<HealthComponent>();
+
+			_animationComponent.InitEnemyAnimation(_attackComponent.DelayToAttack);
+			_aiComponent.Init(_movementComponent.Speed, _heroHealthComponent.transform);
+
 			_healthComponent.OnDeath += Die;
-			_animatorComponent.Init(_attackComponent.DelayToAttack);
+			_attackComponent.OnAttack += _animationComponent.Attack;
 		}
 
 		private void Update()
 		{
-			/*if (Vector2.Distance(transform.position, _heroHealthComponent.transform.position) <= _attackComponent.DistanceToAttack)
+			if (_attackComponent.CanAttack(_heroHealthComponent.transform.position) && _attackComponent.IsAttacking == false)
 			{
 				_attackComponent.Attack(_heroHealthComponent);
-			}*/
+			}
+			else if (_attackComponent.IsAttacking == false)
+			{
+				_animationComponent.Idle();
+			}
 		}
 
 		private void Die()
 		{
-			_animatorComponent.Die();
-			_collider2D.enabled = false;
+			_animationComponent.Die();
 			_healthComponent.OnDeath -= Die;
+			_attackComponent.OnAttack -= _animationComponent.Attack;
+
 		}
 	}
 }
