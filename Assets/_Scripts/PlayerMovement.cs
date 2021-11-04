@@ -1,36 +1,30 @@
-using System.Collections.Generic;
+using Components;
 using UnityEngine;
-using Spine.Unity;
 
-[RequireComponent(typeof(Rigidbody2D))]
+[RequireComponent(typeof(MovementComponent))]
+[RequireComponent(typeof(AnimationComponent))]
 public class PlayerMovement : MonoBehaviour
 {
-    [Header("Main")]
-    [SerializeField, Range(0.1f, 10f)] private float movementSpeed = 2.5f;
-    private Rigidbody2D rigidBody;
-    private Vector2 movementDirection = Vector2.zero;
-    private bool faceLeft = true;
- 
-    [Header("Animations")]
-    [SerializeField] private SkeletonAnimation skeletonAnimation;
-    [SerializeField] private List<AnimationReferenceAsset> animationAssets;
-    [SerializeField] private string currentState;
-    private AnimationReferenceAsset idle;
-    private string currentAnimation;
+    private const string IdleAnimationName = "idle";
+    
+    #region Fields
+    
+    private Vector2 _movementDirection = Vector2.zero;
+    private bool _faceLeft = true;
+
+    private MovementComponent _movementComponent;
+    private AnimationComponent _animationComponent;
+    
+    #endregion Fields
+
+    #region Default
 
     private void Start()
     {
-        rigidBody = GetComponent<Rigidbody2D>();
-
-        if (animationAssets?.Count > 0)
-        {
-            idle = animationAssets.Find(x => x.name.Equals("idle"));
-            if (idle != null)
-            {
-                currentState = idle.name;
-                SetCharacterState(currentState);
-            }
-        }
+        _movementComponent = GetComponent<MovementComponent>();
+        _animationComponent = GetComponent<AnimationComponent>();
+        
+        _animationComponent.Init(IdleAnimationName);
     }
     
     private void Update()
@@ -41,56 +35,28 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Move();
+        _movementComponent.Move(_movementDirection);
     }
+    
+    #endregion Default
 
     private void ProcessInputs()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        if (moveX > 0 && faceLeft)
+        if (moveX > 0 && _faceLeft)
         {
             Flip();
-            faceLeft = false;
+            _faceLeft = false;
         }
-        else if (moveX < 0 && !faceLeft)
+        else if (moveX < 0 && !_faceLeft)
         {
             Flip();
-            faceLeft = true;
+            _faceLeft = true;
         }
 
-        movementDirection = new Vector2(moveX, moveY).normalized;
-    }
-
-    private void Move()
-    {
-        rigidBody.MovePosition(rigidBody.position + movementDirection * movementSpeed * Time.fixedDeltaTime);
-    }
-
-    private void ProcessAnimation()
-    {
-        if (movementDirection != Vector2.zero)
-        {
-            // TODO - добавить выбор анимации в зависимости от направления движения
-            
-            if (movementDirection.x >= 0 && movementDirection.y > 0)
-            {
-                SetCharacterState("back_walk");
-            }
-            else if (movementDirection.x >= 0 && movementDirection.y < 0)
-            {
-                SetCharacterState("front_walk");
-            }
-            else if (movementDirection.y == 0)
-            {
-                SetCharacterState("walking");
-            }
-        }
-        else
-        {
-            SetCharacterState(idle.name);
-        }
+        _movementDirection = new Vector2(moveX, moveY).normalized;
     }
 
     private void Flip()
@@ -99,35 +65,27 @@ public class PlayerMovement : MonoBehaviour
         scale.x *= -1;
         transform.localScale = scale;
     }
-
-    private void SetAnimation(AnimationReferenceAsset animation, bool loop, float timeScale)
+    
+    private void ProcessAnimation()
     {
-        if (animation.name.Equals(currentAnimation))
+        if (_movementDirection == Vector2.zero)
         {
+            _animationComponent.SetAnimationState(IdleAnimationName);
             return;
         }
-        skeletonAnimation.state.SetAnimation(0, animation, loop).TimeScale = timeScale;
-        currentAnimation = animation.name;
-    }
 
-    private void SetCharacterState(string state)
-    {
-        if (animationAssets?.Count > 0)
+        // TODO - добавить выбор анимации в зависимости от направления движения (продумать как)
+        if (_movementDirection.x >= 0 && _movementDirection.y > 0)
         {
-            var currentAnimation = animationAssets.Find(x => x.name.Equals(state));
-            if (currentAnimation != null)
-            {
-                SetAnimation(currentAnimation, true, currentAnimation.name.Equals("idle") ? 0.7f : 1.5f);
-            }
+            _animationComponent.SetAnimationState("back_walk");
         }
-        
-        /*if (state.Equals("idle"))
+        else if (_movementDirection.x >= 0 && _movementDirection.y < 0)
         {
-            SetAnimation(idle, true, 0.7f);
+            _animationComponent.SetAnimationState("front_walk");
         }
-        else if (state.Equals("walking"))
+        else if (_movementDirection.y == 0)
         {
-            SetAnimation(walking, true, 1.5f);
-        }*/
+            _animationComponent.SetAnimationState("walking");
+        }
     }
 }
