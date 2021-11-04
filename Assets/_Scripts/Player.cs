@@ -3,7 +3,7 @@ using UnityEngine;
 
 [RequireComponent(typeof(MovementComponent))]
 [RequireComponent(typeof(AnimationComponent))]
-public class PlayerMovement : MonoBehaviour
+public class Player : MonoBehaviour
 {
     private const string IdleAnimationName = "idle";
     
