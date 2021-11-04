@@ -2,7 +2,8 @@ using Components;
 using UnityEngine;
 
 [RequireComponent(typeof(MovementComponent))]
-[RequireComponent(typeof(AnimationComponent))]
+[RequireComponent(typeof(MainCharacterAnimationComponent))]
+[RequireComponent(typeof(AttackComponent))]
 public class Player : MonoBehaviour
 {
     private const string IdleAnimationName = "idle";
@@ -12,8 +13,10 @@ public class Player : MonoBehaviour
     private Vector2 _movementDirection = Vector2.zero;
     private bool _faceLeft = true;
 
+    private HealthComponent _healthComponent;
     private MovementComponent _movementComponent;
-    private AnimationComponent _animationComponent;
+    private MainCharacterAnimationComponent _animationComponent;
+    private AttackComponent _attackComponent;
     
     #endregion Fields
 
@@ -21,15 +24,21 @@ public class Player : MonoBehaviour
 
     private void Start()
     {
+        _healthComponent = GetComponent<HealthComponent>();
         _movementComponent = GetComponent<MovementComponent>();
-        _animationComponent = GetComponent<AnimationComponent>();
+        _animationComponent = GetComponent<MainCharacterAnimationComponent>();
+        _attackComponent = GetComponent<AttackComponent>();
         
-        _animationComponent.Init(IdleAnimationName);
+        _animationComponent.InitMainCharacterAnimation(2f);
+        
+        _healthComponent.OnDeath += Die;
+        _attackComponent.OnAttack += _animationComponent.Attack;
     }
     
     private void Update()
     {
         ProcessInputs();
+        ProcessOthers();
         ProcessAnimation();
     }
 
@@ -66,6 +75,11 @@ public class Player : MonoBehaviour
         transform.localScale = scale;
     }
     
+    private void ProcessOthers()
+    {
+        
+    }
+
     private void ProcessAnimation()
     {
         if (_movementDirection == Vector2.zero)
@@ -87,5 +101,12 @@ public class Player : MonoBehaviour
         {
             _animationComponent.SetAnimationState("walking");
         }
+    }
+    
+    private void Die()
+    {
+        _animationComponent.Die();
+        _healthComponent.OnDeath -= Die;
+        _attackComponent.OnAttack -= _animationComponent.Attack;
     }
 }

@@ -39314,14 +39314,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 891376675}
+  - component: {fileID: 891376683}
   - component: {fileID: 891376677}
   - component: {fileID: 891376678}
   - component: {fileID: 891376676}
   - component: {fileID: 891376679}
   - component: {fileID: 891376681}
   - component: {fileID: 891376680}
-  - component: {fileID: 891376683}
+  - component: {fileID: 891376685}
   - component: {fileID: 891376682}
+  - component: {fileID: 891376684}
   m_Layer: 0
   m_Name: Main Character
   m_TagString: hero
@@ -39415,7 +39417,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d4a9d65c6fa4eab848e4b650e222286, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _speed: 2.5
+  _speed: 3.5
   _rigidbody2D: {fileID: 891376677}
 --- !u!114 &891376680
 MonoBehaviour:
@@ -39426,7 +39428,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 891376674}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0c854d6df0e87d64ab015244dc0b3fbd, type: 3}
+  m_Script: {fileID: 11500000, guid: c19a42d09b836cf4d8b0998ba3c9d332, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _skeletonAnimation: {fileID: 1477370932}
@@ -39529,7 +39531,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 0}
+  - {fileID: 2100000, guid: d1db217c88e120342870c68b11cbaf0a, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -39551,6 +39553,29 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!33 &891376684
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891376674}
+  m_Mesh: {fileID: 0}
+--- !u!114 &891376685
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 891376674}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: efdd257fe7bd4167922c85c762c79e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _distanceToAttack: 1
+  _delayToAttack: 0.7
+  _damage: 1
 --- !u!1 &895232600
 GameObject:
   m_ObjectHideFlags: 0
@@ -39831,7 +39856,7 @@ GameObject:
   - component: {fileID: 1090692405}
   - component: {fileID: 1090692404}
   m_Layer: 0
-  m_Name: Spine GameObject (fog)
+  m_Name: Fog1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
