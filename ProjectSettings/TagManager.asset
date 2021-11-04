@@ -51,3 +51,6 @@ TagManager:
   - name: Enemies
     uniqueID: 3792619161
     locked: 0
+  - name: Windows
+    uniqueID: 4065745053
+    locked: 0
