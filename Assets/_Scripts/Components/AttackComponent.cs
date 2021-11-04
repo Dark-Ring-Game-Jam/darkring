@@ -26,8 +26,11 @@ namespace Components
 		{
 			yield return new WaitForSeconds(_delayToAttack);
 
-			healthComponent.TakeDamage(_damage);
-			Debug.LogError("Attack");
+			if (Vector2.Distance(transform.position, healthComponent.transform.position) <= _distanceToAttack)
+			{
+				healthComponent.TakeDamage(_damage);
+			}
+
 			_currentCoroutine = null;
 		}
 	}
