@@ -16,13 +16,13 @@ TextureImporter:
     second: ground_3
   - first:
       213: -6991087408395268163
-    second: darkring_tilemap_4
+    second: up_diagonal_wall_2
   - first:
       213: -3954413817552463392
-    second: glass_left_0
+    second: left_glass_up
   - first:
       213: -8412710162442731220
-    second: glass_right_0
+    second: right_glass_up
   - first:
       213: 8733165280635271455
     second: darkring_tilemap_7
@@ -31,67 +31,67 @@ TextureImporter:
     second: wall_up_horizontal_1
   - first:
       213: -601543343053430244
-    second: darkring_tilemap_9
+    second: front_glass_up
   - first:
       213: 6254984706049771638
-    second: darkring_tilemap_10
+    second: diagonal_wall_up_2
   - first:
       213: 221484947477067910
     second: wall_up_horizontal_0
   - first:
       213: 3514598409776315462
-    second: darkring_tilemap_12
+    second: door_up
   - first:
       213: -2451354302090602648
     second: wall_up_vertical
   - first:
       213: -4923238785035079152
-    second: darkring_tilemap_14
+    second: up_diagonal_wall_1
   - first:
       213: 8593415449967785738
-    second: darkring_tilemap_15
+    second: up_diagonal_wall_3
   - first:
       213: -6243986883381043927
-    second: glass_left_1
+    second: left_glass_middle_up
   - first:
       213: -2011265272522256454
-    second: glass_right_1
+    second: right_glass_middle_up
   - first:
       213: -5410359240116070734
     second: darkring_tilemap_18
   - first:
       213: -1430158604631354163
-    second: darkring_tilemap_19
+    second: wall_horizontal_1
   - first:
       213: -352483509557834083
-    second: darkring_tilemap_20
+    second: front_glass_middle
   - first:
       213: 7587710637323008288
-    second: darkring_tilemap_21
+    second: diagonal_wall_bottom_2
   - first:
       213: 3736295510631526250
-    second: darkring_tilemap_22
+    second: diagonal_wall_up_1
   - first:
       213: -1950755161207926601
-    second: darkring_tilemap_23
+    second: small_door_left
   - first:
       213: -93065932177824989
-    second: darkring_tilemap_24
+    second: small_door_right
   - first:
       213: -7789516301770386696
-    second: darkring_tilemap_25
+    second: up_diagonal_wall_4
   - first:
       213: -7650807333856817041
-    second: glass_left_2
+    second: left_glass_middle_down
   - first:
       213: -7462187746434393761
-    second: glass_right_2
+    second: right_glass_middle_down
   - first:
       213: 8718401284255928816
     second: darkring_tilemap_28
   - first:
       213: 4907065454094393858
-    second: darkring_tilemap_29
+    second: front_glass_bottom
   - first:
       213: 8094783086950974703
     second: darkring_tilemap_30
@@ -100,25 +100,25 @@ TextureImporter:
     second: darkring_tilemap_31
   - first:
       213: 5719152670685374464
-    second: darkring_tilemap_32
+    second: diagonal_wall_bottom_1
   - first:
       213: 6540781665153528330
-    second: darkring_tilemap_33
+    second: torch_side_right
   - first:
       213: 8195449595136048800
-    second: darkring_tilemap_34
+    second: torch_side_left
   - first:
       213: 1832668632504453614
     second: darkring_tilemap_35
   - first:
       213: -8445019653869307765
-    second: darkring_tilemap_36
+    second: torch_front
   - first:
       213: 1844695678676072200
-    second: glass_left_3
+    second: left_glass_down
   - first:
       213: -2276039064038414501
-    second: glass_right_3
+    second: right_glass_down
   - first:
       213: -745107666237278153
     second: darkring_tilemap_39
@@ -127,37 +127,37 @@ TextureImporter:
     second: darkring_tilemap_40
   - first:
       213: -8020242978414111075
-    second: darkring_tilemap_41
+    second: metal_fence_small_up_left
   - first:
       213: 6963963405047671830
-    second: darkring_tilemap_42
+    second: metal_fence_small_up_right
   - first:
       213: 2429910836503501890
-    second: darkring_tilemap_43
+    second: gem1
   - first:
       213: 6233630004366129617
-    second: darkring_tilemap_44
+    second: gem2
   - first:
       213: -3579449348868382763
-    second: darkring_tilemap_45
+    second: gem3
   - first:
       213: -1721482435399464779
-    second: darkring_tilemap_46
+    second: gem4
   - first:
       213: -3328065420592221213
     second: darkring_tilemap_47
   - first:
       213: 2472698738950894709
-    second: darkring_tilemap_48
+    second: gem5
   - first:
       213: -5012564606711769357
-    second: darkring_tilemap_49
+    second: gem6
   - first:
       213: -628584370788034924
-    second: darkring_tilemap_50
+    second: metal_fence_small_down_left
   - first:
       213: 2324434406960520341
-    second: darkring_tilemap_51
+    second: metal_fence_small_down_right
   - first:
       213: -1150392166979903782
     second: darkring_tilemap_52
@@ -175,130 +175,130 @@ TextureImporter:
     second: darkring_tilemap_56
   - first:
       213: -663488623443989624
-    second: darkring_tilemap_57
+    second: chest_small
   - first:
       213: -7339853065558229930
     second: darkring_tilemap_58
   - first:
       213: -4477899141058564307
-    second: darkring_tilemap_59
+    second: metal_fence_big_up_left
   - first:
       213: -839793473327944445
-    second: darkring_tilemap_60
+    second: metal_fence_big_up_middle_1
   - first:
       213: -8312908782913537753
-    second: darkring_tilemap_61
+    second: metal_fence_big_up_middle_2
   - first:
       213: 5725009245444485209
-    second: darkring_tilemap_62
+    second: metal_fence_big_up_right
   - first:
       213: -1855003408959809614
-    second: darkring_tilemap_63
+    second: chest_big_up_left
   - first:
       213: -2128846717725774985
-    second: darkring_tilemap_64
+    second: chest_big_up_right
   - first:
       213: -4239190909988531277
-    second: darkring_tilemap_65
+    second: armchair_up_left
   - first:
       213: 3414661967208904201
-    second: darkring_tilemap_66
+    second: armchair_up_right
   - first:
       213: 9127252471292329699
-    second: darkring_tilemap_67
+    second: cage_up
   - first:
       213: -6321748573384545205
-    second: darkring_tilemap_68
+    second: bones_up
   - first:
       213: 6210240621278950285
-    second: darkring_tilemap_69
+    second: door_up_left
   - first:
       213: 8943210018011089061
-    second: darkring_tilemap_70
+    second: door_up_right
   - first:
       213: -5945768270340527218
-    second: darkring_tilemap_71
+    second: cupboard_up_left
   - first:
       213: -8811354793834549099
-    second: darkring_tilemap_72
+    second: cupboard_up_right
   - first:
       213: 6537999444747018381
-    second: darkring_tilemap_73
+    second: metal_fence_big_down_left
   - first:
       213: -4261413376342631690
-    second: darkring_tilemap_74
+    second: metal_fence_big_down_middle_1
   - first:
       213: -3639696525912778610
-    second: darkring_tilemap_75
+    second: metal_fence_big_down_middle_2
   - first:
       213: 497827079587136602
-    second: darkring_tilemap_76
+    second: metal_fence_big_down_right
   - first:
       213: -6681585434409002634
-    second: darkring_tilemap_77
+    second: chest_big_down_left
   - first:
       213: 7339203713054561318
-    second: darkring_tilemap_78
+    second: chest_big_down_right
   - first:
       213: 6019512397412635489
-    second: darkring_tilemap_79
+    second: armchair_down_left
   - first:
       213: -8273972544731749191
-    second: darkring_tilemap_80
+    second: armchair_down_right
   - first:
       213: -3465228439847079790
-    second: darkring_tilemap_81
+    second: cage_down
   - first:
       213: 2233938670009900509
-    second: darkring_tilemap_82
+    second: bones_down
   - first:
       213: -2874718714201701593
-    second: darkring_tilemap_83
+    second: door_down_left
   - first:
       213: -3116256727382693041
-    second: darkring_tilemap_84
+    second: door_down_right
   - first:
       213: -5735967025643084741
-    second: darkring_tilemap_85
+    second: cupboard_middle_left
   - first:
       213: -4994430674055266004
-    second: darkring_tilemap_86
+    second: cupboard_middle_right
   - first:
       213: 2414564838328552193
-    second: darkring_tilemap_87
+    second: cupboard_down_left
   - first:
       213: 231473187493388217
-    second: darkring_tilemap_88
+    second: cupboard_down_right
   - first:
       213: 1169699039464248876
-    second: darkring_tilemap_89
+    second: wooden_table_up_left
   - first:
       213: 3422475971979544582
-    second: darkring_tilemap_90
+    second: wooden_table_up_middle
   - first:
       213: 3885662379156138111
-    second: darkring_tilemap_91
+    second: wooden_table_up_right
   - first:
       213: -3564837446328437278
-    second: darkring_tilemap_92
+    second: chair_back_up
   - first:
       213: 4126927989736761870
-    second: darkring_tilemap_93
+    second: chair_front_up
   - first:
       213: 8021741858268645143
-    second: darkring_tilemap_94
+    second: candle
   - first:
       213: -1846029896204693261
-    second: darkring_tilemap_95
+    second: flashlight
   - first:
       213: -1041857820957799647
-    second: darkring_tilemap_96
+    second: batteries
   - first:
       213: -2254360483293704435
-    second: darkring_tilemap_97
+    second: long_diagonal_wall_1
   - first:
       213: -3718080257285054185
-    second: darkring_tilemap_98
+    second: long_diagonal_wall_2
   - first:
       213: 4977958397333839368
     second: darkring_tilemap_99
@@ -307,19 +307,19 @@ TextureImporter:
     second: darkring_tilemap_100
   - first:
       213: -3123422559124216111
-    second: darkring_tilemap_101
+    second: wooden_table_down_left
   - first:
       213: 706771562415496812
-    second: darkring_tilemap_102
+    second: wooden_table_down_middle
   - first:
       213: -8525282981596473857
-    second: darkring_tilemap_103
+    second: wooden_table_down_right
   - first:
       213: -7613257937612819828
-    second: darkring_tilemap_104
+    second: chair_back_down
   - first:
       213: 5031480690733065096
-    second: darkring_tilemap_105
+    second: chair_front_down
   - first:
       213: 6256951725521132157
     second: darkring_tilemap_106
@@ -331,22 +331,22 @@ TextureImporter:
     second: darkring_tilemap_108
   - first:
       213: -7855256127332704928
-    second: darkring_tilemap_109
+    second: long_diagonal_wall_3
   - first:
       213: -8927607969996296472
-    second: darkring_tilemap_110
+    second: long_diagonal_wall_4
   - first:
       213: -2774320830146579200
-    second: darkring_tilemap_111
+    second: long_diagonal_wall_5
   - first:
       213: -1916184951799645115
-    second: darkring_tilemap_112
+    second: metal_fence_normal_up_left
   - first:
       213: -8195996893403762038
-    second: darkring_tilemap_113
+    second: metal_fence_normal_up_middle
   - first:
       213: -6403026161514585171
-    second: darkring_tilemap_114
+    second: metal_fence_normal_up_right
   - first:
       213: 1182080661522699423
     second: darkring_tilemap_115
@@ -361,7 +361,7 @@ TextureImporter:
     second: darkring_tilemap_118
   - first:
       213: -3747857906240803214
-    second: darkring_tilemap_119
+    second: kerosene_lamp
   - first:
       213: 5516951389012611030
     second: darkring_tilemap_120
@@ -370,31 +370,31 @@ TextureImporter:
     second: darkring_tilemap_121
   - first:
       213: -28359421065273457
-    second: darkring_tilemap_122
+    second: long_diagonal_wall_6
   - first:
       213: 760761663423642814
-    second: darkring_tilemap_123
+    second: long_diagonal_wall_7
   - first:
       213: 2109915986458270538
-    second: darkring_tilemap_124
+    second: metal_fence_normal_down_left
   - first:
       213: -8125644306536345339
-    second: darkring_tilemap_125
+    second: metal_fence_normal_down_middle
   - first:
       213: 8088625552138060169
-    second: darkring_tilemap_126
+    second: metal_fence_normal_down_right
   - first:
       213: 8247507154810206456
-    second: darkring_tilemap_127
+    second: table_left_corner
   - first:
       213: 1558755319441405736
-    second: darkring_tilemap_128
+    second: table_middle_2
   - first:
       213: 857251650799740089
-    second: darkring_tilemap_129
+    second: table_middle_1
   - first:
       213: -6880792178971197987
-    second: darkring_tilemap_130
+    second: table_right_corner
   - first:
       213: -162889911097073080
     second: darkring_tilemap_131
@@ -412,7 +412,7 @@ TextureImporter:
     second: darkring_tilemap_135
   - first:
       213: 641012889239454640
-    second: darkring_tilemap_136
+    second: long_diagonal_wall_8
   - first:
       213: -8146957486713937344
     second: darkring_tilemap_137
@@ -421,7 +421,7 @@ TextureImporter:
     second: darkring_tilemap_138
   - first:
       213: 2146806663035590513
-    second: darkring_tilemap_139
+    second: table_leg_1
   - first:
       213: -5196834246790542597
     second: darkring_tilemap_140
@@ -445,13 +445,13 @@ TextureImporter:
     second: darkring_tilemap_146
   - first:
       213: 8135038619215977226
-    second: darkring_tilemap_147
+    second: bed_up_left
   - first:
       213: -754562243684128321
-    second: darkring_tilemap_148
+    second: bed_up_middle
   - first:
       213: -6125001719576751755
-    second: darkring_tilemap_149
+    second: bed_up_right
   - first:
       213: -2168460829005337916
     second: darkring_tilemap_150
@@ -484,25 +484,25 @@ TextureImporter:
     second: darkring_tilemap_159
   - first:
       213: -3219201703305434578
-    second: darkring_tilemap_160
+    second: bed_down_left
   - first:
       213: -219260849953026813
-    second: darkring_tilemap_161
+    second: bed_down_middle
   - first:
       213: -3057877567301539534
-    second: darkring_tilemap_162
+    second: bed_down_right
   - first:
       213: -8315557106601929621
-    second: darkring_tilemap_163
+    second: window_lefft_up
   - first:
       213: -9189485494950988833
-    second: darkring_tilemap_164
+    second: window_right_up
   - first:
       213: 9223257619089829119
-    second: darkring_tilemap_165
+    second: wall_up_horizontal_
   - first:
       213: -6226785169423062001
-    second: darkring_tilemap_166
+    second: wall_up_horizontal_2
   - first:
       213: -3994268560859526764
     second: darkring_tilemap_167
@@ -511,7 +511,7 @@ TextureImporter:
     second: darkring_tilemap_168
   - first:
       213: 4349004687781816639
-    second: darkring_tilemap_169
+    second: wall_up_horizontal_3
   - first:
       213: 879324123786253422
     second: darkring_tilemap_170
@@ -532,43 +532,43 @@ TextureImporter:
     second: darkring_tilemap_175
   - first:
       213: 956944008477853455
-    second: darkring_tilemap_176
+    second: window_lefft_bottom
   - first:
       213: 7384689579358274856
-    second: darkring_tilemap_177
+    second: window_right_bottom
   - first:
       213: 3239421573344873365
-    second: darkring_tilemap_178
+    second: painting1
   - first:
       213: 8442983500364413354
-    second: darkring_tilemap_179
+    second: painting2
   - first:
       213: 7496415705798556753
     second: darkring_tilemap_180
   - first:
       213: 8302699998546840509
-    second: darkring_tilemap_181
+    second: wall_horizontal_0
   - first:
       213: -2065874855036079491
-    second: darkring_tilemap_182
+    second: note
   - first:
       213: -8773440354206872493
-    second: darkring_tilemap_183
+    second: key
   - first:
       213: 9148997642464299527
-    second: darkring_tilemap_184
+    second: candlestick_big_up
   - first:
       213: -51231535979791684
-    second: darkring_tilemap_185
+    second: carpet_up_left
   - first:
       213: -3086765574180828886
-    second: darkring_tilemap_186
+    second: carpet_up_right
   - first:
       213: -1349790326434897255
-    second: darkring_tilemap_187
+    second: carpet_down_left
   - first:
       213: 6700127980123350703
-    second: darkring_tilemap_188
+    second: carpet_down_right
   - first:
       213: 2164835420128849622
     second: darkring_tilemap_189
@@ -583,7 +583,7 @@ TextureImporter:
     second: darkring_tilemap_192
   - first:
       213: -4894388826836381063
-    second: darkring_tilemap_193
+    second: candlestick_small
   - first:
       213: -1770525054046074138
     second: darkring_tilemap_194
@@ -598,7 +598,7 @@ TextureImporter:
     second: darkring_tilemap_197
   - first:
       213: -4794210554862020490
-    second: darkring_tilemap_198
+    second: candlestick_big_middle
   - first:
       213: 7422353700360345080
     second: darkring_tilemap_199
@@ -613,46 +613,46 @@ TextureImporter:
     second: darkring_tilemap_202
   - first:
       213: 6193416896201213300
-    second: darkring_tilemap_203
+    second: table_left_corner_1
   - first:
       213: 1516578117809033593
-    second: darkring_tilemap_204
+    second: table_middle_4
   - first:
       213: -12167127474712303
-    second: darkring_tilemap_205
+    second: table_middle_3
   - first:
       213: -6247685753206087805
-    second: darkring_tilemap_206
+    second: table_right_corner_1
   - first:
       213: 1969559633745725680
-    second: darkring_tilemap_207
+    second: table_shadow_left_corner
   - first:
       213: 323790274259577638
-    second: darkring_tilemap_208
+    second: table_shadow_middle
   - first:
       213: 2373475260273510284
-    second: darkring_tilemap_209
+    second: table_shadow_right_corner
   - first:
       213: -6953753006443462014
     second: darkring_tilemap_210
   - first:
       213: -2639945322425074213
-    second: darkring_tilemap_211
+    second: candlestick_big_bottom
   - first:
       213: 8304827974856892063
-    second: darkring_tilemap_212
+    second: carpet_middle_left_2
   - first:
       213: -5417085907175675234
-    second: darkring_tilemap_213
+    second: carpet_middle_right_2
   - first:
       213: -2188875272598713665
-    second: darkring_tilemap_214
+    second: carpet_middle_left_1
   - first:
       213: -2725051351947411457
-    second: darkring_tilemap_215
+    second: carpet_middle_right_1
   - first:
       213: 1341556935315538851
-    second: darkring_tilemap_216
+    second: table_leg_2
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -826,7 +826,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_4
+      name: up_diagonal_wall_2
       rect:
         serializedVersion: 2
         x: 608
@@ -847,7 +847,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glass_left_0
+      name: left_glass_up
       rect:
         serializedVersion: 2
         x: 836
@@ -868,7 +868,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glass_right_0
+      name: right_glass_up
       rect:
         serializedVersion: 2
         x: 988
@@ -884,27 +884,6 @@ TextureImporter:
       bones: []
       spriteID: c2148410eac004b80800000000000000
       internalID: -8412710162442731220
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_7
-      rect:
-        serializedVersion: 2
-        x: 1064
-        y: 1448
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f193a0d6d8f623970800000000000000
-      internalID: 8733165280635271455
       vertices: []
       indices: 
       edges: []
@@ -931,7 +910,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_9
+      name: front_glass_up
       rect:
         serializedVersion: 2
         x: 1292
@@ -952,7 +931,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_10
+      name: diagonal_wall_up_2
       rect:
         serializedVersion: 2
         x: 1444
@@ -994,7 +973,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_12
+      name: door_up
       rect:
         serializedVersion: 2
         x: 228
@@ -1036,7 +1015,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_14
+      name: up_diagonal_wall_1
       rect:
         serializedVersion: 2
         x: 532
@@ -1057,7 +1036,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_15
+      name: up_diagonal_wall_3
       rect:
         serializedVersion: 2
         x: 684
@@ -1078,7 +1057,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glass_left_1
+      name: left_glass_middle_up
       rect:
         serializedVersion: 2
         x: 836
@@ -1099,7 +1078,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glass_right_1
+      name: right_glass_middle_up
       rect:
         serializedVersion: 2
         x: 988
@@ -1120,28 +1099,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_18
-      rect:
-        serializedVersion: 2
-        x: 1064
-        y: 1372
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2b611a9bfea8ae4b0800000000000000
-      internalID: -5410359240116070734
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_19
+      name: wall_horizontal_1
       rect:
         serializedVersion: 2
         x: 1140
@@ -1162,7 +1120,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_20
+      name: front_glass_middle
       rect:
         serializedVersion: 2
         x: 1292
@@ -1183,7 +1141,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_21
+      name: diagonal_wall_bottom_2
       rect:
         serializedVersion: 2
         x: 1444
@@ -1204,7 +1162,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_22
+      name: diagonal_wall_up_1
       rect:
         serializedVersion: 2
         x: 152
@@ -1225,7 +1183,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_23
+      name: small_door_left
       rect:
         serializedVersion: 2
         x: 304
@@ -1246,7 +1204,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_24
+      name: small_door_right
       rect:
         serializedVersion: 2
         x: 456
@@ -1267,7 +1225,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_25
+      name: up_diagonal_wall_4
       rect:
         serializedVersion: 2
         x: 608
@@ -1288,7 +1246,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glass_left_2
+      name: left_glass_middle_down
       rect:
         serializedVersion: 2
         x: 836
@@ -1309,7 +1267,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glass_right_2
+      name: right_glass_middle_down
       rect:
         serializedVersion: 2
         x: 988
@@ -1330,28 +1288,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_28
-      rect:
-        serializedVersion: 2
-        x: 1064
-        y: 1296
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0f15265a6cbfdf870800000000000000
-      internalID: 8718401284255928816
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_29
+      name: front_glass_bottom
       rect:
         serializedVersion: 2
         x: 1292
@@ -1372,49 +1309,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_30
-      rect:
-        serializedVersion: 2
-        x: 1444
-        y: 1296
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fe48d8f5452765070800000000000000
-      internalID: 8094783086950974703
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_31
-      rect:
-        serializedVersion: 2
-        x: 1520
-        y: 1296
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a4358827ea5af6520800000000000000
-      internalID: 2697556870482645834
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_32
+      name: diagonal_wall_bottom_1
       rect:
         serializedVersion: 2
         x: 152
@@ -1435,7 +1330,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_33
+      name: torch_side_right
       rect:
         serializedVersion: 2
         x: 228
@@ -1456,7 +1351,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_34
+      name: torch_side_left
       rect:
         serializedVersion: 2
         x: 380
@@ -1477,28 +1372,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_35
-      rect:
-        serializedVersion: 2
-        x: 456
-        y: 1220
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ee9cd6f4962fe6910800000000000000
-      internalID: 1832668632504453614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_36
+      name: torch_front
       rect:
         serializedVersion: 2
         x: 532
@@ -1519,7 +1393,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glass_left_3
+      name: left_glass_down
       rect:
         serializedVersion: 2
         x: 836
@@ -1540,7 +1414,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: glass_right_3
+      name: right_glass_down
       rect:
         serializedVersion: 2
         x: 988
@@ -1561,49 +1435,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_39
-      rect:
-        serializedVersion: 2
-        x: 1064
-        y: 1220
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 738b18a7688d8a5f0800000000000000
-      internalID: -745107666237278153
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_40
-      rect:
-        serializedVersion: 2
-        x: 1140
-        y: 1220
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 55421c99a78e78fa0800000000000000
-      internalID: -5798410381952998315
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_41
+      name: metal_fence_small_up_left
       rect:
         serializedVersion: 2
         x: 1444
@@ -1624,7 +1456,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_42
+      name: metal_fence_small_up_right
       rect:
         serializedVersion: 2
         x: 1520
@@ -1645,7 +1477,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_43
+      name: gem1
       rect:
         serializedVersion: 2
         x: 304
@@ -1670,7 +1502,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_44
+      name: gem2
       rect:
         serializedVersion: 2
         x: 456
@@ -1695,7 +1527,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_45
+      name: gem3
       rect:
         serializedVersion: 2
         x: 608
@@ -1720,7 +1552,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_46
+      name: gem4
       rect:
         serializedVersion: 2
         x: 836
@@ -1745,28 +1577,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_47
-      rect:
-        serializedVersion: 2
-        x: 912
-        y: 1144
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 3e3f650022650d1d0800000000000000
-      internalID: -3328065420592221213
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_48
+      name: gem5
       rect:
         serializedVersion: 2
         x: 988
@@ -1791,7 +1602,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_49
+      name: gem6
       rect:
         serializedVersion: 2
         x: 1140
@@ -1816,7 +1627,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_50
+      name: metal_fence_small_down_left
       rect:
         serializedVersion: 2
         x: 1444
@@ -1837,7 +1648,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_51
+      name: metal_fence_small_down_right
       rect:
         serializedVersion: 2
         x: 1520
@@ -1858,112 +1669,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_52
-      rect:
-        serializedVersion: 2
-        x: 380
-        y: 1068
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ade55ce4b6cf800f0800000000000000
-      internalID: -1150392166979903782
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_53
-      rect:
-        serializedVersion: 2
-        x: 456
-        y: 1068
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cc5bf5b6442396510800000000000000
-      internalID: 1542819616791705036
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_54
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 1068
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8ca6573ed00f06df0800000000000000
-      internalID: -188887241908196664
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_55
-      rect:
-        serializedVersion: 2
-        x: 684
-        y: 1068
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fa7096eb89f5c50f0800000000000000
-      internalID: -1126920697115244625
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_56
-      rect:
-        serializedVersion: 2
-        x: 836
-        y: 1068
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4d8c9319980d73ab0800000000000000
-      internalID: -5028321169670289196
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_57
+      name: chest_small
       rect:
         serializedVersion: 2
         x: 912
@@ -1984,28 +1690,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_58
-      rect:
-        serializedVersion: 2
-        x: 988
-        y: 1068
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 65cf6db668a932a90800000000000000
-      internalID: -7339853065558229930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_59
+      name: metal_fence_big_up_left
       rect:
         serializedVersion: 2
         x: 0
@@ -2026,7 +1711,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_60
+      name: metal_fence_big_up_middle_1
       rect:
         serializedVersion: 2
         x: 76
@@ -2047,7 +1732,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_61
+      name: metal_fence_big_up_middle_2
       rect:
         serializedVersion: 2
         x: 152
@@ -2068,7 +1753,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_62
+      name: metal_fence_big_up_right
       rect:
         serializedVersion: 2
         x: 228
@@ -2089,7 +1774,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_63
+      name: chest_big_up_left
       rect:
         serializedVersion: 2
         x: 380
@@ -2110,7 +1795,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_64
+      name: chest_big_up_right
       rect:
         serializedVersion: 2
         x: 456
@@ -2131,7 +1816,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_65
+      name: armchair_up_left
       rect:
         serializedVersion: 2
         x: 608
@@ -2152,7 +1837,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_66
+      name: armchair_up_right
       rect:
         serializedVersion: 2
         x: 684
@@ -2173,7 +1858,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_67
+      name: cage_up
       rect:
         serializedVersion: 2
         x: 836
@@ -2194,7 +1879,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_68
+      name: bones_up
       rect:
         serializedVersion: 2
         x: 988
@@ -2215,7 +1900,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_69
+      name: door_up_left
       rect:
         serializedVersion: 2
         x: 1140
@@ -2236,7 +1921,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_70
+      name: door_up_right
       rect:
         serializedVersion: 2
         x: 1216
@@ -2257,7 +1942,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_71
+      name: cupboard_up_left
       rect:
         serializedVersion: 2
         x: 1368
@@ -2278,7 +1963,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_72
+      name: cupboard_up_right
       rect:
         serializedVersion: 2
         x: 1444
@@ -2299,7 +1984,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_73
+      name: metal_fence_big_down_left
       rect:
         serializedVersion: 2
         x: 0
@@ -2320,7 +2005,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_74
+      name: metal_fence_big_down_middle_1
       rect:
         serializedVersion: 2
         x: 76
@@ -2341,7 +2026,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_75
+      name: metal_fence_big_down_middle_2
       rect:
         serializedVersion: 2
         x: 152
@@ -2362,7 +2047,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_76
+      name: metal_fence_big_down_right
       rect:
         serializedVersion: 2
         x: 228
@@ -2383,7 +2068,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_77
+      name: chest_big_down_left
       rect:
         serializedVersion: 2
         x: 380
@@ -2404,7 +2089,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_78
+      name: chest_big_down_right
       rect:
         serializedVersion: 2
         x: 456
@@ -2425,7 +2110,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_79
+      name: armchair_down_left
       rect:
         serializedVersion: 2
         x: 608
@@ -2446,7 +2131,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_80
+      name: armchair_down_right
       rect:
         serializedVersion: 2
         x: 684
@@ -2467,7 +2152,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_81
+      name: cage_down
       rect:
         serializedVersion: 2
         x: 836
@@ -2488,7 +2173,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_82
+      name: bones_down
       rect:
         serializedVersion: 2
         x: 988
@@ -2509,7 +2194,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_83
+      name: door_down_left
       rect:
         serializedVersion: 2
         x: 1140
@@ -2530,7 +2215,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_84
+      name: door_down_right
       rect:
         serializedVersion: 2
         x: 1216
@@ -2551,7 +2236,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_85
+      name: cupboard_middle_left
       rect:
         serializedVersion: 2
         x: 1368
@@ -2572,7 +2257,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_86
+      name: cupboard_middle_right
       rect:
         serializedVersion: 2
         x: 1444
@@ -2593,7 +2278,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_87
+      name: cupboard_down_left
       rect:
         serializedVersion: 2
         x: 1368
@@ -2614,7 +2299,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_88
+      name: cupboard_down_right
       rect:
         serializedVersion: 2
         x: 1444
@@ -2635,7 +2320,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_89
+      name: wooden_table_up_left
       rect:
         serializedVersion: 2
         x: 0
@@ -2656,7 +2341,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_90
+      name: wooden_table_up_middle
       rect:
         serializedVersion: 2
         x: 76
@@ -2677,7 +2362,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_91
+      name: wooden_table_up_right
       rect:
         serializedVersion: 2
         x: 152
@@ -2698,7 +2383,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_92
+      name: chair_back_up
       rect:
         serializedVersion: 2
         x: 304
@@ -2719,7 +2404,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_93
+      name: chair_front_up
       rect:
         serializedVersion: 2
         x: 456
@@ -2740,7 +2425,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_94
+      name: candle
       rect:
         serializedVersion: 2
         x: 608
@@ -2761,7 +2446,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_95
+      name: flashlight
       rect:
         serializedVersion: 2
         x: 760
@@ -2789,7 +2474,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_96
+      name: batteries
       rect:
         serializedVersion: 2
         x: 912
@@ -2819,7 +2504,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_97
+      name: long_diagonal_wall_1
       rect:
         serializedVersion: 2
         x: 1064
@@ -2840,7 +2525,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_98
+      name: long_diagonal_wall_2
       rect:
         serializedVersion: 2
         x: 1140
@@ -2861,49 +2546,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_99
-      rect:
-        serializedVersion: 2
-        x: 1368
-        y: 764
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80e91cbb9c2451540800000000000000
-      internalID: 4977958397333839368
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_100
-      rect:
-        serializedVersion: 2
-        x: 1444
-        y: 764
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cf5811c0605af1e60800000000000000
-      internalID: 7935242513840965116
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_101
+      name: wooden_table_down_left
       rect:
         serializedVersion: 2
         x: 0
@@ -2924,7 +2567,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_102
+      name: wooden_table_down_middle
       rect:
         serializedVersion: 2
         x: 76
@@ -2945,7 +2588,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_103
+      name: wooden_table_down_right
       rect:
         serializedVersion: 2
         x: 152
@@ -2966,7 +2609,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_104
+      name: chair_back_down
       rect:
         serializedVersion: 2
         x: 304
@@ -2987,7 +2630,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_105
+      name: chair_front_down
       rect:
         serializedVersion: 2
         x: 456
@@ -3008,70 +2651,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_106
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 688
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d7a5470917825d650800000000000000
-      internalID: 6256951725521132157
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_107
-      rect:
-        serializedVersion: 2
-        x: 760
-        y: 688
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 66b4a916213b868c0800000000000000
-      internalID: -4005754977017771162
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_108
-      rect:
-        serializedVersion: 2
-        x: 836
-        y: 688
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 287f64db57be10420800000000000000
-      internalID: 2594613751261362050
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_109
+      name: long_diagonal_wall_3
       rect:
         serializedVersion: 2
         x: 1064
@@ -3092,7 +2672,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_110
+      name: long_diagonal_wall_4
       rect:
         serializedVersion: 2
         x: 1140
@@ -3113,7 +2693,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_111
+      name: long_diagonal_wall_5
       rect:
         serializedVersion: 2
         x: 1216
@@ -3134,7 +2714,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_112
+      name: metal_fence_normal_up_left
       rect:
         serializedVersion: 2
         x: 1368
@@ -3155,7 +2735,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_113
+      name: metal_fence_normal_up_middle
       rect:
         serializedVersion: 2
         x: 1444
@@ -3176,7 +2756,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_114
+      name: metal_fence_normal_up_right
       rect:
         serializedVersion: 2
         x: 1520
@@ -3197,91 +2777,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_115
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 612
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f945be54918976010800000000000000
-      internalID: 1182080661522699423
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_116
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 612
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 981796140ba0a74f0800000000000000
-      internalID: -830339429168483959
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_117
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 612
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 280e954468bd2fb90800000000000000
-      internalID: -7209458683747901310
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_118
-      rect:
-        serializedVersion: 2
-        x: 456
-        y: 612
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5ab631f5bf74e87d0800000000000000
-      internalID: -2914312763904660571
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_119
+      name: kerosene_lamp
       rect:
         serializedVersion: 2
         x: 608
@@ -3306,49 +2802,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_120
-      rect:
-        serializedVersion: 2
-        x: 760
-        y: 612
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6dfc139ee06209c40800000000000000
-      internalID: 5516951389012611030
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_121
-      rect:
-        serializedVersion: 2
-        x: 836
-        y: 612
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cd650d0eb491e83b0800000000000000
-      internalID: -5508437480542546212
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_122
+      name: long_diagonal_wall_6
       rect:
         serializedVersion: 2
         x: 1140
@@ -3369,7 +2823,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_123
+      name: long_diagonal_wall_7
       rect:
         serializedVersion: 2
         x: 1216
@@ -3390,7 +2844,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_124
+      name: metal_fence_normal_down_left
       rect:
         serializedVersion: 2
         x: 1368
@@ -3411,7 +2865,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_125
+      name: metal_fence_normal_down_middle
       rect:
         serializedVersion: 2
         x: 1444
@@ -3432,7 +2886,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_126
+      name: metal_fence_normal_down_right
       rect:
         serializedVersion: 2
         x: 1520
@@ -3453,7 +2907,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_127
+      name: table_left_corner
       rect:
         serializedVersion: 2
         x: 0
@@ -3474,7 +2928,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_128
+      name: table_middle_2
       rect:
         serializedVersion: 2
         x: 152
@@ -3495,7 +2949,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_129
+      name: table_middle_1
       rect:
         serializedVersion: 2
         x: 304
@@ -3516,7 +2970,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_130
+      name: table_right_corner
       rect:
         serializedVersion: 2
         x: 456
@@ -3537,112 +2991,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_131
-      rect:
-        serializedVersion: 2
-        x: 532
-        y: 536
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 84260972d7c4dbdf0800000000000000
-      internalID: -162889911097073080
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_132
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 536
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 917fd9a78c377ddf0800000000000000
-      internalID: -155528357233166567
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_133
-      rect:
-        serializedVersion: 2
-        x: 760
-        y: 536
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0479d4da2da6dc040800000000000000
-      internalID: 4669505841736292160
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_134
-      rect:
-        serializedVersion: 2
-        x: 836
-        y: 536
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e0adc456498c09c00800000000000000
-      internalID: 905444064781720078
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_135
-      rect:
-        serializedVersion: 2
-        x: 1140
-        y: 536
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 38b98360a438f6360800000000000000
-      internalID: 7165089886124940163
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_136
+      name: long_diagonal_wall_8
       rect:
         serializedVersion: 2
         x: 1216
@@ -3663,49 +3012,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_137
-      rect:
-        serializedVersion: 2
-        x: 1368
-        y: 536
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 042e43c845130fe80800000000000000
-      internalID: -8146957486713937344
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_138
-      rect:
-        serializedVersion: 2
-        x: 1444
-        y: 536
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 991ba7f7f827ec4d0800000000000000
-      internalID: -3112424331821796967
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_139
+      name: table_leg_1
       rect:
         serializedVersion: 2
         x: 152
@@ -3726,154 +3033,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_140
-      rect:
-        serializedVersion: 2
-        x: 532
-        y: 460
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bfa077b59c221e7b0800000000000000
-      internalID: -5196834246790542597
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_141
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 460
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80f29970c1639c880800000000000000
-      internalID: -8590275320218046712
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_142
-      rect:
-        serializedVersion: 2
-        x: 760
-        y: 460
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d22c4e08a4151e160800000000000000
-      internalID: 7053007871870812717
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_143
-      rect:
-        serializedVersion: 2
-        x: 836
-        y: 460
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fae7c6e5b36294ef0800000000000000
-      internalID: -123525478346883409
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_144
-      rect:
-        serializedVersion: 2
-        x: 988
-        y: 460
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e9e266c06142e330800000000000000
-      internalID: 3738622524571970020
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_145
-      rect:
-        serializedVersion: 2
-        x: 1064
-        y: 460
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4ca2e2a01276a1640800000000000000
-      internalID: 5051463323651812036
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_146
-      rect:
-        serializedVersion: 2
-        x: 1140
-        y: 460
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cfef965095eb76b50800000000000000
-      internalID: 6586442269604839164
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_147
+      name: bed_up_left
       rect:
         serializedVersion: 2
         x: 1368
@@ -3894,7 +3054,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_148
+      name: bed_up_middle
       rect:
         serializedVersion: 2
         x: 1444
@@ -3915,7 +3075,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_149
+      name: bed_up_right
       rect:
         serializedVersion: 2
         x: 1520
@@ -3936,217 +3096,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_150
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 384
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4caa9c17d5418e1e0800000000000000
-      internalID: -2168460829005337916
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_151
-      rect:
-        serializedVersion: 2
-        x: 76
-        y: 384
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aaa1c63ce997facd0800000000000000
-      internalID: -2544681541650605398
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_152
-      rect:
-        serializedVersion: 2
-        x: 228
-        y: 384
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 229ea6bf918990bb0800000000000000
-      internalID: -4969273476466939614
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_153
-      rect:
-        serializedVersion: 2
-        x: 380
-        y: 384
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 903d01e9ea33faab0800000000000000
-      internalID: -4994716636661361911
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_154
-      rect:
-        serializedVersion: 2
-        x: 532
-        y: 384
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d449d737c045078a0800000000000000
-      internalID: -6309450665492114355
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_155
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 384
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4e86372be41cb89c0800000000000000
-      internalID: -3923830106577737500
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_156
-      rect:
-        serializedVersion: 2
-        x: 760
-        y: 384
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a183beeaccba387a0800000000000000
-      internalID: -6376063751830161382
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_157
-      rect:
-        serializedVersion: 2
-        x: 988
-        y: 384
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 646dd5d87e695cd70800000000000000
-      internalID: 9062815746406340166
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_158
-      rect:
-        serializedVersion: 2
-        x: 1064
-        y: 384
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: cde715b5c1f1f4a20800000000000000
-      internalID: 3048689679404728028
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_159
-      rect:
-        serializedVersion: 2
-        x: 1140
-        y: 384
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2ed542cd662141a50800000000000000
-      internalID: 6490833195937062370
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_160
+      name: bed_down_left
       rect:
         serializedVersion: 2
         x: 1368
@@ -4167,7 +3117,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_161
+      name: bed_down_middle
       rect:
         serializedVersion: 2
         x: 1444
@@ -4188,7 +3138,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_162
+      name: bed_down_right
       rect:
         serializedVersion: 2
         x: 1520
@@ -4209,7 +3159,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_163
+      name: window_lefft_up
       rect:
         serializedVersion: 2
         x: 0
@@ -4230,7 +3180,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_164
+      name: window_right_up
       rect:
         serializedVersion: 2
         x: 76
@@ -4251,7 +3201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_165
+      name: wall_up_horizontal_
       rect:
         serializedVersion: 2
         x: 228
@@ -4272,7 +3222,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_166
+      name: wall_up_horizontal_2
       rect:
         serializedVersion: 2
         x: 380
@@ -4293,49 +3243,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_167
-      rect:
-        serializedVersion: 2
-        x: 532
-        y: 308
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 499057c08e18198c0800000000000000
-      internalID: -3994268560859526764
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_168
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 308
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 254406a2b95c32b50800000000000000
-      internalID: 6567309951857869906
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_169
+      name: wall_up_horizontal_3
       rect:
         serializedVersion: 2
         x: 760
@@ -4356,133 +3264,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_170
-      rect:
-        serializedVersion: 2
-        x: 912
-        y: 308
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: e6416b8b1acf33c00800000000000000
-      internalID: 879324123786253422
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_171
-      rect:
-        serializedVersion: 2
-        x: 1216
-        y: 308
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bfe60f965d7c8f390800000000000000
-      internalID: -7784252236490576133
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_172
-      rect:
-        serializedVersion: 2
-        x: 1368
-        y: 308
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4fe16963ad2b11da0800000000000000
-      internalID: -5975798580255514892
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_173
-      rect:
-        serializedVersion: 2
-        x: 1444
-        y: 308
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de59f2f4a2cf23d00800000000000000
-      internalID: 951099729975940589
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_174
-      rect:
-        serializedVersion: 2
-        x: 1596
-        y: 308
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: aa2db2e4e80592550800000000000000
-      internalID: 6136524539396084394
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_175
-      rect:
-        serializedVersion: 2
-        x: 1672
-        y: 308
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98cc2a74c75787400800000000000000
-      internalID: 322136549995236489
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_176
+      name: window_lefft_bottom
       rect:
         serializedVersion: 2
         x: 0
@@ -4503,7 +3285,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_177
+      name: window_right_bottom
       rect:
         serializedVersion: 2
         x: 76
@@ -4524,7 +3306,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_178
+      name: painting1
       rect:
         serializedVersion: 2
         x: 228
@@ -4545,7 +3327,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_179
+      name: painting2
       rect:
         serializedVersion: 2
         x: 380
@@ -4566,28 +3348,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_180
-      rect:
-        serializedVersion: 2
-        x: 608
-        y: 232
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 15c38c0ed5e980860800000000000000
-      internalID: 7496415705798556753
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_181
+      name: wall_horizontal_0
       rect:
         serializedVersion: 2
         x: 760
@@ -4608,7 +3369,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_182
+      name: note
       rect:
         serializedVersion: 2
         x: 912
@@ -4635,7 +3396,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_183
+      name: key
       rect:
         serializedVersion: 2
         x: 1064
@@ -4656,7 +3417,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_184
+      name: candlestick_big_up
       rect:
         serializedVersion: 2
         x: 1216
@@ -4677,7 +3438,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_185
+      name: carpet_up_left
       rect:
         serializedVersion: 2
         x: 1368
@@ -4698,7 +3459,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_186
+      name: carpet_up_right
       rect:
         serializedVersion: 2
         x: 1444
@@ -4719,7 +3480,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_187
+      name: carpet_down_left
       rect:
         serializedVersion: 2
         x: 1596
@@ -4740,7 +3501,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_188
+      name: carpet_down_right
       rect:
         serializedVersion: 2
         x: 1672
@@ -4761,91 +3522,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_189
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 156
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6dea6f5485a0b0e10800000000000000
-      internalID: 2164835420128849622
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_190
-      rect:
-        serializedVersion: 2
-        x: 152
-        y: 156
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b8776e659f2c9d280800000000000000
-      internalID: -9017962402672117877
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_191
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 156
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d4c6bb28cc423e680800000000000000
-      internalID: -8727091192128639923
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_192
-      rect:
-        serializedVersion: 2
-        x: 456
-        y: 156
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d5883de3000c75530800000000000000
-      internalID: 3843751914270591069
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_193
+      name: candlestick_small
       rect:
         serializedVersion: 2
         x: 608
@@ -4866,91 +3543,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_194
-      rect:
-        serializedVersion: 2
-        x: 760
-        y: 156
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6ea87af08d4dd67e0800000000000000
-      internalID: -1770525054046074138
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_195
-      rect:
-        serializedVersion: 2
-        x: 912
-        y: 156
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1cf897098131c4590800000000000000
-      internalID: -7688749467604250687
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_196
-      rect:
-        serializedVersion: 2
-        x: 1064
-        y: 156
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 30e921b8875144580800000000000000
-      internalID: -8843920160775299581
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_197
-      rect:
-        serializedVersion: 2
-        x: 1140
-        y: 156
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 070a9a8a71fd06220800000000000000
-      internalID: 2477225087760703600
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_198
+      name: candlestick_big_middle
       rect:
         serializedVersion: 2
         x: 1216
@@ -4971,91 +3564,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_199
-      rect:
-        serializedVersion: 2
-        x: 1368
-        y: 156
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 8f5d84b7d5f710760800000000000000
-      internalID: 7422353700360345080
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_200
-      rect:
-        serializedVersion: 2
-        x: 1444
-        y: 156
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b073ec77eb2265c20800000000000000
-      internalID: 3194779187115079435
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_201
-      rect:
-        serializedVersion: 2
-        x: 1596
-        y: 156
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a7d9bb66efaa08770800000000000000
-      internalID: 8611070497154375034
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_202
-      rect:
-        serializedVersion: 2
-        x: 1672
-        y: 156
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 5c8c8cdc5d311a7d0800000000000000
-      internalID: -2909022075303180091
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_203
+      name: table_left_corner_1
       rect:
         serializedVersion: 2
         x: 0
@@ -5076,7 +3585,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_204
+      name: table_middle_4
       rect:
         serializedVersion: 2
         x: 152
@@ -5097,7 +3606,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_205
+      name: table_middle_3
       rect:
         serializedVersion: 2
         x: 304
@@ -5118,7 +3627,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_206
+      name: table_right_corner_1
       rect:
         serializedVersion: 2
         x: 456
@@ -5139,7 +3648,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_207
+      name: table_shadow_left_corner
       rect:
         serializedVersion: 2
         x: 760
@@ -5160,7 +3669,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_208
+      name: table_shadow_middle
       rect:
         serializedVersion: 2
         x: 912
@@ -5181,7 +3690,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_209
+      name: table_shadow_right_corner
       rect:
         serializedVersion: 2
         x: 1064
@@ -5202,28 +3711,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_210
-      rect:
-        serializedVersion: 2
-        x: 1140
-        y: 80
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 2820223bb7e4f7f90800000000000000
-      internalID: -6953753006443462014
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: darkring_tilemap_211
+      name: candlestick_big_bottom
       rect:
         serializedVersion: 2
         x: 1216
@@ -5244,7 +3732,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_212
+      name: carpet_middle_left_2
       rect:
         serializedVersion: 2
         x: 1368
@@ -5265,7 +3753,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_213
+      name: carpet_middle_right_2
       rect:
         serializedVersion: 2
         x: 1444
@@ -5286,7 +3774,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_214
+      name: carpet_middle_left_1
       rect:
         serializedVersion: 2
         x: 1596
@@ -5307,7 +3795,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_215
+      name: carpet_middle_right_1
       rect:
         serializedVersion: 2
         x: 1672
@@ -5328,7 +3816,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: darkring_tilemap_216
+      name: table_leg_2
       rect:
         serializedVersion: 2
         x: 152
