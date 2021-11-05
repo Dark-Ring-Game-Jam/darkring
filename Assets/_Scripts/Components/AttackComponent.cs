@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using _Scripts;
 using UnityEngine;
 
 namespace Components
@@ -22,23 +23,23 @@ namespace Components
 			return Vector2.Distance(transform.position, targetPosition) <= _distanceToAttack;
 		}
 
-		public void Attack(HealthComponent healthComponent)
+		public void Attack(ICanBeAttacked canBeAttacked, Vector2 targetPosition)
 		{
 			if (_currentCoroutine == null)
 			{
 				IsAttacking = true;
-				_currentCoroutine = StartCoroutine(AttackCoroutine(healthComponent));
+				_currentCoroutine = StartCoroutine(AttackCoroutine(canBeAttacked, targetPosition));
 				OnAttack?.Invoke();
 			}
 		}
 
-		private IEnumerator AttackCoroutine(HealthComponent healthComponent)
+		private IEnumerator AttackCoroutine(ICanBeAttacked canBeAttacked, Vector2 targetPosition)
 		{
 			yield return new WaitForSeconds(_delayToAttack);
 
-			if (CanAttack(healthComponent.transform.position))
+			if (CanAttack(targetPosition))
 			{
-				healthComponent.TakeDamage(_damage);
+				canBeAttacked.TakeDamage(_damage);
 			}
 
 			IsAttacking = false;

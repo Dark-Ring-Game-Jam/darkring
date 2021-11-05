@@ -3,26 +3,26 @@ using UnityEngine;
 
 namespace _Scripts
 {
-	public class Enemy : MonoBehaviour
+	public class Enemy : MonoBehaviour, ICanBeAttacked
 	{
 		[Header("Components")]
 		[SerializeField] private HealthComponent _healthComponent;
-		[SerializeField] private MovementComponent _movementComponent;
 		[SerializeField] private EnemyAnimationComponent _animationComponent;
 		[SerializeField] private AttackComponent _attackComponent;
 		[SerializeField] private AiComponent _aiComponent;
 
-		public HealthComponent HealthComponent => _healthComponent;
-		public MovementComponent MovementComponent => _movementComponent;
-
-		private HealthComponent _heroHealthComponent;
+		private ICanBeAttacked _targetCanBeAttacked;
+		private Player _target;
+		private Transform _targetTransform;
 
 		private void Start()
 		{
-			_heroHealthComponent = GameObject.FindGameObjectWithTag("hero").GetComponent<HealthComponent>();
+			_target = GameObject.FindGameObjectWithTag("hero").GetComponent<Player>();
+			_targetCanBeAttacked = _target.GetComponent<ICanBeAttacked>();
+			_targetTransform = _target.transform;
 
 			_animationComponent.InitEnemyAnimation(_attackComponent.DelayToAttack);
-			_aiComponent.Init(_movementComponent.Speed, _heroHealthComponent.transform);
+			_aiComponent.Init(_target);
 
 			_healthComponent.OnDeath += Die;
 			_attackComponent.OnAttack += _animationComponent.Attack;
@@ -30,14 +30,19 @@ namespace _Scripts
 
 		private void Update()
 		{
-			if (_attackComponent.CanAttack(_heroHealthComponent.transform.position) && _attackComponent.IsAttacking == false)
+			if (_attackComponent.CanAttack(_targetTransform.position) && _attackComponent.IsAttacking == false)
 			{
-				_attackComponent.Attack(_heroHealthComponent);
+				_attackComponent.Attack(_targetCanBeAttacked, _targetTransform.position);
 			}
 			else if (_attackComponent.IsAttacking == false)
 			{
 				_animationComponent.Idle();
 			}
+		}
+
+		public void TakeDamage(int damage)
+		{
+			_healthComponent.TakeDamage(damage);
 		}
 
 		private void Die()
@@ -47,5 +52,6 @@ namespace _Scripts
 			_attackComponent.OnAttack -= _animationComponent.Attack;
 			Destroy(this);
 		}
+
 	}
 }

@@ -7,9 +7,12 @@ using UnityEngine;
 [RequireComponent(typeof(MainCharacterAnimationComponent))]
 [RequireComponent(typeof(AttackComponent))]
 [RequireComponent(typeof(SmokeComponent))]
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, ICanBeAttacked
 {
     #region Fields
+
+    public float Speed => _movementComponent.Speed;
+
 
     private Inventory _inventory;
     private Vector2 _movementDirection = Vector2.zero;
@@ -23,7 +26,7 @@ public class Player : MonoBehaviour
 
     // TODO - для теста (потом выбирать динамически ближайшего врага)
     [SerializeField] private Enemy _targetEnemy;
-    
+
     #endregion Fields
 
     #region Default
@@ -35,16 +38,16 @@ public class Player : MonoBehaviour
         _animationComponent = GetComponent<MainCharacterAnimationComponent>();
         _attackComponent = GetComponent<AttackComponent>();
         _smokeComponent = GetComponent<SmokeComponent>();
-        
+
         _animationComponent.InitMainCharacterAnimation(2f, 2f);
-        
+
         _healthComponent.OnDeath += Die;
         _attackComponent.OnAttack += _animationComponent.Attack;
         _smokeComponent.OnSmoke += _animationComponent.Smoke;
 
         _inventory = new Inventory();
     }
-    
+
     private void Update()
     {
         if (!_healthComponent.IsDead)
@@ -68,14 +71,19 @@ public class Player : MonoBehaviour
             _movementComponent.Move(_movementDirection);
         }
     }
-    
+
     #endregion Default
+
+    public void TakeDamage(int damage)
+    {
+        _healthComponent.TakeDamage(damage);
+    }
 
     private bool IsBusy()
     {
         return _attackComponent.IsAttacking || _smokeComponent.IsSmoking || _healthComponent.IsDead;
     }
-    
+
     private void ProcessInputs()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
@@ -101,14 +109,14 @@ public class Player : MonoBehaviour
         scale.x *= -1;
         transform.localScale = scale;
     }
-    
+
     private void ProcessInteractions()
     {
         if (Input.GetKey(KeyCode.E))
         {
             if (_targetEnemy != null && _attackComponent.CanAttack(_targetEnemy.transform.position) && _attackComponent.IsAttacking == false)
             {
-                _attackComponent.Attack(_targetEnemy.HealthComponent);
+                _attackComponent.Attack(_targetEnemy.GetComponent<ICanBeAttacked>(), _targetEnemy.transform.position);
             }
         }
         else if (Input.GetKey(KeyCode.X))
@@ -128,7 +136,7 @@ public class Player : MonoBehaviour
         {
             return;
         }
-        
+
         if (_movementDirection == Vector2.zero)
         {
             _animationComponent.Idle();
@@ -148,7 +156,7 @@ public class Player : MonoBehaviour
             _animationComponent.SideWalk();
         }
     }
-    
+
     private void Die()
     {
         _animationComponent.Die();
