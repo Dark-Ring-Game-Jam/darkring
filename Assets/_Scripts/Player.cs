@@ -7,6 +7,7 @@ using UnityEngine;
 [RequireComponent(typeof(MainCharacterAnimationComponent))]
 [RequireComponent(typeof(AttackComponent))]
 [RequireComponent(typeof(SmokeComponent))]
+[RequireComponent(typeof(UIInventory))]
 public class Player : MonoBehaviour, ICanBeAttacked
 {
     #region Fields
@@ -26,6 +27,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     // TODO - для теста (потом выбирать динамически ближайшего врага)
     [SerializeField] private Enemy _targetEnemy;
+    [SerializeField] private UIInventory _UIInventory;
 
     #endregion Fields
 
@@ -46,6 +48,8 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _smokeComponent.OnSmoke += _animationComponent.Smoke;
 
         _inventory = new Inventory();
+        _UIInventory = GetComponent<UIInventory>();
+        _UIInventory.SetInventory(_inventory);
     }
 
     private void Update()
