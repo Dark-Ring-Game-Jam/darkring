@@ -57375,6 +57375,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: UI Inventory
       objectReference: {fileID: 0}
+    - target: {fileID: 8285325690515647442, guid: 7c747167f4f96fe4180d63178d800d4f, type: 3}
+      propertyPath: m_Spacing
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 8285325690515647444, guid: 7c747167f4f96fe4180d63178d800d4f, type: 3}
       propertyPath: m_SizeDelta.x
       value: 0

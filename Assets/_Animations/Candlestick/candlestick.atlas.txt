@@ -1,0 +1,12 @@
+candlestick.png
+size:344,98
+filter:Linear,Linear
+pma:true
+candlestick
+bounds:2,22,74,198
+rotate:90
+candlestick1
+bounds:298,36,60,44
+rotate:90
+candlestick2
+bounds:202,2,94,94
