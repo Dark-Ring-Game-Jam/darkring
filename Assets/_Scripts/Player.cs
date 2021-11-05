@@ -31,7 +31,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     #region Default
 
-    private void Start()
+    private void Awake()
     {
         _healthComponent = GetComponent<HealthComponent>();
         _movementComponent = GetComponent<MovementComponent>();

@@ -1,14 +1,64 @@
-﻿using UnityEngine;
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
 
 namespace _Scripts
 {
 	public class EnemySpawnPointsController : MonoBehaviour
 	{
-		[SerializeField] private SpawnPoint[] _enemySpawnPoints;
+		[SerializeField] private float _secondsToSpawn;
+		[SerializeField] private SpawnPoint[] _littleEnemySpawnPoints;
+		[SerializeField] private SpawnPoint[] _bigEnemySpawnPoints;
 
-		public void SpawnEnemy(int spawnPointIndex)
+		private readonly List<Enemy> _enemyList = new List<Enemy>();
+		private bool _isCanSpawnBig;
+
+		private void Start()
 		{
-			_enemySpawnPoints[spawnPointIndex].Spawn<Enemy>();
+			StartCoroutine(SpawnEnemy());
+		}
+
+		private IEnumerator SpawnEnemy()
+		{
+			while (true)
+			{
+				yield return new WaitForSeconds(_secondsToSpawn);
+
+				if (_enemyList.Count > 0)
+				{
+					continue;
+				}
+
+				foreach (var spawnPoint in _littleEnemySpawnPoints)
+				{
+					SpawnEnemy(spawnPoint);
+				}
+
+				if (_isCanSpawnBig)
+				{
+					foreach (var spawnPoint in _bigEnemySpawnPoints)
+					{
+						SpawnEnemy(spawnPoint);
+					}
+				}
+
+			}
+		}
+
+		private void SpawnEnemy(SpawnPoint spawnPoint)
+		{
+			var enemy = spawnPoint.Spawn<Enemy>();
+
+			enemy.OnDie += DeleteEnemy;
+
+			_enemyList.Add(enemy);
+		}
+
+		private void DeleteEnemy(Enemy enemy)
+		{
+			var existEnemy = _enemyList.Find(existEnemy => existEnemy.Equals(enemy));
+
+			existEnemy.OnDie -= DeleteEnemy;
 		}
 	}
 }

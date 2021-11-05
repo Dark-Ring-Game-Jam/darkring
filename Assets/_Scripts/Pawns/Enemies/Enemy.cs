@@ -1,4 +1,5 @@
-﻿using Components;
+﻿using System;
+using Components;
 using UnityEngine;
 
 namespace _Scripts
@@ -9,15 +10,19 @@ namespace _Scripts
 		[SerializeField] private HealthComponent _healthComponent;
 		[SerializeField] private EnemyAnimationComponent _animationComponent;
 		[SerializeField] private AttackComponent _attackComponent;
-		[SerializeField] private AiComponent _aiComponent;
+		[SerializeField] protected AiComponent _aiComponent;
+
+		public event Action<Enemy> OnDie;
 
 		private ICanBeAttacked _targetCanBeAttacked;
 		private Player _target;
 		private Transform _targetTransform;
 
-		private void Start()
+		protected virtual void HandleInit() {}
+
+		protected void Start()
 		{
-			_target = GameObject.FindGameObjectWithTag("hero").GetComponent<Player>();
+			_target = GameManager.Instance.Player;
 			_targetCanBeAttacked = _target.GetComponent<ICanBeAttacked>();
 			_targetTransform = _target.transform;
 
@@ -26,6 +31,8 @@ namespace _Scripts
 
 			_healthComponent.OnDeath += Die;
 			_attackComponent.OnAttack += _animationComponent.Attack;
+
+			HandleInit();
 		}
 
 		private void Update()
@@ -50,6 +57,9 @@ namespace _Scripts
 			_animationComponent.Die();
 			_healthComponent.OnDeath -= Die;
 			_attackComponent.OnAttack -= _animationComponent.Attack;
+
+			OnDie?.Invoke(this);
+
 			Destroy(this);
 		}
 
