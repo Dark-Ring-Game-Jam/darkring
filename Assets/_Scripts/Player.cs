@@ -13,8 +13,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
     #region Fields
 
     public float Speed => _movementComponent.Speed;
-
-
+    
     private Inventory _inventory;
     private Vector2 _movementDirection = Vector2.zero;
     private bool _faceLeft = true;
@@ -47,9 +46,12 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _attackComponent.OnAttack += _animationComponent.Attack;
         _smokeComponent.OnSmoke += _animationComponent.Smoke;
 
-        _inventory = new Inventory();
-        _UIInventory = GetComponent<UIInventory>();
+        _inventory = new Inventory(UseItem);
+        _UIInventory.SetPlayer(this);
         _UIInventory.SetInventory(_inventory);
+        
+        // TODO - проверяем спаун предметов
+        ItemWorld.SpawnItemWorld(this.transform.position, new Item { Type = Item.ItemType.Batteries, Amount = 1 });
     }
 
     private void Update()
@@ -167,5 +169,55 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _healthComponent.OnDeath -= Die;
         _attackComponent.OnAttack -= _animationComponent.Attack;
         _smokeComponent.OnSmoke -= _animationComponent.Smoke;
+    }
+    
+    private void OnTriggerEnter2D(Collider2D collider) 
+    {
+        ItemWorld itemWorld = collider.GetComponent<ItemWorld>();
+        if (itemWorld != null) 
+        {
+            _inventory.AddItem(itemWorld.GetItem());
+            itemWorld.DestroySelf();
+        }
+    }
+    
+    private void UseItem(Item item) 
+    {
+        switch (item.Type) 
+        {
+            case Item.ItemType.Batteries:
+                // TODO - добавить действие
+                
+                _inventory.RemoveItem(new Item { Type = Item.ItemType.Batteries, Amount = 1 });
+                break;
+            case Item.ItemType.Candle:
+                // TODO - добавить действие
+                
+                _inventory.RemoveItem(new Item { Type = Item.ItemType.Candle, Amount = 1 });
+                break;
+            case Item.ItemType.Key:
+                // TODO - добавить действие
+                
+                _inventory.RemoveItem(new Item { Type = Item.ItemType.Key, Amount = 1 });
+                break;
+            case Item.ItemType.Note:
+                // TODO - добавить действие
+
+                break;
+            case Item.ItemType.ElectricalTape:
+                // TODO - добавить действие
+                
+                _inventory.RemoveItem(new Item { Type = Item.ItemType.Batteries, Amount = 1 });
+                break;
+            case Item.ItemType.KeroseneLamp:
+                // TODO - добавить действие
+                
+                _inventory.RemoveItem(new Item { Type = Item.ItemType.Batteries, Amount = 1 });
+                break;
+            case Item.ItemType.Flashlight:
+                // TODO - добавить действие
+
+                break;
+        }
     }
 }

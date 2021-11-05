@@ -49948,6 +49948,64 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2fda864f7204fe693777f3404151970, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1220684535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1220684537}
+  - component: {fileID: 1220684536}
+  m_Layer: 0
+  m_Name: ItemAssets
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1220684536
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220684535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 54bb880c0b5dc5e48903fc3766f41318, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ItemWorldPrefab: {fileID: 0}
+  NoteSprite: {fileID: -2065874855036079491, guid: 0e1a855b078b35c43a7654a64ac77182, type: 3}
+  CandleSprite: {fileID: 21300000, guid: 3bd49a1e795dc244bbcf524e1e09f08b, type: 3}
+  ElectricalTapeSprite: {fileID: -8555608272780379752, guid: 1881d7890ed380a41a106e70cdc00e41, type: 3}
+  KeroseneLampSprite: {fileID: -3747857906240803214, guid: 0e1a855b078b35c43a7654a64ac77182, type: 3}
+  FlashlightSprite: {fileID: 21300000, guid: dce34a7f74710dc4fbe5f593bc803c22, type: 3}
+  KeySprite: {fileID: -8773440354206872493, guid: 0e1a855b078b35c43a7654a64ac77182, type: 3}
+  BatteriesSprite: {fileID: 21300000, guid: 0bca7016c0ab9154d95c7d651bc2ecbd, type: 3}
+  EmptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 0}
+  AmountX1: {fileID: -1435124601987729151, guid: 72a5e1faebcb8a845b7815c086324077, type: 3}
+  AmountX2: {fileID: 7996481273727956128, guid: 72a5e1faebcb8a845b7815c086324077, type: 3}
+  AmountX3: {fileID: -1797625539728689003, guid: 72a5e1faebcb8a845b7815c086324077, type: 3}
+  AmountX4: {fileID: -3838674082296116462, guid: 72a5e1faebcb8a845b7815c086324077, type: 3}
+  AmountX5: {fileID: 6474345162767489121, guid: 72a5e1faebcb8a845b7815c086324077, type: 3}
+  AmountX6: {fileID: -8761496183629611704, guid: 72a5e1faebcb8a845b7815c086324077, type: 3}
+--- !u!4 &1220684537
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1220684535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 889.2379, y: 514.7489, z: -724.47565}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 13
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1281077054
 GameObject:
   m_ObjectHideFlags: 0
