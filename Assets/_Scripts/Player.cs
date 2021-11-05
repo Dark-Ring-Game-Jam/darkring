@@ -10,7 +10,8 @@ using UnityEngine;
 public class Player : MonoBehaviour
 {
     #region Fields
-    
+
+    private Inventory _inventory;
     private Vector2 _movementDirection = Vector2.zero;
     private bool _faceLeft = true;
 
@@ -40,6 +41,8 @@ public class Player : MonoBehaviour
         _healthComponent.OnDeath += Die;
         _attackComponent.OnAttack += _animationComponent.Attack;
         _smokeComponent.OnSmoke += _animationComponent.Smoke;
+
+        _inventory = new Inventory();
     }
     
     private void Update()
