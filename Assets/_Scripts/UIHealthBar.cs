@@ -15,4 +15,9 @@ public class UIHealthBar : MonoBehaviour
         _healthBarAnimationComponent = GetComponent<UIHealthBarAnimationComponent>();
         _healthBarAnimationComponent.InitUIHealthBarAnimation(_skeletonGraphic);
     }
+
+    public void Die()
+    {
+        _healthBarAnimationComponent.Die();
+    }
 }

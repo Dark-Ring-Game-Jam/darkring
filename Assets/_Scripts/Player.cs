@@ -188,7 +188,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     private void Die()
     {
-        _UIHealthBar.GetComponent<UIHealthBarAnimationComponent>().Die();
+        _UIHealthBar.Die();
         _animationComponent.Die();
         _healthComponent.OnDeath -= Die;
         _attackComponent.OnAttack -= _animationComponent.Attack;
