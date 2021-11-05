@@ -1,28 +1,33 @@
 big boss.png
-size:878,2046
+size:1214,1937
 filter:Linear,Linear
 pma:true
 010
-bounds:498,786,438,214
+bounds:948,1497,438,214
 rotate:90
+eyes1
+bounds:948,1372,154,123
+eyes2
+bounds:999,25,213,156
+vil
+bounds:2,1353,944,582
 Слой 12
-bounds:2,312,381,874
-rotate:90
+bounds:521,477,381,874
 Слой 14
-bounds:2,695,529,494
+bounds:2,2,529,494
 rotate:90
 Слой 15
-bounds:521,1643,168,401
+bounds:662,74,168,401
 Слой 16
-bounds:2,1226,517,818
+bounds:2,533,517,818
 Слой 17
-bounds:521,1334,168,307
+bounds:999,183,168,307
 Слой 18
-bounds:661,6,200,304
-Слой 19
-bounds:2,2,308,657
+bounds:904,492,200,304
 rotate:90
+Слой 19
+bounds:904,694,308,657
 Слой 20
-bounds:691,1620,162,424
+bounds:498,51,162,424
 Слой 21
-bounds:691,1235,165,383
+bounds:832,92,165,383

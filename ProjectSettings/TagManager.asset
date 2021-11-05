@@ -55,3 +55,6 @@ TagManager:
   - name: Windows
     uniqueID: 4065745053
     locked: 0
+  - name: UI
+    uniqueID: 2870850149
+    locked: 0
