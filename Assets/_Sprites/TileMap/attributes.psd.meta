@@ -412,48 +412,6 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: attributes_13
-      rect:
-        serializedVersion: 2
-        x: 228
-        y: 0
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6c1167c9ff7e33af0800000000000000
-      internalID: -417735255387663930
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: attributes_14
-      rect:
-        serializedVersion: 2
-        x: 304
-        y: 0
-        width: 76
-        height: 76
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 23c1d96a867317610800000000000000
-      internalID: 1617134663814159410
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
       name: electricalTape_red
       rect:
         serializedVersion: 2
