@@ -1,5 +1,7 @@
 using System;
 using System.Linq;
+using Spine.Unity;
+using UnityEngine;
 
 namespace Components
 {
@@ -13,12 +15,14 @@ namespace Components
         private const string SideWalkAnimationName = "walking";
         private const string SmokeAnimationName = "smoke";
 
+        private SkeletonAnimation _skeletonAnimation;
         private float _normalizedDurationToDelayAttack;
         private float _normalizedDurationToDelaySmoke;
 
-        public void InitMainCharacterAnimation(float delayToAttack, float delayToSmoke)
+        public void InitMainCharacterAnimation(float delayToAttack, float delayToSmoke, SkeletonAnimation skeletonAnimation)
         {
-            Init(IdleAnimationName);
+            _skeletonAnimation = skeletonAnimation;
+            Init(IdleAnimationName, skeletonAnimation);
 
             var currentAnimation = AnimationsWithDuration.Keys.FirstOrDefault(x => x.name.Equals(AttackAnimationName));
 

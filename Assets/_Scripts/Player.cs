@@ -1,6 +1,7 @@
 using System;
 using _Scripts;
 using Components;
+using Spine.Unity;
 using UnityEngine;
 
 [RequireComponent(typeof(HealthComponent))]
@@ -26,8 +27,15 @@ public class Player : MonoBehaviour, ICanBeAttacked
     private SmokeComponent _smokeComponent;
 
     // TODO - для теста (потом выбирать динамически ближайшего врага)
+    [Header("For Tests")]
     [SerializeField] private Enemy _targetEnemy;
+    
+    [Header("UI")]
     [SerializeField] private UIInventory _UIInventory;
+    [SerializeField] private UIHealthBar _UIHealthBar;
+    
+    [Header("Animation")]
+    [SerializeField] private SkeletonAnimation _skeletonAnimation;
 
     #endregion Fields
 
@@ -41,7 +49,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _attackComponent = GetComponent<AttackComponent>();
         _smokeComponent = GetComponent<SmokeComponent>();
 
-        _animationComponent.InitMainCharacterAnimation(2f, 2f);
+        _animationComponent.InitMainCharacterAnimation(2f, 2f, _skeletonAnimation);
 
         _healthComponent.OnDeath += Die;
         _attackComponent.OnAttack += _animationComponent.Attack;
@@ -50,7 +58,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _inventory = new Inventory(UseItem);
         _UIInventory.SetPlayer(this);
         _UIInventory.SetInventory(_inventory);
-        
+
         // TODO - проверяем спаун предметов
         ItemWorld.SpawnItemWorld(this.transform.position, new Item { Type = Item.ItemType.Batteries, Amount = 1 });
     }
@@ -176,6 +184,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     private void Die()
     {
+        _UIHealthBar.GetComponent<UIHealthBarAnimationComponent>().Die();
         _animationComponent.Die();
         _healthComponent.OnDeath -= Die;
         _attackComponent.OnAttack -= _animationComponent.Attack;

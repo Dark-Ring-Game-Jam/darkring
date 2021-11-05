@@ -59,7 +59,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7a5c23d67f463ea4228101d9226686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skeletonAnimation: {fileID: 8595218505293300903}
   _animationsWithDuration:
     m_keys:
     - {fileID: 11400000, guid: 5375f6789edc9214da893c11bd804c1f, type: 2}
@@ -152,6 +151,7 @@ MonoBehaviour:
   _animationComponent: {fileID: 7663798962630913801}
   _attackComponent: {fileID: 2238700466572631236}
   _aiComponent: {fileID: 2647890060341339458}
+  _skeletonAnimation: {fileID: 8595218505293300903}
   _increaseSpeedAmount: 0.1
 --- !u!114 &8310751000038536049
 MonoBehaviour:

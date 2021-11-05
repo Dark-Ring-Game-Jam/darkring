@@ -52,6 +52,7 @@ MonoBehaviour:
   _animationComponent: {fileID: 2316955331154719187}
   _attackComponent: {fileID: 5508356745887433020}
   _aiComponent: {fileID: 420826807445575808}
+  _skeletonAnimation: {fileID: 8425011667560181841}
 --- !u!114 &7173001960499414532
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -189,7 +190,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2a7a5c23d67f463ea4228101d9226686, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _skeletonAnimation: {fileID: 8425011667560181841}
   _animationsWithDuration:
     m_keys:
     - {fileID: 11400000, guid: 5375f6789edc9214da893c11bd804c1f, type: 2}

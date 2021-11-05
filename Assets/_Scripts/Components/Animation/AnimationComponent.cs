@@ -8,17 +8,18 @@ public class AnimationComponent : MonoBehaviour
 {
     [Serializable] public class AnimationDurationDictionary : SerializableDictionary<AnimationReferenceAsset, float> {}
 
-    [SerializeField] protected SkeletonAnimation _skeletonAnimation;
     [SerializeField] protected AnimationDurationDictionary _animationsWithDuration;
 
     public IDictionary<AnimationReferenceAsset, float> AnimationsWithDuration => _animationsWithDuration;
     public AnimationReferenceAsset IdleAnimation => _idleAnimation;
 
+    private IAnimationStateComponent _animationStateComponent;
     private AnimationReferenceAsset _idleAnimation;
     private AnimationReferenceAsset _currentAnimation;
 
-    public void Init(string idleAnimationName)
+    public void Init(string idleAnimationName, IAnimationStateComponent animationStateComponent)
     {
+        _animationStateComponent = animationStateComponent;
         _idleAnimation = AnimationsWithDuration.Keys.FirstOrDefault(x => x.name.Equals(idleAnimationName));
         if (_idleAnimation == null)
         {
@@ -52,7 +53,7 @@ public class AnimationComponent : MonoBehaviour
             return;
         }
 
-        _skeletonAnimation.state.SetAnimation(0, animation, loop).TimeScale = timeScale;
+        _animationStateComponent.AnimationState.SetAnimation(0, animation, loop).TimeScale = timeScale;
         _currentAnimation = animation;
     }
 }

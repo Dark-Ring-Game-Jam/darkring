@@ -1,5 +1,6 @@
 ﻿using System;
 using Components;
+using Spine.Unity;
 using UnityEngine;
 
 namespace _Scripts
@@ -12,6 +13,9 @@ namespace _Scripts
 		[SerializeField] private AttackComponent _attackComponent;
 		[SerializeField] protected AiComponent _aiComponent;
 
+		[Header("Animation")]
+		[SerializeField] private SkeletonAnimation _skeletonAnimation;
+		
 		public int Health => _healthComponent.Health;
 		public event Action<Enemy> OnDie;
 
@@ -27,7 +31,7 @@ namespace _Scripts
 			_targetCanBeAttacked = _target.GetComponent<ICanBeAttacked>();
 			_targetTransform = _target.transform;
 
-			_animationComponent.InitEnemyAnimation(_attackComponent.DelayToAttack);
+			_animationComponent.InitEnemyAnimation(_attackComponent.DelayToAttack, _skeletonAnimation);
 			_aiComponent.Init(_target);
 
 			_healthComponent.OnDeath += Die;

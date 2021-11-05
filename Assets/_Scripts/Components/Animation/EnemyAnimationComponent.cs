@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Linq;
+using Spine.Unity;
+using UnityEngine;
 
 namespace Components
 {
@@ -9,11 +11,13 @@ namespace Components
 		private const string AttackAnimationName = "attac";
 		private const string DieAnimationName = "die";
 
+		private SkeletonAnimation _skeletonAnimation;
 		private float _normalizedDurationToDelayAttack;
 
-		public void InitEnemyAnimation(float delayToAttack)
+		public void InitEnemyAnimation(float delayToAttack, SkeletonAnimation skeletonAnimation)
 		{
-			Init(IdleAnimationName);
+			_skeletonAnimation = skeletonAnimation;
+			Init(IdleAnimationName, skeletonAnimation);
 
 			var currentAnimation = AnimationsWithDuration.Keys.FirstOrDefault(x => x.name.Equals(AttackAnimationName));
 
