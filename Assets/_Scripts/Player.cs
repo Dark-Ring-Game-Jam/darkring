@@ -26,7 +26,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
     private AttackComponent _attackComponent;
     private SmokeComponent _smokeComponent;
 
-    // TODO - для теста (потом выбирать динамически ближайшего врага)
+    // TODO - для теста (потом выбирать динамически ближайшего врага или бить всех по области)
     [Header("For Tests")]
     [SerializeField] private Enemy _targetEnemy;
     
@@ -150,6 +150,10 @@ public class Player : MonoBehaviour, ICanBeAttacked
             {
                 _smokeComponent.Smoke();
             }
+        }
+        else if (Input.GetKey(KeyCode.F))
+        {
+            // TODO - взаимодействовать с предметами
         }
 
         ProcessAnimation();

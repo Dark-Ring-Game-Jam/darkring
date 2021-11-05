@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 5789375671882226941}
   - component: {fileID: 5789375671882226940}
   - component: {fileID: 5789375671882226943}
+  - component: {fileID: 696922057020406670}
+  - component: {fileID: 3475557565851117455}
   m_Layer: 0
   m_Name: Spine GameObject (smoke)
   m_TagString: Untagged
@@ -133,6 +135,53 @@ MonoBehaviour:
   _animationName: animation
   loop: 1
   timeScale: 1
+--- !u!61 &696922057020406670
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5789375671882226937}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.03229618, y: 3.4413996}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 9.652584, y: 4.7479877}
+  m_EdgeRadius: 0
+--- !u!50 &3475557565851117455
+Rigidbody2D:
+  serializedVersion: 4
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5789375671882226937}
+  m_BodyType: 2
+  m_Simulated: 1
+  m_UseFullKinematicContacts: 0
+  m_UseAutoMass: 0
+  m_Mass: 0.0001
+  m_LinearDrag: 0
+  m_AngularDrag: 0.05
+  m_GravityScale: 0
+  m_Material: {fileID: 0}
+  m_Interpolate: 0
+  m_SleepingMode: 1
+  m_CollisionDetection: 0
+  m_Constraints: 4
 --- !u!1 &5789375672332932748
 GameObject:
   m_ObjectHideFlags: 0
