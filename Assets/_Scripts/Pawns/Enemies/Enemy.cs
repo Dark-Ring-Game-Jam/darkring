@@ -12,6 +12,7 @@ namespace _Scripts
 		[SerializeField] private AttackComponent _attackComponent;
 		[SerializeField] protected AiComponent _aiComponent;
 
+		public int Health => _healthComponent.Health;
 		public event Action<Enemy> OnDie;
 
 		private ICanBeAttacked _targetCanBeAttacked;
@@ -60,7 +61,7 @@ namespace _Scripts
 
 			OnDie?.Invoke(this);
 
-			Destroy(this);
+			Destroy(gameObject);
 		}
 
 	}

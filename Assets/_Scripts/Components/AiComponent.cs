@@ -57,5 +57,10 @@ namespace Components
 		{
 			_aiPath.maxSpeed += _targetSpeed * value;
 		}
+
+		public void ResetSpeed()
+		{
+			_aiPath.maxSpeed = _targetSpeed * _percentFromTargetSpeed;
+		}
 	}
 }

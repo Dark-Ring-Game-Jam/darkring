@@ -12,6 +12,11 @@ namespace _Scripts
 			StartCoroutine(IncreaseSpeed());
 		}
 
+		public void ResetSpeed()
+		{
+			_aiComponent.ResetSpeed();
+		}
+
 		private IEnumerator IncreaseSpeed()
 		{
 			while (true)

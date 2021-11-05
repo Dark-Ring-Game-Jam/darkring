@@ -1,3 +1,4 @@
+using System;
 using _Scripts;
 using Components;
 using UnityEngine;
@@ -75,6 +76,16 @@ public class Player : MonoBehaviour, ICanBeAttacked
         if (IsBusy() == false)
         {
             _movementComponent.Move(_movementDirection);
+        }
+    }
+
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.collider.TryGetComponent(out MiniNoteView miniNoteView))
+        {
+            var note = new Note();
+            note.Init(new Note.InitData(miniNoteView.Text));
+            Destroy(miniNoteView.gameObject);
         }
     }
 
