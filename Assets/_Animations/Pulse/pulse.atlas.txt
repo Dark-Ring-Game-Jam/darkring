@@ -1,0 +1,10 @@
+pulse.png
+size:973,637
+filter:Linear,Linear
+pma:true
+heart
+bounds:2,49,603,586
+line
+bounds:2,2,969,45
+scull
+bounds:607,342,333,293

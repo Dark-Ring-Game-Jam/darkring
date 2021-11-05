@@ -184,11 +184,10 @@ public class Player : MonoBehaviour, ICanBeAttacked
     
     private void OnTriggerEnter2D(Collider2D collider) 
     {
-        ItemWorld itemWorld = collider.GetComponent<ItemWorld>();
-        if (itemWorld != null) 
+        if (collider.TryGetComponent(out ItemWorld item))
         {
-            _inventory.AddItem(itemWorld.GetItem());
-            itemWorld.DestroySelf();
+            _inventory.AddItem(item.GetItem());
+            item.DestroySelf();
         }
     }
     
