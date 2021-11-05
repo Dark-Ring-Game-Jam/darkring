@@ -1,0 +1,6 @@
+smoke.png
+size:1080,656
+filter:Linear,Linear
+pma:true
+Слой 2
+bounds:2,2,1076,652
