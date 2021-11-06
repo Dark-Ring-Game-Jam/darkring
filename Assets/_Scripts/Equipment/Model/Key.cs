@@ -4,7 +4,8 @@
 	{
 		public Key()
 		{
-			GameManager.Instance.Player.Inventory.AddItem(new Item { Type = ItemType.Key, Amount = 1 });
+			Type = ItemType.Key;
+			Amount = 1;
 		}
 	}
 }

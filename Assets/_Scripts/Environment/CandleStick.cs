@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections;
+﻿using System.Collections;
 using Spine.Unity;
 using UnityEngine;
 
@@ -26,6 +25,7 @@ namespace _Scripts
 			if (inventory.ContainItemType(Item.ItemType.Candle))
 			{
 				StartCoroutine(ActiveCandleStick());
+				inventory.RemoveItem(new Item { Type = Item.ItemType.Candle, Amount = 1 });
 			}
 		}
 
