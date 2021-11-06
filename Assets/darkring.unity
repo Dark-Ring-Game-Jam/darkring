@@ -49936,12 +49936,12 @@ MonoBehaviour:
   ItemWorldPrefab: {fileID: 7849748138191044384, guid: 52acd5f4c5083a643b96fba8e75c218e, type: 3}
   NoteSprite: {fileID: -2065874855036079491, guid: 0e1a855b078b35c43a7654a64ac77182, type: 3}
   CandleSprite: {fileID: 21300000, guid: 3bd49a1e795dc244bbcf524e1e09f08b, type: 3}
-  ElectricalTapeSprite: {fileID: -8555608272780379752, guid: 1881d7890ed380a41a106e70cdc00e41, type: 3}
+  InsulatingTapeSprite: {fileID: -2320791403303595990, guid: 1881d7890ed380a41a106e70cdc00e41, type: 3}
   KeroseneLampSprite: {fileID: -3747857906240803214, guid: 0e1a855b078b35c43a7654a64ac77182, type: 3}
   FlashlightSprite: {fileID: 21300000, guid: dce34a7f74710dc4fbe5f593bc803c22, type: 3}
   KeySprite: {fileID: -8773440354206872493, guid: 0e1a855b078b35c43a7654a64ac77182, type: 3}
-  BatteriesSprite: {fileID: 21300000, guid: 0bca7016c0ab9154d95c7d651bc2ecbd, type: 3}
-  EmptySprite: {fileID: 10917, guid: 0000000000000000f000000000000000, type: 3}
+  BatterySprite: {fileID: 21300000, guid: 0bca7016c0ab9154d95c7d651bc2ecbd, type: 3}
+  EmptySprite: {fileID: 0}
   AmountX1: {fileID: -1435124601987729151, guid: 72a5e1faebcb8a845b7815c086324077, type: 3}
   AmountX2: {fileID: 7996481273727956128, guid: 72a5e1faebcb8a845b7815c086324077, type: 3}
   AmountX3: {fileID: -1797625539728689003, guid: 72a5e1faebcb8a845b7815c086324077, type: 3}

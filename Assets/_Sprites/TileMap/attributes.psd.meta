@@ -4,10 +4,10 @@ TextureImporter:
   internalIDToNameTable:
   - first:
       213: -8555608272780379752
-    second: electricalTape_cyan
+    second: insulatingTape_cyan
   - first:
       213: -1983084928407570641
-    second: electricalTape_purple
+    second: insulatingTape_purple
   - first:
       213: -6204503792896161340
     second: wall_up_window_left_dark
@@ -22,10 +22,10 @@ TextureImporter:
     second: wall_up_window_right_light
   - first:
       213: -1224674936830377092
-    second: electricalTape_green
+    second: insulatingTape_green
   - first:
       213: -2320791403303595990
-    second: electricalTape_azure
+    second: insulatingTape_azure
   - first:
       213: -3291246385089659548
     second: window_left_dark
@@ -40,7 +40,7 @@ TextureImporter:
     second: window_right_light
   - first:
       213: 5719201010200532641
-    second: electricalTape_indigo
+    second: insulatingTape_indigo
   - first:
       213: -417735255387663930
     second: attributes_13
@@ -49,7 +49,7 @@ TextureImporter:
     second: attributes_14
   - first:
       213: 6574596332506538025
-    second: electricalTape_red
+    second: insulatingTape_red
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -139,7 +139,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: electricalTape_cyan
+      name: insulatingTape_cyan
       rect:
         serializedVersion: 2
         x: 380
@@ -160,7 +160,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: electricalTape_purple
+      name: insulatingTape_purple
       rect:
         serializedVersion: 2
         x: 532
@@ -265,7 +265,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: electricalTape_green
+      name: insulatingTape_green
       rect:
         serializedVersion: 2
         x: 456
@@ -286,7 +286,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: electricalTape_azure
+      name: insulatingTape_azure
       rect:
         serializedVersion: 2
         x: 608
@@ -391,7 +391,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: electricalTape_indigo
+      name: insulatingTape_indigo
       rect:
         serializedVersion: 2
         x: 532
@@ -412,7 +412,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: electricalTape_red
+      name: insulatingTape_red
       rect:
         serializedVersion: 2
         x: 380
