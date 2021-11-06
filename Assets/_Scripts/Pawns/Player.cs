@@ -5,6 +5,7 @@ using _Scripts;
 using Components;
 using Spine.Unity;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 [RequireComponent(typeof(HealthComponent))]
 [RequireComponent(typeof(MovementComponent))]
@@ -21,6 +22,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
     public Inventory Inventory => _inventory;
     public bool HasKeroseneLamp => _inventory.ContainItemType(Item.ItemType.KeroseneLamp);
     public IUsable UsableEnvironment {get; set;}
+    public bool IsHide {get; private set;}
 
     private Inventory _inventory;
     private Vector2 _movementDirection = Vector2.zero;
@@ -43,6 +45,8 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     [Header("Animation")]
     [SerializeField] private SkeletonAnimation _skeletonAnimation;
+
+    [SerializeField] private MeshRenderer _spriteRenderer;
 
     #endregion Fields
 
@@ -115,6 +119,12 @@ public class Player : MonoBehaviour, ICanBeAttacked
     public void TakeDamage(int damage)
     {
         _healthComponent.TakeDamage(damage);
+    }
+
+    public void SetHidePlayer(bool active)
+    {
+        _spriteRenderer.enabled = active;
+        IsHide = active;
     }
 
     private bool IsBusy()

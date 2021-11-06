@@ -18,6 +18,17 @@ namespace _Scripts
 			StartCoroutine(SpawnEnemy());
 		}
 
+		public void StopEnemies() => SetEnemiesActive(true);
+		public void RunEnemies() => SetEnemiesActive(false);
+
+		private void SetEnemiesActive(bool active)
+		{
+			foreach (var enemy in _enemyList)
+			{
+				enemy.SetHidePlayer(active);
+			}
+		}
+
 		private IEnumerator SpawnEnemy()
 		{
 			while (true)
@@ -57,6 +68,8 @@ namespace _Scripts
 		private void DeleteEnemy(Enemy enemy)
 		{
 			var existEnemy = _enemyList.Find(existEnemy => existEnemy.Equals(enemy));
+
+			_enemyList.Remove(existEnemy);
 
 			existEnemy.OnDie -= DeleteEnemy;
 		}

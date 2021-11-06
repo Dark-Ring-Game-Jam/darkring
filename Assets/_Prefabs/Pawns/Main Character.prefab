@@ -211,6 +211,7 @@ MonoBehaviour:
   _UIInventory: {fileID: 8285325689601006696, guid: 7c747167f4f96fe4180d63178d800d4f, type: 3}
   _UIHealthBar: {fileID: -3403454524952149272, guid: 27752044c69d14f40b0f0fa69d862be6, type: 3}
   _skeletonAnimation: {fileID: 2796195236850067137}
+  _spriteRenderer: {fileID: 2796195236850067136}
 --- !u!114 &2796195236850067145
 MonoBehaviour:
   m_ObjectHideFlags: 0

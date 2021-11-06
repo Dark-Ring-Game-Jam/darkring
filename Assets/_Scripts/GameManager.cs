@@ -6,6 +6,7 @@ namespace _Scripts
 	{
 		[SerializeField] private Player _player;
 		[SerializeField] private PatrolPointsController _patrolPointsController;
+		[SerializeField] private EnemySpawnPointsController _enemySpawnPointsController;
 		[SerializeField] private NoteView _noteViewPrefab;
 		[SerializeField] private Canvas _canvas;
 
@@ -20,6 +21,7 @@ namespace _Scripts
 
 		public Player Player => _player;
 		public PatrolPointsController PatrolPointsController => _patrolPointsController;
+		public EnemySpawnPointsController EnemySpawnPointsController => _enemySpawnPointsController;
 		public NoteView NoteViewPrefab => _noteViewPrefab;
 		public Canvas Canvas => _canvas;
 

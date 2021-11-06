@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using Components;
 using Spine.Unity;
@@ -55,10 +56,15 @@ namespace _Scripts
 					_attackComponent.Attack(enemy);
 				}
 			}
-			else if (_attackComponent.IsAttacking == false)
+			else if (_attackComponent.IsAttacking == false && _healthComponent.Health > 0)
 			{
 				_animationComponent.Idle();
 			}
+		}
+
+		public void SetHidePlayer(bool active)
+		{
+			_aiComponent.IsPlayerHide = active;
 		}
 
 		public void TakeDamage(int damage)
@@ -68,11 +74,21 @@ namespace _Scripts
 
 		private void Die()
 		{
+			StartCoroutine(DeferredDie());
+		}
+
+		private IEnumerator DeferredDie()
+		{
 			_animationComponent.Die();
-			_healthComponent.OnDeath -= Die;
-			_attackComponent.OnAttack -= _animationComponent.Attack;
 
 			OnDie?.Invoke(this);
+
+			_healthComponent.OnDeath -= Die;
+			_attackComponent.OnAttack -= _animationComponent.Attack;
+			_attackComponent.enabled = false;
+			_aiComponent.enabled = false;
+
+			yield return new WaitForSeconds(2f);
 
 			Destroy(gameObject);
 		}

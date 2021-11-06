@@ -11,6 +11,8 @@ namespace Components
 		[SerializeField] private float _distanceToAggro;
 		[SerializeField] private float _percentFromTargetSpeed;
 
+		public bool IsPlayerHide {get; set;}
+
 		private readonly Vector2 _leftSize = new Vector2(-1f, 1f);
 		private readonly Vector2 _rightSize = new Vector2(1f, 1f);
 		private float _targetSpeed;
@@ -33,7 +35,7 @@ namespace Components
 			var normalized = (position - _aiPath.steeringTarget).normalized;
 			var isToFar = Vector2.Distance(_target.position, position) > _distanceToAggro;
 
-			if (isToFar && _isReached)
+			if ((isToFar && _isReached) || IsPlayerHide)
 			{
 				_aiDestinationSetter.target = GameManager.Instance.PatrolPointsController.GetRandomPatrolPoint();
 

@@ -24,9 +24,14 @@ namespace _Scripts
 		{
 			if (inventory.ContainItemType(Item.ItemType.Candle))
 			{
-				StartCoroutine(ActiveCandleStick());
+				Active();
 				inventory.RemoveItem(new Item { Type = Item.ItemType.Candle, Amount = 1 });
 			}
+		}
+
+		public void Active()
+		{
+			StartCoroutine(ActiveCandleStick());
 		}
 
 		private IEnumerator ActiveCandleStick()
@@ -57,8 +62,6 @@ namespace _Scripts
 			{
 				smoke.Destroy();
 			}
-
-
 		}
 
 		private void OnTriggerExit2D(Collider2D other)

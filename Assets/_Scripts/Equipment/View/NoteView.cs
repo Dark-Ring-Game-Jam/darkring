@@ -14,8 +14,8 @@ namespace _Scripts
 
 		public void Use(Inventory inventory)
 		{
-			// TODO - закрыть NoteView
-			// Destroy(this); // так не работает
+			GameManager.Instance.Player.UsableEnvironment = null;
+			Destroy(gameObject);
 		}
 	}
 }
