@@ -8,9 +8,12 @@ namespace _Scripts
 		{
 			if (other.TryGetComponent(out Player player))
 			{
-				var flashlight = new Flashlight();
-				player.Inventory.AddItem(flashlight);
-				Destroy(gameObject);
+				if (!player.Inventory.ContainItemType(Item.ItemType.Flashlight))
+				{
+					var flashlight = new Flashlight();
+					player.Inventory.AddItem(flashlight);
+					Destroy(gameObject);
+				}
 			}
 		}
 	}

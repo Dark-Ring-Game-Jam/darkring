@@ -8,9 +8,12 @@ namespace _Scripts
 		{
 			if (other.TryGetComponent(out Player player))
 			{
-				var lamp = new Lamp();
-				player.Inventory.AddItem(lamp);
-				Destroy(gameObject);
+				if (!player.Inventory.ContainItemType(Item.ItemType.KeroseneLamp))
+				{
+					var lamp = new Lamp();
+					player.Inventory.AddItem(lamp);
+					Destroy(gameObject);
+				}
 			}
 		}
 	}

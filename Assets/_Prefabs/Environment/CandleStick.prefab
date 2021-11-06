@@ -80,7 +80,7 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -904156519
   m_SortingLayer: 1
-  m_SortingOrder: 0
+  m_SortingOrder: 6
   m_AdditionalVertexStreams: {fileID: 0}
 --- !u!114 &3973169017451730583
 MonoBehaviour:
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 7967903704452958807}
   - component: {fileID: 7694879478605376156}
   - component: {fileID: 6531905110105188251}
-  m_Layer: 6
+  m_Layer: 9
   m_Name: CandleStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -148,7 +148,7 @@ Transform:
   m_GameObject: {fileID: 8608525614301378129}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.2, y: 1.2, z: 1}
   m_Children:
   - {fileID: 3973169017451730578}
   m_Father: {fileID: 0}
