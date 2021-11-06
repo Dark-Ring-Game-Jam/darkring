@@ -209,8 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9605ed29df431bc42b7d42ec1e6dee40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetEnemy: {fileID: 468711869770476518, guid: a9945195504acb542814471f20de7abe,
-    type: 3}
+  _targetEnemy: {fileID: 468711869770476518, guid: a9945195504acb542814471f20de7abe, type: 3}
   _UIInventory: {fileID: 0}
   _UIHealthBar: {fileID: 0}
   _skeletonAnimation: {fileID: 2796195236850067137}
@@ -310,8 +309,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8743dc86e21ca6245a2f8a0e4f59298b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemSlotTemplate: {fileID: 628646343795134461, guid: 3a56192921186b74582feb0f779c9ddf,
-    type: 3}
+  _itemSlotTemplate: {fileID: 628646343795134461, guid: 3a56192921186b74582feb0f779c9ddf, type: 3}
   _itemSlotContainer: {fileID: 0}
 --- !u!61 &2796195236850067125
 BoxCollider2D:
@@ -354,6 +352,7 @@ MonoBehaviour:
   _checkRadius: 4
   _checkDistance: 4
   _lightRadius: 2
+  _keroseneLampLightRadiusMultiplier: 4
 --- !u!82 &1443475853
 AudioSource:
   m_ObjectHideFlags: 0
@@ -463,7 +462,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pitchRandomless: 0.05
+  pickupClip: {fileID: 0}
   deathClip: {fileID: 8300000, guid: 0fbae3cd38999421f9125184f56b935a, type: 3}
   stepClip: {fileID: 8300000, guid: e9263e0a100c24ed4b91c83fcacb5b91, type: 3}
-  SetSoundCooldown: 0.5
-  _keroseneLampLightRadiusMultiplier: 4
+  attackClip: {fileID: 0}
+  setSoundCooldown: 0.5

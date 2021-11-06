@@ -136,8 +136,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _animationsWithDuration:
-    m_keys: []
-    m_values: []
+    m_keys:
+    - {fileID: 11400000, guid: 4351fae42025d9a4681be5ed759037e0, type: 2}
+    - {fileID: 11400000, guid: e183bb86cd8091a41a2fc29eba500aa9, type: 2}
+    - {fileID: 11400000, guid: fbad3426e2e32c841bf17cf4261088e8, type: 2}
+    m_values:
+    - 1
+    - 1
+    - 1
 --- !u!114 &3841555643474834726
 MonoBehaviour:
   m_ObjectHideFlags: 0
