@@ -7,6 +7,13 @@ namespace _Scripts
 	{
 		[SerializeField] private TMP_Text _text;
 
-		public string Text => _text.text;
+		private void OnTriggerEnter2D(Collider2D other)
+		{
+			if (other.TryGetComponent(out Player player))
+			{
+				player.Inventory.AddItem(new Note(_text.text));
+				Destroy(gameObject);
+			}
+		}
 	}
 }

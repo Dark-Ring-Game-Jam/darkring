@@ -2,49 +2,30 @@
 
 namespace _Scripts
 {
-	public class Flashlight : IEquipment, IUsable, IEquipInitializable<Flashlight.InitData>
+	public class Flashlight : Item, IUsable
 	{
-		public Inventory Inventory { get; private set; }
-		
-		public readonly struct InitData
+		private readonly Player _player;
+
+		public Flashlight()
 		{
-			public readonly float FlashDistance;
-
-			public InitData(float flashDistance)
-			{
-				FlashDistance = flashDistance;
-			}
-		}
-		public bool IsCharge {get; set;}
-
-		private float _flashDistance;
-		private Transform _playerTransform;
-
-
-		public IEquipment Init(InitData initData, Inventory inventory)
-		{
-			_flashDistance = initData.FlashDistance;
-			_playerTransform = GameManager.Instance.Player.transform;
-			
-			Inventory = inventory;
-			inventory.AddItem(new Item { Type = Item.ItemType.Flashlight, Amount = 1 });
-			
-			return this;
+			_player = GameManager.Instance.Player;
+			Type = ItemType.Flashlight;
+			Amount = 1;
 		}
 
-		public bool TryUse()
+		public void Use()
 		{
-			var results = new RaycastHit2D[1];
-			var size = Physics2D.RaycastNonAlloc(_playerTransform.position, _playerTransform.forward, results, _flashDistance, LayerMask.NameToLayer("Enemy"));
+			var results = new Collider2D[3];
+			var size = Physics2D.OverlapBoxNonAlloc((Vector2)_player.transform.position + _player.NormalizedDirection, new Vector2(1f, 5f), 0f, results, LayerMask.NameToLayer("Enemy"));
 
 			if (size <= 0)
 			{
-				return false;
+				return;
 			}
 
-			foreach (var raycastHit2D in results)
+			foreach (var collider2D in results)
 			{
-				if (raycastHit2D.collider.TryGetComponent(out Enemy enemy) && IsCharge)
+				if (collider2D.TryGetComponent(out Enemy enemy) && _player.Inventory.ContainItemType(ItemType.Batteriy))
 				{
 					if (enemy is BigEnemy bigEnemy)
 					{
@@ -55,11 +36,13 @@ namespace _Scripts
 						enemy.TakeDamage(1);
 					}
 
-					IsCharge = false;
+					_player.Inventory.RemoveItem(new Item { Type = ItemType.Batteriy, Amount = 1 });
 				}
 			}
-
-			return false;
+		}
+		public void Use(Inventory inventory)
+		{
+			throw new System.NotImplementedException();
 		}
 	}
 }

@@ -6,10 +6,10 @@ public class Smoke : MonoBehaviour
     {
         DestroySelf();
     }
-    
-    private void OnCollisionEnter2D(Collision2D other)
+
+    private void OnTriggerEnter(Collider other)
     {
-        if (other.collider.TryGetComponent(out Player player))
+        if (other.TryGetComponent(out Player player))
         {
             player.TakeDamage(1000);
         }

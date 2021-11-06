@@ -9,7 +9,7 @@ namespace _Scripts
 		[SerializeField] private NoteView _noteViewPrefab;
 		[SerializeField] private Canvas _canvas;
 
-		[Header("Fog")] 
+		[Header("Fog")]
 		[SerializeField] private Vector2 _startPosition;
 		[SerializeField] private int _width;
 		[SerializeField] private int _height;

@@ -2,33 +2,24 @@
 
 namespace _Scripts
 {
-	public class InsulatingTape : IEquipment, IUsable, IEquipInitializable<InsulatingTape.InitData>
+	public class InsulatingTape : Item, IUsable
 	{
-		public Inventory Inventory { get; private set; }
-		
-		public readonly struct InitData
-		{}
+		private Player _player;
 
-		private Transform _playerTransform;
-
-		public IEquipment Init(InitData initData, Inventory inventory)
+		public InsulatingTape()
 		{
-			_playerTransform = GameManager.Instance.transform;
-			
-			Inventory = inventory;
-			inventory.AddItem(new Item { Type = Item.ItemType.InsulatingTape, Amount = 1 });
-			
-			return this;
+			_player = GameManager.Instance.Player;
+			Type = ItemType.InsulatingTape;
+			Amount = 1;
 		}
 
-		public bool TryUse()
+		public void Use()
 		{
 			var results = new Collider2D[2];
-			var size = Physics2D.OverlapBoxNonAlloc(_playerTransform.position + _playerTransform.forward, Vector2.one, 0f, results, LayerMask.NameToLayer("Environment"));
+			var size = Physics2D.OverlapBoxNonAlloc(_player.transform.position + _player.transform.up, Vector2.one, 0f, results, LayerMask.NameToLayer("Environment"));
 
 			if (size <= 0)
 			{
-				return false;
 			}
 
 			foreach (var collider2D in results)
@@ -37,13 +28,13 @@ namespace _Scripts
 				{
 					table.Active();
 
-					Inventory.RemoveItem(new Item { Type = Item.ItemType.InsulatingTape, Amount = 1 });
-					
-					return true;
+					_player.Inventory.RemoveItem(new Item { Type = ItemType.InsulatingTape, Amount = 1 });
 				}
 			}
-
-			return false;
+		}
+		public void Use(Inventory inventory)
+		{
+			throw new System.NotImplementedException();
 		}
 	}
 }

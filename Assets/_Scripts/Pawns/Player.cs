@@ -17,7 +17,11 @@ public class Player : MonoBehaviour, ICanBeAttacked
     #region Fields
 
     public float Speed => _movementComponent.Speed;
-    
+    public Vector2 NormalizedDirection => _movementDirection.normalized;
+    public Inventory Inventory => _inventory;
+    public int KeysCount => _inventory.ItemCount(Item.ItemType.Key);
+    public IUsable UsableEnvironment {get; set;}
+
     private Inventory _inventory;
     private Vector2 _movementDirection = Vector2.zero;
     private bool _faceLeft = true;
@@ -31,11 +35,11 @@ public class Player : MonoBehaviour, ICanBeAttacked
     // TODO - для теста (потом выбирать динамически ближайшего врага или бить всех по области)
     [Header("For Tests")]
     [SerializeField] private Enemy _targetEnemy;
-    
+
     [Header("UI")]
     [SerializeField] private UIInventory _UIInventory;
     [SerializeField] private UIHealthBar _UIHealthBar;
-    
+
     [Header("Animation")]
     [SerializeField] private SkeletonAnimation _skeletonAnimation;
 
@@ -101,16 +105,6 @@ public class Player : MonoBehaviour, ICanBeAttacked
         if (IsBusy() == false)
         {
             _movementComponent.Move(_movementDirection);
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D other)
-    {
-        if (other.collider.TryGetComponent(out MiniNoteView miniNoteView))
-        {
-            var note = new Note();
-            note.Init(new Note.InitData(miniNoteView.Text), _inventory);
-            Destroy(miniNoteView.gameObject);
         }
     }
 
@@ -222,9 +216,9 @@ public class Player : MonoBehaviour, ICanBeAttacked
                 _smokeComponent.Smoke();
             }
         }
-        else if (Input.GetKey(KeyCode.F))
+        else if (Input.GetKey(KeyCode.F) && UsableEnvironment != null)
         {
-            // TODO - взаимодействовать с предметами
+            UsableEnvironment.Use(Inventory);
         }
 
         ProcessAnimation();
@@ -266,7 +260,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _smokeComponent.OnSmoke -= _animationComponent.Smoke;
     }
 
-    public Vector3 GetPosition() 
+    public Vector3 GetPosition()
     {
         return transform.position;
     }

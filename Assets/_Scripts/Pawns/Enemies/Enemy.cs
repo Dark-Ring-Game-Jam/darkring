@@ -15,7 +15,7 @@ namespace _Scripts
 
 		[Header("Animation")]
 		[SerializeField] private SkeletonAnimation _skeletonAnimation;
-		
+
 		public int Health => _healthComponent.Health;
 		public event Action<Enemy> OnDie;
 

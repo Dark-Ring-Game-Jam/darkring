@@ -2,6 +2,6 @@
 {
 	public interface IUsable
 	{
-		bool TryUse();
+		void Use(Inventory inventory);
 	}
 }
