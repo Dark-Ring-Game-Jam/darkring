@@ -4,6 +4,8 @@ namespace _Scripts
 {
 	public class Flashlight : IEquipment, IUsable, IEquipInitializable<Flashlight.InitData>
 	{
+		public Inventory Inventory { get; private set; }
+		
 		public readonly struct InitData
 		{
 			public readonly float FlashDistance;
@@ -19,11 +21,14 @@ namespace _Scripts
 		private Transform _playerTransform;
 
 
-		public IEquipment Init(InitData initData)
+		public IEquipment Init(InitData initData, Inventory inventory)
 		{
 			_flashDistance = initData.FlashDistance;
 			_playerTransform = GameManager.Instance.Player.transform;
-
+			
+			Inventory = inventory;
+			inventory.AddItem(new Item { Type = Item.ItemType.Flashlight, Amount = 1 });
+			
 			return this;
 		}
 

@@ -46,11 +46,11 @@ public class UIInventory : MonoBehaviour
                 // Use item
                 _inventory.UseItem(item);
             };
-
+            
             itemSlotRectTransform.GetComponent<Button_UI>().MouseRightClickFunc = () =>
             {
                 // Drop item
-                Item duplicateItem = new Item { Type = item.itemType, amount = 1 };
+                Item duplicateItem = new Item { Type = item.Type, Amount = 1 };
                 inventory.RemoveItem(item);
                 ItemWorld.DropItem(player.GetPosition(), duplicateItem);
             };*/
@@ -58,10 +58,18 @@ public class UIInventory : MonoBehaviour
             itemSlotRectTransform.anchoredPosition = new Vector2(x * itemSlotCellSize, -y * itemSlotCellSize);
             Image image = itemSlotRectTransform.Find("Image").GetComponent<Image>();
             image.sprite = item.GetSprite();
+            if (image.sprite == ItemAssets.Instance.EmptySprite)
+            {
+                image.color = new Color(1f, 1f, 1f, 0f);
+            }
 
             Image amount = itemSlotRectTransform.Find("Amount").GetComponent<Image>();
             amount.sprite = item.GetAmountSprite();
-
+            if (amount.sprite == ItemAssets.Instance.EmptySprite)
+            {
+                amount.color = new Color(1f, 1f, 1f, 0f);
+            }
+            
             x++;
         }
     }

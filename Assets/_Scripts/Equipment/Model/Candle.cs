@@ -4,15 +4,20 @@ namespace _Scripts
 {
 	public class Candle : IEquipment, IUsable, IEquipInitializable<Candle.InitData>
 	{
+		public Inventory Inventory { get; private set; }
+		
 		public readonly struct InitData
 		{}
 
 		private Transform _playerTransform;
 
-		public IEquipment Init(InitData initData)
+		public IEquipment Init(InitData initData, Inventory inventory)
 		{
 			_playerTransform = GameManager.Instance.Player.transform;
-
+			
+			Inventory = inventory;
+			inventory.AddItem(new Item { Type = Item.ItemType.Candle, Amount = 1 });
+			
 			return this;
 		}
 
@@ -32,6 +37,8 @@ namespace _Scripts
 				{
 					candleStick.Active();
 
+					Inventory.RemoveItem(new Item { Type = Item.ItemType.Candle, Amount = 1 });
+					
 					return true;
 				}
 			}

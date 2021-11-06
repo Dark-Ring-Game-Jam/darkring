@@ -3,6 +3,6 @@
 	public interface IEquipInitializable<in TInitData>
 		where TInitData : struct
 	{
-		IEquipment Init(TInitData initData);
+		IEquipment Init(TInitData initData, Inventory inventory);
 	}
 }

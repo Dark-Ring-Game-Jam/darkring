@@ -2,5 +2,6 @@
 {
 	public interface IEquipment
 	{
+		Inventory Inventory { get; }
 	}
 }

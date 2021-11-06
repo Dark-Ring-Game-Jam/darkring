@@ -4,6 +4,8 @@ namespace _Scripts
 {
 	public class Battery : IEquipment, IUsable, IEquipInitializable<Battery.InitData>
 	{
+		public Inventory Inventory { get; private set; }
+		
 		public readonly struct InitData
 		{
 			public readonly IReadOnlyDictionary<IEquipment, int> Items;
@@ -16,9 +18,12 @@ namespace _Scripts
 
 		private IReadOnlyDictionary<IEquipment, int> _items;
 
-		public IEquipment Init(InitData initData)
+		public IEquipment Init(InitData initData, Inventory inventory)
 		{
 			_items = initData.Items;
+			
+			Inventory = inventory;
+			inventory.AddItem(new Item { Type = Item.ItemType.Batteriy, Amount = 1 });
 
 			return this;
 		}
@@ -32,6 +37,8 @@ namespace _Scripts
 				{
 					flashlight.IsCharge = true;
 
+					Inventory.RemoveItem(new Item { Type = Item.ItemType.Batteriy, Amount = 1 });
+					
 					return true;
 				}
 			}

@@ -4,6 +4,8 @@ namespace _Scripts
 {
 	public class Note : IEquipment
 	{
+		public Inventory Inventory { get; private set; }
+		
 		public readonly struct InitData
 		{
 			public readonly string Text;
@@ -14,7 +16,7 @@ namespace _Scripts
 			}
 		}
 
-		public IEquipment Init(InitData initData)
+		public IEquipment Init(InitData initData, Inventory inventory)
 		{
 			var text = initData.Text;
 
@@ -22,6 +24,9 @@ namespace _Scripts
 
 			noteView.Init(text);
 
+			Inventory = inventory;
+			inventory.AddItem(new Item { Type = Item.ItemType.Note, Amount = 1 });
+			
 			return this;
 		}
 	}

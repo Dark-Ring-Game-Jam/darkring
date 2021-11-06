@@ -8,11 +8,11 @@ public class Item
     {
         Note, // записка
         Candle, // свечка
-        ElectricalTape, // изолента
+        InsulatingTape, // изолента
         KeroseneLamp, // керосиновая лампа
         Flashlight, // фонарик
         Key, // ключ
-        Batteries, // батарейки
+        Batteriy // батарейки
     }
 
     public ItemType Type;
@@ -26,16 +26,16 @@ public class Item
                 return ItemAssets.Instance.NoteSprite;
             case ItemType.Candle: 
                 return ItemAssets.Instance.CandleSprite;
-            case ItemType.ElectricalTape:   
-                return ItemAssets.Instance.ElectricalTapeSprite;
+            case ItemType.InsulatingTape:   
+                return ItemAssets.Instance.InsulatingTapeSprite;
             case ItemType.KeroseneLamp:         
                 return ItemAssets.Instance.KeroseneLampSprite;
             case ItemType.Flashlight:       
                 return ItemAssets.Instance.FlashlightSprite;
             case ItemType.Key:       
                 return ItemAssets.Instance.KeySprite;
-            case ItemType.Batteries:       
-                return ItemAssets.Instance.BatteriesSprite;
+            case ItemType.Batteriy:       
+                return ItemAssets.Instance.BatterySprite;
             default:
                 return ItemAssets.Instance.EmptySprite;
         }
@@ -69,9 +69,9 @@ public class Item
             case ItemType.Note:
             case ItemType.Candle:
             case ItemType.Key:
-            case ItemType.Batteries:
+            case ItemType.Batteriy:
+            case ItemType.InsulatingTape:
                 return true;
-            case ItemType.ElectricalTape:
             case ItemType.KeroseneLamp:
             case ItemType.Flashlight:
                 return false;

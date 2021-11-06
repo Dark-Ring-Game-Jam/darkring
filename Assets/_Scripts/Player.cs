@@ -1,4 +1,3 @@
-using System;
 using _Scripts;
 using Components;
 using Spine.Unity;
@@ -55,12 +54,9 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _attackComponent.OnAttack += _animationComponent.Attack;
         _smokeComponent.OnSmoke += _animationComponent.Smoke;
 
-        _inventory = new Inventory(UseItem);
+        _inventory = new Inventory();
         _UIInventory.SetPlayer(this);
         _UIInventory.SetInventory(_inventory);
-
-        // TODO - проверяем спаун предметов
-        ItemWorld.SpawnItemWorld(this.transform.position, new Item { Type = Item.ItemType.Batteries, Amount = 1 });
     }
 
     private void Update()
@@ -75,7 +71,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         }
         else
         {
-            // TODO - закончить игру (через GameComponent?)
+            // TODO - закончить игру (через GameManager?)
         }
     }
 
@@ -92,7 +88,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         if (other.collider.TryGetComponent(out MiniNoteView miniNoteView))
         {
             var note = new Note();
-            note.Init(new Note.InitData(miniNoteView.Text));
+            note.Init(new Note.InitData(miniNoteView.Text), _inventory);
             Destroy(miniNoteView.gameObject);
         }
     }
@@ -139,6 +135,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
     {
         if (Input.GetKey(KeyCode.E))
         {
+            // TODO - исправить га AOE для всех врагов в радиусе
             if (_targetEnemy != null && _attackComponent.CanAttack(_targetEnemy.transform.position) && _attackComponent.IsAttacking == false)
             {
                 _attackComponent.Attack(_targetEnemy.GetComponent<ICanBeAttacked>(), _targetEnemy.transform.position);
@@ -194,53 +191,9 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _attackComponent.OnAttack -= _animationComponent.Attack;
         _smokeComponent.OnSmoke -= _animationComponent.Smoke;
     }
-    
-    private void OnTriggerEnter2D(Collider2D collider) 
-    {
-        if (collider.TryGetComponent(out ItemWorld item))
-        {
-            _inventory.AddItem(item.GetItem());
-            item.DestroySelf();
-        }
-    }
-    
-    private void UseItem(Item item) 
-    {
-        switch (item.Type) 
-        {
-            case Item.ItemType.Batteries:
-                // TODO - добавить действие
-                
-                _inventory.RemoveItem(new Item { Type = Item.ItemType.Batteries, Amount = 1 });
-                break;
-            case Item.ItemType.Candle:
-                // TODO - добавить действие
-                
-                _inventory.RemoveItem(new Item { Type = Item.ItemType.Candle, Amount = 1 });
-                break;
-            case Item.ItemType.Key:
-                // TODO - добавить действие
-                
-                _inventory.RemoveItem(new Item { Type = Item.ItemType.Key, Amount = 1 });
-                break;
-            case Item.ItemType.Note:
-                // TODO - добавить действие
 
-                break;
-            case Item.ItemType.ElectricalTape:
-                // TODO - добавить действие
-                
-                _inventory.RemoveItem(new Item { Type = Item.ItemType.Batteries, Amount = 1 });
-                break;
-            case Item.ItemType.KeroseneLamp:
-                // TODO - добавить действие
-                
-                _inventory.RemoveItem(new Item { Type = Item.ItemType.Batteries, Amount = 1 });
-                break;
-            case Item.ItemType.Flashlight:
-                // TODO - добавить действие
-
-                break;
-        }
+    public Vector3 GetPosition() 
+    {
+        return transform.position;
     }
 }

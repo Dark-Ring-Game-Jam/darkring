@@ -1,6 +1,5 @@
 using System;
 using System.Collections.Generic;
-using UnityEngine;
 
 public class Inventory
 {
@@ -8,19 +7,10 @@ public class Inventory
     public List<Item> ItemList =>_itemList;
     
     private List<Item> _itemList;
-    private Action<Item> _useItemAction;
 
-    public Inventory(Action<Item> useItemAction)
+    public Inventory()
     {
-        _useItemAction = useItemAction;
         _itemList = new List<Item>();
-        
-        // TODO - для теста (убрать)
-        AddItem(new Item { Type = Item.ItemType.Key, Amount = 1 });
-        AddItem(new Item { Type = Item.ItemType.Candle, Amount = 2 });
-        AddItem(new Item { Type = Item.ItemType.Note, Amount = 1 });
-        
-        Debug.Log("Inventory Items Count: " + _itemList.Count);
     }
     
     public void AddItem(Item item)
@@ -72,9 +62,5 @@ public class Inventory
             _itemList.Remove(item);
         }
         OnItemListChanged?.Invoke(this, EventArgs.Empty);
-    }
-
-    public void UseItem(Item item) {
-        _useItemAction(item);
     }
 }

@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Serialization;
 
 public class ItemAssets : MonoBehaviour 
 {
@@ -13,11 +14,11 @@ public class ItemAssets : MonoBehaviour
 
     public Sprite NoteSprite;
     public Sprite CandleSprite;
-    public Sprite ElectricalTapeSprite;
+    public Sprite InsulatingTapeSprite;
     public Sprite KeroseneLampSprite;
     public Sprite FlashlightSprite;
     public Sprite KeySprite;
-    public Sprite BatteriesSprite;
+    public Sprite BatterySprite;
     public Sprite EmptySprite;
     
     public Sprite AmountX1;
