@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 7104143960983652416}
   - component: {fileID: 7104143960983652422}
   - component: {fileID: 7104143960983652421}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FogTile
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 58c0cb2e6bb6c2d44af03575872ee5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _itemAnchor: {fileID: 7104143960983652417}
 --- !u!61 &7104143960983652421
 BoxCollider2D:
   m_ObjectHideFlags: 0

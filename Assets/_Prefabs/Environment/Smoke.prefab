@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 5789375671882226943}
   - component: {fileID: 696922057020406670}
   - component: {fileID: 3475557565851117455}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spine GameObject (smoke)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -191,7 +191,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5789375672332932749}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}

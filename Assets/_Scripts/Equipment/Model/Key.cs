@@ -1,6 +1,6 @@
 ﻿namespace _Scripts
 {
-	public class Key :Item
+	public class Key : Item
 	{
 		public Key()
 		{

@@ -19,13 +19,13 @@ public class Player : MonoBehaviour, ICanBeAttacked
     public float Speed => _movementComponent.Speed;
     public Vector2 NormalizedDirection => _movementDirection.normalized;
     public Inventory Inventory => _inventory;
-    public int KeysCount => _inventory.ItemCount(Item.ItemType.Key);
     public bool HasKeroseneLamp => _inventory.ContainItemType(Item.ItemType.KeroseneLamp);
     public IUsable UsableEnvironment {get; set;}
 
     private Inventory _inventory;
     private Vector2 _movementDirection = Vector2.zero;
     private bool _faceLeft = true;
+    private readonly Vector2 _distance = new Vector2(5f, 3f);
 
     private HealthComponent _healthComponent;
     private MovementComponent _movementComponent;
@@ -65,7 +65,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _inventory = new Inventory();
         _UIInventory.SetPlayer(this);
         _UIInventory.SetInventory(_inventory);
-        
+
         //TODO - для проверки атаки (потом удалить)
         //----------------------------------------------
         ItemWorld.SpawnItemWorld(transform.position, new Item { Type = Item.ItemType.Batteriy, Amount = 2 });
@@ -76,7 +76,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     //TODO - для проверки атаки (потом удалить)
     //----------------------------------------------
-    private void OnTriggerEnter2D(Collider2D collider) 
+    private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.TryGetComponent(out ItemWorld item))
         {
@@ -85,7 +85,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         }
     }
     //----------------------------------------------
-    
+
     private void Update()
     {
         if (!_healthComponent.IsDead)
@@ -150,9 +150,9 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     private void ProcessInteractions()
     {
-        if (Input.GetKey(KeyCode.E))
+        if (Input.GetKey(KeyCode.E) && _inventory.ContainItemType(Item.ItemType.Batteriy) && _inventory.ContainItemType(Item.ItemType.Flashlight))
         {
-            // TODO - использовать фонарик для атаки
+            Attack();
         }
         else if (Input.GetKey(KeyCode.X))
         {
@@ -167,6 +167,41 @@ public class Player : MonoBehaviour, ICanBeAttacked
         }
 
         ProcessAnimation();
+    }
+
+    private void Attack()
+    {
+        var results = new Collider2D[5];
+        var size = Physics2D.OverlapBoxNonAlloc((Vector2)transform.position + new Vector2(Mathf.Sign(-transform.localScale.x) * 1.5f, 1f), _distance, 0f, results, LayerMask.NameToLayer("Enemy"));
+        var enemies = new Dictionary<ICanBeAttacked, Vector2>();
+
+        _inventory.RemoveItem(new Item { Type = Item.ItemType.Batteriy, Amount = 1 });
+
+        if (size > 0)
+        {
+            foreach (var collider2d in results)
+            {
+                if (collider2d != null && collider2d.TryGetComponent(out Enemy enemy))
+                {
+                    if (enemy is BigEnemy bigEnemy)
+                    {
+                        bigEnemy.ResetSpeed();
+                    }
+                    else
+                    {
+                        enemies[enemy] = enemy.transform.position;
+                    }
+                }
+            }
+        }
+
+        _attackComponent.Attack(enemies);
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.black;
+        Gizmos.DrawWireCube((Vector2)transform.position + new Vector2(Mathf.Sign(-transform.localScale.x) * 1.5f, 1f), new Vector2(5f, 3f));
     }
 
     private void ProcessAnimation()

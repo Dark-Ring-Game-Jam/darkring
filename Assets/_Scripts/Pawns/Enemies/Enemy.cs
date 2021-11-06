@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using Components;
 using Spine.Unity;
 using UnityEngine;
@@ -46,7 +47,12 @@ namespace _Scripts
 			{
 				if (!_target.GetComponent<HealthComponent>().IsDead)
 				{
-					_attackComponent.Attack(_targetCanBeAttacked, _targetTransform.position);
+					var enemy = new Dictionary<ICanBeAttacked, Vector2>
+					{
+						[_targetCanBeAttacked] = _targetTransform.position
+					};
+
+					_attackComponent.Attack(enemy);
 				}
 			}
 			else if (_attackComponent.IsAttacking == false)

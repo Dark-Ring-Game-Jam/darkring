@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 4143901309905856222}
   - component: {fileID: 3561293699598682452}
   - component: {fileID: 8683946549007194808}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spine GameObject (torch)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -130,7 +130,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3954469183064106574}
   - component: {fileID: 1597473233029857860}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torch - Side - Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}

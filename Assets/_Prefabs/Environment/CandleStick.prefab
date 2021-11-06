@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3973169017451730577}
   - component: {fileID: 3973169017451730576}
   - component: {fileID: 3973169017451730583}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spine GameObject (candlestick)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,7 @@ GameObject:
   - component: {fileID: 7967903704452958807}
   - component: {fileID: 7694879478605376156}
   - component: {fileID: 6531905110105188251}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: CandleStick
   m_TagString: Untagged
   m_Icon: {fileID: 0}

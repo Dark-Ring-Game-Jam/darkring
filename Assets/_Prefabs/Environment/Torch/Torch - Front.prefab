@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8589334486668953554}
   - component: {fileID: 8132822039129829612}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Torch - Front
   m_TagString: torch
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 6215620930474535475}
   - component: {fileID: 2230244187395844340}
   - component: {fileID: 7822496917498118992}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spine GameObject (torch)
   m_TagString: Untagged
   m_Icon: {fileID: 0}

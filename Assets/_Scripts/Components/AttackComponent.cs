@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
 using _Scripts;
 using UnityEngine;
 
@@ -11,7 +12,6 @@ namespace Components
 		[SerializeField] private float _delayToAttack;
 		[SerializeField] private int _damage;
 
-		public float DistanceToAttack => _distanceToAttack;
 		public float DelayToAttack => _delayToAttack;
 		public event Action OnAttack;
 		public bool IsAttacking {get; private set;}
@@ -23,23 +23,29 @@ namespace Components
 			return Vector2.Distance(transform.position, targetPosition) <= _distanceToAttack;
 		}
 
-		public void Attack(ICanBeAttacked canBeAttacked, Vector2 targetPosition)
+		public void Attack(Dictionary<ICanBeAttacked, Vector2> canBeAttacked)
 		{
 			if (_currentCoroutine == null)
 			{
 				IsAttacking = true;
-				_currentCoroutine = StartCoroutine(AttackCoroutine(canBeAttacked, targetPosition));
+				_currentCoroutine = StartCoroutine(AttackCoroutine(canBeAttacked));
 				OnAttack?.Invoke();
 			}
 		}
 
-		private IEnumerator AttackCoroutine(ICanBeAttacked canBeAttacked, Vector2 targetPosition)
+		private IEnumerator AttackCoroutine(Dictionary<ICanBeAttacked, Vector2>  canBeAttacked)
 		{
 			yield return new WaitForSeconds(_delayToAttack);
 
-			if (CanAttack(targetPosition))
+			foreach (var pair in canBeAttacked)
 			{
-				canBeAttacked.TakeDamage(_damage);
+				var target = pair.Key;
+				var position = pair.Value;
+
+				if (CanAttack(position))
+				{
+					target.TakeDamage(_damage);
+				}
 			}
 
 			IsAttacking = false;

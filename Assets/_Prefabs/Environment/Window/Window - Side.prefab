@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4323112471668709758}
   - component: {fileID: -6448940493332510173}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Window - Side
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -56,7 +56,7 @@ GameObject:
   - component: {fileID: 7880301704080040634}
   - component: {fileID: 5412672188702096788}
   - component: {fileID: 2003761856051947131}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Spine GameObject (window)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
