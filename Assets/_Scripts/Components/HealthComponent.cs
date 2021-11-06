@@ -11,6 +11,8 @@ namespace Components
 		public bool IsDead => Health == 0;
 		public event Action OnDeath;
 
+		private bool _isDead = false;		
+		
 		private void Start()
 		{
 			Health = _initHealth;
@@ -20,8 +22,9 @@ namespace Components
 		{
 			Health = Mathf.Clamp(Health - amount, 0, _initHealth);
 
-			if (Health == 0)
+			if (Health == 0 && _isDead == false)
 			{
+				_isDead = true;
 				OnDeath?.Invoke();
 			}
 		}

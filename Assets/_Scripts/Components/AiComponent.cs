@@ -1,4 +1,5 @@
 ﻿using _Scripts;
+using _Scripts.Audio;
 using Pathfinding;
 using UnityEngine;
 
@@ -19,6 +20,7 @@ namespace Components
 		private Transform _target;
 		private Transform _parentTransform;
 		private bool _isReached = true;
+		private CharacterSounds _characterSounds;
 
 		public void Init(Player target)
 		{
@@ -27,6 +29,8 @@ namespace Components
 			_targetSpeed = target.Speed;
 			_aiPath.maxSpeed = _targetSpeed * _percentFromTargetSpeed;
 			_aiDestinationSetter.target = _target;
+
+			_characterSounds = GetComponent<CharacterSounds>();
 		}
 
 		private void Update()
@@ -53,6 +57,10 @@ namespace Components
 
 			_parentTransform.localScale = normalized.x < 0 ? _leftSize : _rightSize;
 
+			if (_aiPath.velocity != Vector3.zero && _characterSounds != null)
+			{
+				_characterSounds.PlayStepSound();
+			}
 		}
 
 		public void IncreaseSpeed(float value)

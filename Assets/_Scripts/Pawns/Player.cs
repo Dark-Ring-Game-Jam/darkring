@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using _Scripts;
+using _Scripts.Audio;
 using Components;
 using Spine.Unity;
 using UnityEngine;
@@ -34,6 +35,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
     private MainCharacterAnimationComponent _animationComponent;
     private AttackComponent _attackComponent;
     private SmokeComponent _smokeComponent;
+    private CharacterSounds _characterSounds;
 
     // TODO - для теста (потом выбирать динамически ближайшего врага или бить всех по области)
     [Header("For Tests")]
@@ -59,6 +61,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _animationComponent = GetComponent<MainCharacterAnimationComponent>();
         _attackComponent = GetComponent<AttackComponent>();
         _smokeComponent = GetComponent<SmokeComponent>();
+        _characterSounds = GetComponent<CharacterSounds>();
 
         _animationComponent.InitMainCharacterAnimation(2f, 2f, _skeletonAnimation);
 
@@ -226,6 +229,8 @@ public class Player : MonoBehaviour, ICanBeAttacked
             _animationComponent.Idle();
             return;
         }
+        
+        _characterSounds.PlayStepSound();
 
         if (_movementDirection.x >= 0 && _movementDirection.y > 0)
         {
