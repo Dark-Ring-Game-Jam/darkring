@@ -62,6 +62,12 @@ public class Item
                 return ItemAssets.Instance.AmountX5;
             case 6:
                 return ItemAssets.Instance.AmountX6;
+            case 7:
+                return ItemAssets.Instance.AmountX7;
+            case 8:
+                return ItemAssets.Instance.AmountX8;
+            case 9:
+                return ItemAssets.Instance.AmountX9;
             default:
                 return ItemAssets.Instance.EmptySprite;
         }

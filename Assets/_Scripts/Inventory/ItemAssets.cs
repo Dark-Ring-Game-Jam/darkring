@@ -1,5 +1,4 @@
 using UnityEngine;
-using UnityEngine.Serialization;
 
 public class ItemAssets : MonoBehaviour 
 {
@@ -27,4 +26,7 @@ public class ItemAssets : MonoBehaviour
     public Sprite AmountX4;
     public Sprite AmountX5;
     public Sprite AmountX6;
+    public Sprite AmountX7;
+    public Sprite AmountX8;
+    public Sprite AmountX9;
 }

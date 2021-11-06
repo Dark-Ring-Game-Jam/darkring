@@ -53040,6 +53040,9 @@ MonoBehaviour:
   AmountX4: {fileID: -3838674082296116462, guid: 72a5e1faebcb8a845b7815c086324077, type: 3}
   AmountX5: {fileID: 6474345162767489121, guid: 72a5e1faebcb8a845b7815c086324077, type: 3}
   AmountX6: {fileID: -8761496183629611704, guid: 72a5e1faebcb8a845b7815c086324077, type: 3}
+  AmountX7: {fileID: 8888513300040317074, guid: dafc388f3ffe463409bdecc68af6f8eb, type: 3}
+  AmountX8: {fileID: -2189224198335499755, guid: dafc388f3ffe463409bdecc68af6f8eb, type: 3}
+  AmountX9: {fileID: -1330871172465981650, guid: dafc388f3ffe463409bdecc68af6f8eb, type: 3}
 --- !u!4 &1220684537
 Transform:
   m_ObjectHideFlags: 0
