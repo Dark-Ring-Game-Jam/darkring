@@ -43,6 +43,11 @@ public class Item
 
     public Sprite GetAmountSprite()
     {
+        if (!IsStackable())
+        {
+            return ItemAssets.Instance.EmptySprite;
+        }
+        
         switch (Amount)
         {
             case 1:

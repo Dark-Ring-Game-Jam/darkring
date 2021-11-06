@@ -57446,6 +57446,10 @@ PrefabInstance:
       propertyPath: _UIInventory
       value: 
       objectReference: {fileID: 24480343}
+    - target: {fileID: 2796195236850067146, guid: fa691be1e9ffb0043b05f0065fba7729, type: 3}
+      propertyPath: _initHealth
+      value: 500
+      objectReference: {fileID: 0}
     - target: {fileID: 2796195236850067149, guid: fa691be1e9ffb0043b05f0065fba7729, type: 3}
       propertyPath: _itemSlotContainer
       value: 
