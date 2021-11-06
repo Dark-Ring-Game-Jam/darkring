@@ -51,3 +51,4 @@ MonoBehaviour:
   _width: 66
   _height: 48
   _fogAnchor: {fileID: 0}
+  _fogTile: {fileID: 7104143960983652422, guid: 329458ace94efa44a8daa9e2c3f5c439, type: 3}

@@ -14,6 +14,7 @@ namespace _Scripts
 		[SerializeField] private int _width;
 		[SerializeField] private int _height;
 		[SerializeField] private Transform _fogAnchor;
+		[SerializeField] private FogTile _fogTile;
 
 		public static GameManager Instance {get; private set;}
 
@@ -26,7 +27,7 @@ namespace _Scripts
 		{
 			Instance = this;
 
-			FogTile.FillTheMap(_startPosition, _width, _height, _fogAnchor);
+			FogTile.FillTheMap(_startPosition, _width, _height, _fogTile, _fogAnchor);
 		}
 	}
 }
