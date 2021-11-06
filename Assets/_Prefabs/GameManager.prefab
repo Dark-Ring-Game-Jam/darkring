@@ -44,3 +44,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _player: {fileID: 0}
+  _patrolPointsController: {fileID: 0}
+  _noteViewPrefab: {fileID: 0}
+  _canvas: {fileID: 0}
+  _startPosition: {x: -13, y: 9}
+  _width: 66
+  _height: 48
+  _fogAnchor: {fileID: 0}

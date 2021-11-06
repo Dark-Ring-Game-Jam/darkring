@@ -47,22 +47,16 @@ public class Item
         {
             case 1:
                 return ItemAssets.Instance.AmountX1;
-                break;
             case 2:
                 return ItemAssets.Instance.AmountX2;
-                break;
             case 3:
                 return ItemAssets.Instance.AmountX3;
-                break;
             case 4:
                 return ItemAssets.Instance.AmountX4;
-                break;
             case 5:
                 return ItemAssets.Instance.AmountX5;
-                break;
             case 6:
                 return ItemAssets.Instance.AmountX6;
-                break;
             default:
                 return ItemAssets.Instance.EmptySprite;
         }
