@@ -57459,6 +57459,22 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1313232985}
     m_Modifications:
+    - target: {fileID: 1202744241792241293, guid: 27752044c69d14f40b0f0fa69d862be6, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1543953844937297782, guid: 27752044c69d14f40b0f0fa69d862be6, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1693392510199943276, guid: 27752044c69d14f40b0f0fa69d862be6, type: 3}
+      propertyPath: m_RootOrder
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 1783635093912449867, guid: 27752044c69d14f40b0f0fa69d862be6, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3651617649613738861, guid: 27752044c69d14f40b0f0fa69d862be6, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -57546,6 +57562,14 @@ PrefabInstance:
     - target: {fileID: 3651617649613738862, guid: 27752044c69d14f40b0f0fa69d862be6, type: 3}
       propertyPath: m_Name
       value: UI Healthbar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3651617650574237319, guid: 27752044c69d14f40b0f0fa69d862be6, type: 3}
+      propertyPath: m_RootOrder
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6595232395998246263, guid: 27752044c69d14f40b0f0fa69d862be6, type: 3}
+      propertyPath: m_RootOrder
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 27752044c69d14f40b0f0fa69d862be6, type: 3}
