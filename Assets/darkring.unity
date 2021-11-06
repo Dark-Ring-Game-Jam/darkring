@@ -41019,7 +41019,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2639327270460817055, guid: 43eef6fe78f2ca241ae1f46624b941b4, type: 3}
       propertyPath: _secondsToSpawn
-      value: 300
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2639327270460817055, guid: 43eef6fe78f2ca241ae1f46624b941b4, type: 3}
       propertyPath: _bigEnemySpawnPoints.Array.size

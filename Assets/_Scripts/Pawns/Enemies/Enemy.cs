@@ -44,7 +44,10 @@ namespace _Scripts
 		{
 			if (_attackComponent.CanAttack(_targetTransform.position) && _attackComponent.IsAttacking == false)
 			{
-				_attackComponent.Attack(_targetCanBeAttacked, _targetTransform.position);
+				if (!_target.GetComponent<HealthComponent>().IsDead)
+				{
+					_attackComponent.Attack(_targetCanBeAttacked, _targetTransform.position);
+				}
 			}
 			else if (_attackComponent.IsAttacking == false)
 			{
