@@ -69,6 +69,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         //----------------------------------------------
         ItemWorld.SpawnItemWorld(transform.position, new Item { Type = Item.ItemType.Batteriy, Amount = 2 });
         ItemWorld.SpawnItemWorld(transform.position, new Item { Type = Item.ItemType.Flashlight, Amount = 1 });
+        ItemWorld.SpawnItemWorld(transform.position, new Item { Type = Item.ItemType.KeroseneLamp, Amount = 1 });
         //----------------------------------------------
     }
 
@@ -146,68 +147,11 @@ public class Player : MonoBehaviour, ICanBeAttacked
         transform.localScale = scale;
     }
 
-    private RaycastHit2D[] _hit;
-    private List<Enemy> _enemies = new List<Enemy>();
-    private int _frames;
-
-    private void GetEnemiesInRadius()
-    {
-        _hit = Physics2D.CircleCastAll(transform.position, _attackComponent.DistanceToAttack, new Vector2(0, 0),
-            _attackComponent.DistanceToAttack);
-
-        _enemies.Clear();
-        foreach (var item in _hit)
-        {
-            var enemy = item.collider.transform.gameObject.GetComponent<Enemy>();
-            if (item.collider.transform.gameObject != gameObject && enemy != null)
-            {
-                Vector3 dis = transform.position - item.collider.transform.position;
-
-                if (dis.sqrMagnitude < _attackComponent.DistanceToAttack * _attackComponent.DistanceToAttack)
-                {
-                    _enemies.Add(enemy);
-                }
-            }
-        }
-    }
-
     private void ProcessInteractions()
     {
         if (Input.GetKey(KeyCode.E))
         {
-            var flashlightItem = _inventory.ItemList.FirstOrDefault(x => x.Type == Item.ItemType.Flashlight);
-            if (flashlightItem?.Amount > 0)
-            {
-                var batteryItem = _inventory.ItemList.FirstOrDefault(x => x.Type == Item.ItemType.Batteriy);
-                if (batteryItem?.Amount > 0)
-                {
-                    GetEnemiesInRadius();
-                    if (_enemies.Count > 0)
-                    {
-                        _inventory.RemoveItem(new Item { Type = Item.ItemType.Batteriy, Amount = 1 });
-                    
-                        foreach (var enemy in _enemies)
-                        {
-                            if (enemy != null && _attackComponent.CanAttack(enemy.transform.position) && _attackComponent.IsAttacking == false)
-                            {
-                                _attackComponent.Attack(enemy.GetComponent<ICanBeAttacked>(), enemy.transform.position);
-                            }
-                        }
-                    }
-                    else
-                    {
-                        // TODO - выводить надпись, что вокруг нет врагов ("я же не идиот тратить батарейки")
-                    }
-                }
-                else
-                {
-                    //TODO - выводить надпись, что нет батареек
-                }
-            }
-            else
-            {
-                //TODO -выводить надмись "мне же нечем светить, лол!"
-            }
+            // TODO - использовать фонарик для атаки
         }
         else if (Input.GetKey(KeyCode.X))
         {
