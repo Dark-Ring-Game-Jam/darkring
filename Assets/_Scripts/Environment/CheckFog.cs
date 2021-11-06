@@ -18,12 +18,11 @@ public class CheckFog : MonoBehaviour
         if (_frames == 4)
         {
             _frames = 0;
-
             _hit = Physics2D.CircleCastAll(transform.position, _checkRadius, new Vector2(0, 0), _checkDistance);
             
             foreach (var item in _hit)
             {
-                if (item.collider.transform.gameObject != this.gameObject && item.collider.transform.gameObject.GetComponent<FogTile>() != null)
+                if (item.collider.transform.gameObject != gameObject && item.collider.transform.gameObject.GetComponent<FogTile>() != null)
                 {
                     Vector3 dis = transform.position - item.collider.transform.position;
                     SpriteRenderer sprite = item.collider.transform.gameObject.GetComponent<SpriteRenderer>();

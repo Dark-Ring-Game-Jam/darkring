@@ -68,22 +68,22 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
         //TODO - для проверки атаки (потом удалить)
         //----------------------------------------------
-        ItemWorld.SpawnItemWorld(transform.position, new Item { Type = Item.ItemType.Batteriy, Amount = 2 });
+        /*ItemWorld.SpawnItemWorld(transform.position, new Item { Type = Item.ItemType.Batteriy, Amount = 2 });
         ItemWorld.SpawnItemWorld(transform.position, new Item { Type = Item.ItemType.Flashlight, Amount = 1 });
-        ItemWorld.SpawnItemWorld(transform.position, new Item { Type = Item.ItemType.KeroseneLamp, Amount = 1 });
+        ItemWorld.SpawnItemWorld(transform.position, new Item { Type = Item.ItemType.KeroseneLamp, Amount = 1 });*/
         //----------------------------------------------
     }
 
     //TODO - для проверки атаки (потом удалить)
     //----------------------------------------------
-    private void OnTriggerEnter2D(Collider2D collider)
+    /*private void OnTriggerEnter2D(Collider2D collider)
     {
         if (collider.TryGetComponent(out ItemWorld item))
         {
             _inventory.AddItem(item.GetItem());
             item.DestroySelf();
         }
-    }
+    }*/
     //----------------------------------------------
 
     private void Update()
