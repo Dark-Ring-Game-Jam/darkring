@@ -1,6 +1,9 @@
 fog.png
-size:1560,1009
+size:2214,1080
 filter:Linear,Linear
 pma:true
 1
-bounds:2,2,1556,1005
+bounds:2,73,1556,1005
+2
+bounds:1560,2,1076,652
+rotate:90
