@@ -1,0 +1,14 @@
+ghost.png
+size:904,1017
+filter:Linear,Linear
+pma:true
+ghost
+bounds:2,48,269,636
+rotate:90
+ghost1
+bounds:640,139,237,178
+ghost2
+bounds:640,2,122,135
+ghost3
+bounds:2,319,696,900
+rotate:90
