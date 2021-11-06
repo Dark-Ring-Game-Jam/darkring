@@ -11,7 +11,9 @@ namespace _Scripts
 		{
 			if (other.TryGetComponent(out Player player))
 			{
+				var note = new Note(_text.text);
 				player.Inventory.AddItem(new Note(_text.text));
+				GameManager.Instance.Player.UsableEnvironment = note.NoteView;
 				Destroy(gameObject);
 			}
 		}
