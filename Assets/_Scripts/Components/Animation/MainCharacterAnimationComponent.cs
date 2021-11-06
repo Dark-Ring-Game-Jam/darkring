@@ -11,8 +11,11 @@ namespace Components
         private const string AttackAnimationName = "attack";
         private const string DieAnimationName = "die";
         private const string BackWalkAnimationName = "back_walk";
+        private const string BackWalkWithKeroseneLampAnimationName = "back_walk_with lamp";
         private const string FrontWalkAnimationName = "front_walk";
+        private const string FrontWalkWithKeroseneLampAnimationName = "front_walk_with lamp";
         private const string SideWalkAnimationName = "walking";
+        private const string SideWalkWithKeroseneLampAnimationName = "walking_with lamp";
         private const string SmokeAnimationName = "smoke";
 
         private SkeletonAnimation _skeletonAnimation;
@@ -73,19 +76,39 @@ namespace Components
             SetAnimationState(SmokeAnimationName, false, timeScale);
         }
         
-        public void BackWalk()
+        public void BackWalk(bool withKeroseneLamp = false)
         {
-            SetAnimationState(BackWalkAnimationName);
+            if (withKeroseneLamp)
+            {
+                SetAnimationState(BackWalkWithKeroseneLampAnimationName);
+            }
+            else
+            {
+                SetAnimationState(BackWalkAnimationName);
+            }
         }
         
-        public void FrontWalk()
-        {
-            SetAnimationState(FrontWalkAnimationName);
+        public void FrontWalk(bool withKeroseneLamp = false)
+        {if (withKeroseneLamp)
+            {
+                SetAnimationState(FrontWalkWithKeroseneLampAnimationName);
+            }
+            else
+            {
+                SetAnimationState(FrontWalkAnimationName);
+            }
         }
         
-        public void SideWalk()
+        public void SideWalk(bool withKeroseneLamp = false)
         {
-            SetAnimationState(SideWalkAnimationName);
+            if (withKeroseneLamp)
+            {
+                SetAnimationState(SideWalkWithKeroseneLampAnimationName);
+            }
+            else
+            {
+                SetAnimationState(SideWalkAnimationName);
+            }
         }
     }
 }
