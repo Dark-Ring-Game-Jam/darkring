@@ -14,7 +14,7 @@ namespace _Scripts
 
 		private void OnCollisionExit2D(Collision2D other)
 		{
-			if (other.collider.TryGetComponent(out Player player) && player.UsableEnvironment.Equals(this))
+			if (other.collider.TryGetComponent(out Player player) && player.UsableEnvironment?.Equals(this) == true)
 			{
 				player.UsableEnvironment = null;
 			}
