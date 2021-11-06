@@ -20,10 +20,10 @@ public class Player : MonoBehaviour, ICanBeAttacked
     public Vector2 NormalizedDirection => _movementDirection.normalized;
     public Inventory Inventory => _inventory;
     public int KeysCount => _inventory.ItemCount(Item.ItemType.Key);
+    public bool HasKeroseneLamp => _inventory.ContainItemType(Item.ItemType.KeroseneLamp);
     public IUsable UsableEnvironment {get; set;}
 
     private Inventory _inventory;
-    private bool _hasKeroseneKeroseneLamp => _inventory.ContainItemType(Item.ItemType.KeroseneLamp);
     private Vector2 _movementDirection = Vector2.zero;
     private bool _faceLeft = true;
 
@@ -184,15 +184,15 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
         if (_movementDirection.x >= 0 && _movementDirection.y > 0)
         {
-            _animationComponent.BackWalk(_hasKeroseneKeroseneLamp);
+            _animationComponent.BackWalk(HasKeroseneLamp);
         }
         else if (_movementDirection.x >= 0 && _movementDirection.y < 0)
         {
-            _animationComponent.FrontWalk(_hasKeroseneKeroseneLamp);
+            _animationComponent.FrontWalk(HasKeroseneLamp);
         }
         else if (_movementDirection.y == 0)
         {
-            _animationComponent.SideWalk(_hasKeroseneKeroseneLamp);
+            _animationComponent.SideWalk(HasKeroseneLamp);
         }
     }
 

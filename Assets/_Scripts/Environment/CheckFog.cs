@@ -1,3 +1,4 @@
+using _Scripts;
 using UnityEngine;
 
 public class CheckFog : MonoBehaviour
@@ -6,11 +7,12 @@ public class CheckFog : MonoBehaviour
     [SerializeField, Range(0, 10)] private float _checkRadius;
     [SerializeField, Range(0, 10)] private float _checkDistance;
     [SerializeField] private float _lightRadius;
+    [SerializeField, Range(1, 10)] private int _keroseneLampLightRadiusMultiplier;
     
     private RaycastHit2D[] _hit;
     private int _frames;
-    
-    void FixedUpdate()
+
+    private void FixedUpdate()
     {
         _frames++;
         if (_frames == 4)
@@ -27,7 +29,8 @@ public class CheckFog : MonoBehaviour
                     SpriteRenderer sprite = item.collider.transform.gameObject.GetComponent<SpriteRenderer>();
                     if (sprite != null)
                     {
-                        if (dis.sqrMagnitude < _lightRadius * _lightRadius)
+                        if (dis.sqrMagnitude < _lightRadius * _lightRadius *
+                            (GameManager.Instance.Player.HasKeroseneLamp ? _keroseneLampLightRadiusMultiplier : 1))
                         {
                             sprite.color = new Color(1.0f, 1.0f, 1.0f, 0f);
                         }

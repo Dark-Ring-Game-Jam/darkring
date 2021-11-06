@@ -349,3 +349,4 @@ MonoBehaviour:
   _checkRadius: 4
   _checkDistance: 4
   _lightRadius: 2
+  _keroseneLampLightRadiusMultiplier: 4
