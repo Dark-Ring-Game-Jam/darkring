@@ -1,12 +1,10 @@
 using System;
 using System.Collections.Generic;
-using System.Linq;
 using _Scripts;
 using _Scripts.Audio;
 using Components;
 using Spine.Unity;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 [RequireComponent(typeof(HealthComponent))]
 [RequireComponent(typeof(MovementComponent))]
@@ -24,6 +22,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
     public bool HasKeroseneLamp => _inventory.ContainItemType(Item.ItemType.KeroseneLamp);
     public IUsable UsableEnvironment {get; set;}
     public bool IsHide {get; private set;}
+    public int HealthPoints => _healthComponent.Health;
 
     private Inventory _inventory;
     private Vector2 _movementDirection = Vector2.zero;
@@ -72,26 +71,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _inventory = new Inventory();
         _UIInventory.SetPlayer(this);
         _UIInventory.SetInventory(_inventory);
-
-        //TODO - для проверки атаки (потом удалить)
-        //----------------------------------------------
-        /*ItemWorld.SpawnItemWorld(transform.position, new Item { Type = Item.ItemType.Batteriy, Amount = 2 });
-        ItemWorld.SpawnItemWorld(transform.position, new Item { Type = Item.ItemType.Flashlight, Amount = 1 });
-        ItemWorld.SpawnItemWorld(transform.position, new Item { Type = Item.ItemType.KeroseneLamp, Amount = 1 });*/
-        //----------------------------------------------
     }
-
-    //TODO - для проверки атаки (потом удалить)
-    //----------------------------------------------
-    /*private void OnTriggerEnter2D(Collider2D collider)
-    {
-        if (collider.TryGetComponent(out ItemWorld item))
-        {
-            _inventory.AddItem(item.GetItem());
-            item.DestroySelf();
-        }
-    }*/
-    //----------------------------------------------
 
     private void Update()
     {
@@ -119,6 +99,11 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     #endregion Default
 
+    public void SetHealthPoints(int health)
+    {
+        _healthComponent.SetHealth(health);
+    }
+    
     public void TakeDamage(int damage)
     {
         _healthComponent.TakeDamage(damage);
@@ -255,8 +240,19 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _smokeComponent.OnSmoke -= _animationComponent.Smoke;
     }
 
-    public Vector3 GetPosition()
+    private Vector3 GetPosition()
     {
         return transform.position;
+    }
+
+    private void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.gameObject.TryGetComponent(out PlayerSpawnPoint spawnPoint) && !spawnPoint.IsUsed)
+        {
+            GameManager.Instance.Save(spawnPoint.GetPosition());
+            spawnPoint.SetUsed();
+            
+            // TODO - вывести надпись при сохранении
+        }
     }
 }

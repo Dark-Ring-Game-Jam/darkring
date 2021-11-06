@@ -28,5 +28,10 @@ namespace Components
 				OnDeath?.Invoke();
 			}
 		}
+
+		public void SetHealth(int health)
+		{
+			Health = health;
+		}
 	}
 }

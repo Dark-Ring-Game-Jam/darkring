@@ -17,5 +17,10 @@ namespace _Scripts
 			Gizmos.color = Color.red;
 			Gizmos.DrawWireCube(transform.position, transform.localScale);
 		}
+		
+		public Vector3 GetPosition()
+		{
+			return transform.position;
+		}
 	}
 }
