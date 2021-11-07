@@ -123,8 +123,6 @@ namespace _Scripts
 
 		private void Initialize(SaveData data, int inventoryNotes)
 		{
-			var notesDiff = inventoryNotes - _player.Inventory.ItemCount(Item.ItemType.Note);
-
 			_player.SetHealthPoints(data.PlayerHealthPoints);
 
 			_player.Inventory.ItemList.Clear();
@@ -133,6 +131,7 @@ namespace _Scripts
 				_player.Inventory.AddItem(savedItem);
 			}
 
+			var notesDiff = inventoryNotes - _player.Inventory.ItemCount(Item.ItemType.Note);
 			if (notesDiff > 0)
 			{
 				_player.Inventory.AddItem(new Item { Type = Item.ItemType.Note, Amount = notesDiff });
