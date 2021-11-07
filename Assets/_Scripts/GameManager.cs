@@ -96,7 +96,12 @@ namespace _Scripts
 
 		private int RestoreItems(SaveData data)
 		{
-			foreach (var item in _levelItems)
+			var itemsToRestore = _player.Inventory.ItemList
+				.Where(x => !(x is Note))
+				.SelectMany(x => x.Ids).Except(data.Items.SelectMany(y => y.Ids))
+				.ToList();
+			
+			foreach (var itemToRestore in itemsToRestore)
 			{
 				var hasId = item.GetComponent<IHasId>();
 				var isInventoryHas = false;
@@ -145,7 +150,6 @@ namespace _Scripts
 			{
 				_player.Inventory.AddItem(new Item { Type = Item.ItemType.Note, Amount = notesDiff });
 			}
-
 
 			_playerSpawnPoint = data.SpawnPoint;
 			_player.transform.position = _playerSpawnPoint;

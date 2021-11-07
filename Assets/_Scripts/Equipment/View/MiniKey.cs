@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 
 namespace _Scripts
@@ -13,7 +14,7 @@ namespace _Scripts
 			{
 				var key = new Key();
 				player.Inventory.AddItem(key);
-				Id = GameManager.Instance.GlobalIdCounter++;
+				Id = key.Ids.First();
 				player.PlayPickUpSound();
 				gameObject.SetActive(false);
 				//Destroy(gameObject);
