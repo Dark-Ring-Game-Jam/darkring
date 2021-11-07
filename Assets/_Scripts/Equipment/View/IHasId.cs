@@ -2,5 +2,5 @@ using System;
 
 public interface IHasId
 {
-    public Guid Id { get; }
+    public int Id { get; }
 }

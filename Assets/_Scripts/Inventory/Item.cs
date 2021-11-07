@@ -20,28 +20,28 @@ public class Item
     public int Amount;
     public List<Guid> Ids;
 
-    public Item()
+    public Sprite GetSprite()
     {
         Ids = new List<Guid> { Guid.NewGuid() };
     }
     
     public Sprite GetSprite() 
     {
-        switch (Type) 
+        switch (Type)
         {
-            case ItemType.Note:        
+            case ItemType.Note:
                 return ItemAssets.Instance.NoteSprite;
-            case ItemType.Candle: 
+            case ItemType.Candle:
                 return ItemAssets.Instance.CandleSprite;
-            case ItemType.InsulatingTape:   
+            case ItemType.InsulatingTape:
                 return ItemAssets.Instance.InsulatingTapeSprite;
-            case ItemType.KeroseneLamp:         
+            case ItemType.KeroseneLamp:
                 return ItemAssets.Instance.KeroseneLampSprite;
-            case ItemType.Flashlight:       
+            case ItemType.Flashlight:
                 return ItemAssets.Instance.FlashlightSprite;
-            case ItemType.Key:       
+            case ItemType.Key:
                 return ItemAssets.Instance.KeySprite;
-            case ItemType.Batteriy:       
+            case ItemType.Batteriy:
                 return ItemAssets.Instance.BatterySprite;
             default:
                 return ItemAssets.Instance.EmptySprite;
@@ -54,7 +54,7 @@ public class Item
         {
             return ItemAssets.Instance.EmptySprite;
         }
-        
+
         switch (Amount)
         {
             case 1:
@@ -80,9 +80,9 @@ public class Item
         }
     }
 
-    public bool IsStackable() 
+    public bool IsStackable()
     {
-        switch (Type) 
+        switch (Type)
         {
             case ItemType.Note:
             case ItemType.Candle:

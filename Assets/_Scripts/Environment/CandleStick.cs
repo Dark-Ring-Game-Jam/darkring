@@ -53,7 +53,7 @@ namespace _Scripts
 
 		private void OnTriggerEnter2D(Collider2D other)
 		{
-			if ( _isActive && other.TryGetComponent(out Enemy enemy))
+			if ( _isActive && other != null && other.TryGetComponent(out Enemy enemy))
 			{
 				enemy.TakeDamage(enemy.Health);
 			}

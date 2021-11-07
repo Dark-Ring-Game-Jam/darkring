@@ -5,15 +5,15 @@ using System.Linq;
 [Serializable]
 public class Inventory
 {
-    public event EventHandler OnItemListChanged;
-    public List<Item> ItemList =>_itemList;
+	public event EventHandler OnItemListChanged;
+	public List<Item> ItemList => _itemList;
 
-    private List<Item> _itemList;
+	private List<Item> _itemList;
 
-    public Inventory()
-    {
-        _itemList = new List<Item>();
-    }
+	public Inventory()
+	{
+		_itemList = new List<Item>();
+	}
 
     public void AddItem(Item item)
     {
@@ -41,37 +41,37 @@ public class Inventory
             _itemList.Add(item);
         }
 
-        OnItemListChanged?.Invoke(this, EventArgs.Empty);
-    }
+		OnItemListChanged?.Invoke(this, EventArgs.Empty);
+	}
 
-    public bool ContainItemType(Item.ItemType itemType)
-    {
-        return _itemList.Any(item => item.Type == itemType);
-    }
+	public bool ContainItemType(Item.ItemType itemType)
+	{
+		return _itemList.Any(item => item.Type == itemType);
+	}
 
-    public int ItemCount(Item.ItemType itemType)
-    {
-        return TryGetItem(itemType, out var item) ? item.Amount : 0;
+	public int ItemCount(Item.ItemType itemType)
+	{
+		return TryGetItem(itemType, out var item) ? item.Amount : 0;
 
-    }
+	}
 
-    public bool TryGetItem(Item.ItemType itemType, out Item item)
-    {
-        if (ContainItemType(itemType))
-        {
-            foreach (var existItem in _itemList.Where(existItem => existItem.Type == itemType))
-            {
-                item = existItem;
+	public bool TryGetItem(Item.ItemType itemType, out Item item)
+	{
+		if (ContainItemType(itemType))
+		{
+			foreach (var existItem in _itemList.Where(existItem => existItem.Type == itemType))
+			{
+				item = existItem;
 
-                return true;
-            }
-        }
+				return true;
+			}
+		}
 
-        item = default;
+		item = default;
 
-        return false;
-    }
-
+		return false;
+	}
+  
     public void RemoveItem(Item item)
     {
         if (item.IsStackable())
