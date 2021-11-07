@@ -82,14 +82,34 @@ namespace _Scripts
 			}
 			else
 			{
-				_player.Init();
 				var data = SaveGame.Load(_gameIdentifier, new SaveData(_playerSpawnPoint, _player.Inventory.ItemList, _player.HealthPoints));
-				Initialize(data);
+				var inventoryNotes = RestoreItems(data);
+				
+				_player.Init();
+				
+				Initialize(data, inventoryNotes);
 
 				_enemySpawnPointsController.DestroyAllEnemies();
 			}
 		}
 
+		private int RestoreItems(SaveData data)
+		{
+			var itemsToRestore = _player.Inventory.ItemList
+				.Where(x => !(x is Note))
+				.Select(x => x.Id).Except(data.Items.Select(y => y.Id))
+				.ToList();
+			
+			foreach (var itemToRestore in itemsToRestore)
+			{
+				var item = _levelItems.FirstOrDefault(x =>
+					x.gameObject.TryGetComponent<IHasId>(out var itemWithId) && itemWithId.Id.Equals(itemToRestore));
+				item?.SetActive(true);
+			}
+
+			return _player.Inventory.ItemCount(Item.ItemType.Note);
+		}
+		
 		public void Reset()
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -100,24 +120,22 @@ namespace _Scripts
 			_deathScreen.SetActive(true);
 		}
 
-		private void Initialize(SaveData data)
+		private void Initialize(SaveData data, int inventoryNotes)
 		{
 			_player.SetHealthPoints(data.PlayerHealthPoints);
+
 			_player.Inventory.ItemList.Clear();
-			foreach (var item in data.Items)
+			foreach (var savedItem in data.Items)
 			{
-				_player.Inventory.AddItem(item);
-
-				if (item is Note)
-				{
-					continue;
-				}
-
-				foreach (var levelItem in _levelItems.Where(x => x.gameObject.TryGetComponent<IHasId>(out var itemWithId) && itemWithId.Id.Equals(item.Id)))
-				{
-					levelItem.SetActive(true);
-				}
+				_player.Inventory.AddItem(savedItem);
 			}
+
+			var notesDiff = inventoryNotes - _player.Inventory.ItemCount(Item.ItemType.Note);
+			if (notesDiff > 0)
+			{
+				_player.Inventory.AddItem(new Item { Type = Item.ItemType.Note, Amount = notesDiff });
+			}
+			
 
 			_playerSpawnPoint = data.SpawnPoint;
 			_player.transform.position = _playerSpawnPoint;
