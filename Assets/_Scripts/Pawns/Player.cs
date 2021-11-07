@@ -198,7 +198,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
             {
                 _isUsing = true;
                 _usingCooldownCoroutine = StartCoroutine(UsingCooldownCoroutine());
-                if (UsableEnvironment is Doors)
+                if (UsableEnvironment is Doors || UsableEnvironment is Cupboard)
                 {
                     _characterSounds.PlayOpenDoorSound();
                 }

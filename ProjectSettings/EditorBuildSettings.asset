@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/ComicBook.unity
+    guid: 828d9248c34b54872b02f045e8639774
+  - enabled: 1
     path: Assets/darkring.unity
     guid: 62b4fc8da24b3ff4a816830ae27ca2ba
   - enabled: 0
