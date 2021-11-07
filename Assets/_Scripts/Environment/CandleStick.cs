@@ -66,7 +66,7 @@ namespace _Scripts
 
 		private void OnCollisionEnter2D(Collision2D other)
 		{
-			if (other.collider.TryGetComponent(out Player player))
+			if (_isActive == false && other.collider.TryGetComponent(out Player player))
 			{
 				player.UsableEnvironment = this;
 			}

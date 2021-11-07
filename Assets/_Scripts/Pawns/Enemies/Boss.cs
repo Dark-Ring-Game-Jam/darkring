@@ -27,6 +27,7 @@ namespace _Scripts
 		private float _currentAbilityCooldown;
 		private Player _player;
 		private bool _isUseAbility;
+		private bool _isDie;
 
 		private void Start()
 		{
@@ -71,7 +72,7 @@ namespace _Scripts
 					_attackComponent.Attack(enemy);
 				}
 			}
-			else if (_attackComponent.IsAttacking == false && _isUseAbility == false)
+			else if (_attackComponent.IsAttacking == false && _isUseAbility == false && _isDie == false)
 			{
 				_bossAnimationComponent.Run();
 			}
@@ -108,13 +109,16 @@ namespace _Scripts
 
 		private IEnumerator DeferredDie()
 		{
+			_isDie = true;
 			_bossAnimationComponent.Die();
+			_attackComponent.StopAttack();
 			_attackComponent.enabled = false;
 			_destinationSetter.enabled = false;
+			GetComponent<Seeker>().enabled = false;
 
 			yield return new WaitForSeconds(_delayToDie);
 
-			Destroy(_finalDoor);
+			Destroy(_finalDoor.gameObject);
 
 			Destroy(gameObject);
 		}
