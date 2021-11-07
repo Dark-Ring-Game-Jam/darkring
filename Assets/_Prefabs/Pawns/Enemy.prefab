@@ -394,6 +394,7 @@ MonoBehaviour:
   deathClip: {fileID: 8300000, guid: 2c27b324cc4834206850cee492f5e563, type: 3}
   stepClip: {fileID: 0}
   attackClip: {fileID: 8300000, guid: 5b158208717ab4755a0e2e1966397dfd, type: 3}
+  openDoorClip: {fileID: 0}
   setSoundCooldown: 0.5
 --- !u!1 &1661527593414290088
 GameObject:
