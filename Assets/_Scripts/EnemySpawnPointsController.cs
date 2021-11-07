@@ -31,6 +31,7 @@ namespace _Scripts
 
 		public void AddEnemy(Enemy enemy)
 		{
+			enemy.OnDie += DeleteEnemy;
 			_enemyList.Add(enemy);
 		}
 
@@ -38,7 +39,10 @@ namespace _Scripts
 		{
 			foreach (var enemy in _enemyList)
 			{
-				Destroy(enemy.gameObject);
+				if (enemy != null)
+				{
+					Destroy(enemy.gameObject);
+				}
 			}
 
 			_enemyList.Clear();
