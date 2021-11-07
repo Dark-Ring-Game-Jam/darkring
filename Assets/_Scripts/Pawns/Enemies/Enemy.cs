@@ -44,7 +44,7 @@ namespace _Scripts
 
 		private void Update()
 		{
-			if (_attackComponent.CanAttack(_targetTransform.position) && _attackComponent.IsAttacking == false)
+			if (_attackComponent.CanAttack(_targetTransform.position) && _attackComponent.IsAttacking == false && _target.IsHide == false)
 			{
 				if (!_target.GetComponent<HealthComponent>().IsDead)
 				{

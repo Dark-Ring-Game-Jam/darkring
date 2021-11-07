@@ -33,7 +33,7 @@ namespace Components
 			}
 		}
 
-		private IEnumerator AttackCoroutine(Dictionary<ICanBeAttacked, Vector2>  canBeAttacked)
+		private IEnumerator AttackCoroutine(Dictionary<ICanBeAttacked, Vector2> canBeAttacked)
 		{
 			yield return new WaitForSeconds(_delayToAttack);
 

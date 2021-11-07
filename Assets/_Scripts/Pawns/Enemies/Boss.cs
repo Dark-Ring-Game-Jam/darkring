@@ -59,7 +59,7 @@ namespace _Scripts
 				_currentAbilityCooldown -= Time.deltaTime;
 			}
 
-			if (_attackComponent.CanAttack(_player.transform.position) && _attackComponent.IsAttacking == false)
+			if (_attackComponent.CanAttack(_player.transform.position) && _attackComponent.IsAttacking == false && _player.IsHide == false)
 			{
 				if (!_player.GetComponent<HealthComponent>().IsDead)
 				{
