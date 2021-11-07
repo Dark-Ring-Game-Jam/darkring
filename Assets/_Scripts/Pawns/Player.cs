@@ -102,10 +102,6 @@ public class Player : MonoBehaviour, ICanBeAttacked
                 ProcessInteractions();
             }
         }
-        else
-        {
-            // TODO - закончить игру (через GameManager?)
-        }
     }
 
     private void FixedUpdate()
@@ -247,7 +243,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     private void ProcessAnimation()
     {
-        if (IsBusy())
+        if (IsBusy() || _isReadNote)
         {
             return;
         }
