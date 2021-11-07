@@ -263,7 +263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _distanceToAttack: 1
-  _delayToAttack: 0.7
+  _delayToAttack: 2
   _damage: 1
 --- !u!114 &420826807445575808
 MonoBehaviour:
@@ -280,7 +280,7 @@ MonoBehaviour:
   _aiDestinationSetter: {fileID: 5966204868880962636}
   _aiPath: {fileID: 8878621441252326647}
   _distanceToAggro: 10
-  _percentFromTargetSpeed: 1.45
+  _percentFromTargetSpeed: 1.15
 --- !u!82 &6553416136315355090
 AudioSource:
   m_ObjectHideFlags: 0

@@ -60,6 +60,8 @@ namespace _Scripts
 			{
 				_animationComponent.Idle();
 			}
+
+			_aiComponent.enabled = !_attackComponent.IsAttacking;
 		}
 
 		public void SetHidePlayer(bool active)

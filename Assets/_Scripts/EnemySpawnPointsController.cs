@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -49,31 +50,31 @@ namespace _Scripts
 			}
 		}
 
+		private void Update()
+		{
+			if (_enemyList.Count <= 0)
+			{
+				StartCoroutine(SpawnEnemy());
+			}
+		}
+
 		private IEnumerator SpawnEnemy()
 		{
-			while (true)
+			yield return new WaitForSeconds(_secondsToSpawn);
+
+			foreach (var spawnPoint in _littleEnemySpawnPoints)
 			{
-				yield return new WaitForSeconds(_secondsToSpawn);
+				SpawnEnemy(spawnPoint);
+			}
 
-				if (_enemyList.Count > 0)
-				{
-					continue;
-				}
-
-				foreach (var spawnPoint in _littleEnemySpawnPoints)
+			if (_isCanSpawnBig)
+			{
+				foreach (var spawnPoint in _bigEnemySpawnPoints)
 				{
 					SpawnEnemy(spawnPoint);
 				}
-
-				if (_isCanSpawnBig)
-				{
-					foreach (var spawnPoint in _bigEnemySpawnPoints)
-					{
-						SpawnEnemy(spawnPoint);
-					}
-				}
-
 			}
+
 		}
 
 		private void SpawnEnemy(SpawnPoint spawnPoint)
