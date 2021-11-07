@@ -11,7 +11,7 @@ namespace _Scripts
 		[SerializeField] private SpawnPoint[] _bigEnemySpawnPoints;
 
 		private readonly List<Enemy> _enemyList = new List<Enemy>();
-		private bool _isCanSpawnBig;
+		private bool _isCanSpawnBig = false;
 
 		private void Start()
 		{

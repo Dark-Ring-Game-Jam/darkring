@@ -27,11 +27,11 @@ namespace _Scripts
 
 			if (player.IsHide)
 			{
-				enemiesController.StopEnemies();
+				enemiesController.RunEnemies();
 			}
 			else
 			{
-				enemiesController.RunEnemies();
+				enemiesController.StopEnemies();
 			}
 
 			player.SetHidePlayer(!player.IsHide);

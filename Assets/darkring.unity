@@ -63372,6 +63372,10 @@ PrefabInstance:
       propertyPath: _itemSlotContainer
       value: 
       objectReference: {fileID: 863872348}
+    - target: {fileID: 4683615663428079051, guid: fa691be1e9ffb0043b05f0065fba7729, type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: fa691be1e9ffb0043b05f0065fba7729, type: 3}
 --- !u!1001 &3651617649754771303

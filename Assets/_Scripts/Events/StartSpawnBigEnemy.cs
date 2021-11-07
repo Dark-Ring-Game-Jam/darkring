@@ -6,8 +6,11 @@ namespace _Scripts.Events
 	{
 		private void OnTriggerEnter2D(Collider2D other)
 		{
-			GameManager.Instance.StartSpawnBigEnemy();
-			Destroy(gameObject);
+			if (other.TryGetComponent(out Player _))
+			{
+				GameManager.Instance.StartSpawnBigEnemy();
+				Destroy(gameObject);
+			}
 		}
 	}
 }

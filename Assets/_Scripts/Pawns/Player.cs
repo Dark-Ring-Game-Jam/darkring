@@ -18,7 +18,6 @@ public class Player : MonoBehaviour, ICanBeAttacked
     #region Fields
 
     public float Speed => _movementComponent.Speed;
-    public Vector2 NormalizedDirection => _movementDirection.normalized;
     public Inventory Inventory => _inventory;
     public bool HasKeroseneLamp => _inventory.ContainItemType(Item.ItemType.KeroseneLamp);
     public IUsable UsableEnvironment {get; set;}
@@ -38,6 +37,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
     private SmokeComponent _smokeComponent;
     private CharacterSounds _characterSounds;
     private PhrasesComponent _phrasesComponent;
+    private ButtonComponent _buttonComponent;
 
 
     [Header("Common")]
@@ -72,6 +72,9 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _smokeComponent = GetComponent<SmokeComponent>();
         _characterSounds = GetComponent<CharacterSounds>();
         _phrasesComponent = GetComponent<PhrasesComponent>();
+        _buttonComponent = GetComponent<ButtonComponent>();
+
+        _buttonComponent.SetButtonActive(false);
 
         _animationComponent.InitMainCharacterAnimation(2f, 2f, _skeletonAnimation);
 
@@ -89,6 +92,8 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     private void Update()
     {
+        _buttonComponent.SetButtonActive(UsableEnvironment != null);
+
         if (!_healthComponent.IsDead)
         {
             if (IsBusy() == false)
@@ -116,6 +121,11 @@ public class Player : MonoBehaviour, ICanBeAttacked
     public void SetHealthPoints(int health)
     {
         _healthComponent.SetHealth(health);
+    }
+
+    public void SetButtonActive(bool active)
+    {
+        _buttonComponent.SetButtonActive(active);
     }
 
     public void TakeDamage(int damage)
@@ -271,7 +281,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _healthComponent.OnDeath -= Die;
         _attackComponent.OnAttack -= _animationComponent.Attack;
         _smokeComponent.OnSmoke -= _animationComponent.Smoke;
-        
+
         GameManager.Instance.ShowDeathScreen();
     }
 

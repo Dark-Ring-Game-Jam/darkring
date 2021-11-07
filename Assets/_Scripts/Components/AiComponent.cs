@@ -39,18 +39,18 @@ namespace Components
 			var normalized = (position - _aiPath.steeringTarget).normalized;
 			var isToFar = Vector2.Distance(_target.position, position) > _distanceToAggro;
 
-			if ((isToFar && _isReached) || IsPlayerHide)
+			if ((isToFar || IsPlayerHide) && _isReached)
 			{
 				_aiDestinationSetter.target = GameManager.Instance.PatrolPointsController.GetRandomPatrolPoint();
 
 				_isReached = false;
 			}
-			else if(isToFar == false)
+			else if(isToFar == false && IsPlayerHide == false)
 			{
 				_aiDestinationSetter.target = _target;
 			}
 
-			if (isToFar && _aiPath.remainingDistance <= 1f)
+			if ((isToFar || IsPlayerHide) && _aiPath.remainingDistance <= 1f)
 			{
 				_isReached = true;
 			}
