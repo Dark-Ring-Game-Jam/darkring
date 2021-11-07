@@ -2,6 +2,7 @@
 using System.Runtime.CompilerServices;
 using BayatGames.SaveGameFree;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 namespace _Scripts
 {
@@ -74,14 +75,7 @@ namespace _Scripts
 
 		public void Reset()
 		{
-			_deathScreen.SetActive(false);
-			_player.Inventory.ItemList.Clear();
-			_player.SetHealthPoints(_defaultHealthPoints);
-			
-			// TODO - перезагрузить туман войны
-
-			Save(_defaultPlayerSpawnPoint);
-			Load();
+			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 
 		public void ShowDeathScreen()
