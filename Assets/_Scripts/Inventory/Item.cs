@@ -20,7 +20,7 @@ public class Item
     public int Amount;
     public List<Guid> Ids;
 
-    public Sprite GetSprite()
+    public Item()
     {
         Ids = new List<Guid> { Guid.NewGuid() };
     }

@@ -103,22 +103,9 @@ namespace _Scripts
 			
 			foreach (var itemToRestore in itemsToRestore)
 			{
-				var hasId = item.GetComponent<IHasId>();
-				var isInventoryHas = false;
-
-				foreach (var inventoryItem in data.Items)
-				{
-					if (inventoryItem.Id == hasId.Id || inventoryItem.Type == Item.ItemType.Note)
-					{
-						isInventoryHas = true;
-						break;
-					}
-				}
-
-				if (isInventoryHas == false)
-				{
-					item.SetActive(true);
-				}
+				var item = _levelItems.FirstOrDefault(x =>
+					x.gameObject.TryGetComponent<IHasId>(out var itemWithId) && itemWithId.Id.Equals(itemToRestore));
+				item?.SetActive(true);
 			}
 
 			return _player.Inventory.ItemCount(Item.ItemType.Note);

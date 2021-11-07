@@ -6,7 +6,7 @@ namespace _Scripts
 {
 	public class MiniKey : MonoBehaviour, IHasId
 	{
-		public int Id { get; private set; }
+		public Guid Id { get; private set; }
 
 		private void OnTriggerEnter2D(Collider2D other)
 		{

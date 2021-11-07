@@ -9,7 +9,7 @@ namespace _Scripts
 	{
 		[SerializeField] private TMP_Text _text;
 
-		public int Id { get; private set; }
+		public Guid Id { get; private set; }
 
 		private void OnTriggerEnter2D(Collider2D other)
 		{
