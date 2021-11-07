@@ -181,7 +181,11 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     private void ProcessInteractions()
     {
-        if (Input.GetKey(KeyCode.E) && _inventory.ContainItemType(Item.ItemType.Batteriy) && _inventory.ContainItemType(Item.ItemType.Flashlight))
+        if (Input.GetKey(KeyCode.Escape))
+        {
+            GameManager.Instance.ShowMenuScreen(true);
+        }
+        else if (Input.GetKey(KeyCode.E) && _inventory.ContainItemType(Item.ItemType.Batteriy) && _inventory.ContainItemType(Item.ItemType.Flashlight))
         {
             Attack();
         }
@@ -283,7 +287,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _attackComponent.OnAttack -= _animationComponent.Attack;
         _smokeComponent.OnSmoke -= _animationComponent.Smoke;
 
-        GameManager.Instance.ShowDeathScreen();
+        GameManager.Instance.ShowMenuScreen();
     }
 
     private Vector3 GetPosition()

@@ -4,6 +4,7 @@ using System.Linq;
 using BayatGames.SaveGameFree;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.Serialization;
 
 namespace _Scripts
 {
@@ -26,7 +27,9 @@ namespace _Scripts
 		[Header("UI")]
 		[SerializeField] private NoteView _noteViewPrefab;
 		[SerializeField] private Canvas _canvas;
-		[SerializeField] private GameObject _deathScreen;
+		[SerializeField] private GameObject _menuScreen;
+		[SerializeField] private GameObject _deathTitle;
+		[SerializeField] private GameObject _menuTitle;
 
 		[Header("Fog")]
 		[SerializeField] private Vector2 _startPosition;
@@ -52,7 +55,7 @@ namespace _Scripts
 			_defaultPlayerSpawnPoint = _playerSpawnPoint;
 
 			FogTile.FillTheMap(_startPosition, _width, _height, _fogTile, _fogAnchor);
-			_deathScreen.SetActive(false);
+			_menuScreen.SetActive(false);
 
 			if (_levelItems == null)
 			{
@@ -79,7 +82,7 @@ namespace _Scripts
 
 		public void Load()
 		{
-			_deathScreen.SetActive(false);
+			_menuScreen.SetActive(false);
 			if (_defaultPlayerSpawnPoint == _playerSpawnPoint)
 			{
 				Reset();
@@ -120,9 +123,12 @@ namespace _Scripts
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 
-		public void ShowDeathScreen()
+		public void ShowMenuScreen(bool isMenu = false)
 		{
-			_deathScreen.SetActive(true);
+			_deathTitle.SetActive(!isMenu);
+			_menuTitle.SetActive(isMenu);
+
+			_menuScreen.SetActive(true);
 		}
 
 		private void Initialize(SaveData data, int inventoryNotes)
