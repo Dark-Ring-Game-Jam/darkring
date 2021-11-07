@@ -21,12 +21,14 @@ namespace Components
 		private Transform _parentTransform;
 		private bool _isReached = true;
 		private CharacterSounds _characterSounds;
+		private float _maxSpeed;
 
 		public void Init(Player target)
 		{
 			_parentTransform = transform.parent;
 			_target = target.transform;
 			_targetSpeed = target.Speed;
+			_maxSpeed = _targetSpeed * 1.5f;
 			_aiPath.maxSpeed = _targetSpeed * _percentFromTargetSpeed;
 			_aiDestinationSetter.target = _target;
 
@@ -65,7 +67,15 @@ namespace Components
 
 		public void IncreaseSpeed(float value)
 		{
-			_aiPath.maxSpeed += _targetSpeed * value;
+			if (_aiPath.maxSpeed >= _maxSpeed)
+			{
+				_aiPath.maxSpeed = _maxSpeed;
+			}
+			else
+			{
+				_aiPath.maxSpeed += _targetSpeed * value;
+			}
+
 		}
 
 		public void ResetSpeed()
