@@ -107,6 +107,12 @@ namespace _Scripts
 			foreach (var item in data.Items)
 			{
 				_player.Inventory.AddItem(item);
+
+				if (item is Note)
+				{
+					continue;
+				}
+
 				foreach (var levelItem in _levelItems.Where(x => x.gameObject.TryGetComponent<IHasId>(out var itemWithId) && itemWithId.Id.Equals(item.Id)))
 				{
 					levelItem.SetActive(true);

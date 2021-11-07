@@ -9,7 +9,7 @@ namespace _Scripts.Events
 
 		private void Update()
 		{
-			if (_noteView == null)
+			if (_noteView.gameObject.activeSelf == false)
 			{
 				foreach (var door in _doors)
 				{

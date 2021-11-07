@@ -27,6 +27,7 @@ namespace _Scripts
 			if (inventory.ContainItemType(Item.ItemType.KeroseneLamp))
 			{
 				_candleStick.Active();
+				inventory.RemoveItem(new Item { Type = Item.ItemType.KeroseneLamp, Amount = 1 });
 			}
 			else
 			{

@@ -11,7 +11,7 @@ namespace _Scripts.Events
 
 		private void Update()
 		{
-			if (_noteView == null)
+			if (_noteView.gameObject.activeSelf == false)
 			{
 				var enemy = _spawnPoint.Spawn<BigEnemy>();
 				GameManager.Instance.AddEnemy(enemy);
