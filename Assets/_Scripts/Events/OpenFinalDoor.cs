@@ -4,7 +4,7 @@ namespace _Scripts.Events
 {
 	public class OpenFinalDoor : MonoBehaviour
 	{
-		[SerializeField] private Doors _doors;
+		[SerializeField] private FinalDoor _finalDoor;
 		[SerializeField] private Table[] _tables;
 
 		private int _tapeCount;
@@ -28,7 +28,7 @@ namespace _Scripts.Events
 					table.OnUse -= AddTape;
 				}
 
-				Destroy(_doors.gameObject);
+				Destroy(_finalDoor.gameObject);
 				Destroy(gameObject);
 			}
 		}
