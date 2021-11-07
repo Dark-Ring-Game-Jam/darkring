@@ -8,15 +8,15 @@ namespace _Scripts
 	public class GameManager : MonoBehaviour
 	{
 		private static string _gameIdentifier = "darkring";
-		
+
 		[Header("Main")]
 		[SerializeField] private Player _player;
 		[SerializeField] private Vector3 _playerSpawnPoint;
-		
+
 		[Header("AI")]
 		[SerializeField] private PatrolPointsController _patrolPointsController;
 		[SerializeField] private EnemySpawnPointsController _enemySpawnPointsController;
-		
+
 		[Header("UI")]
 		[SerializeField] private NoteView _noteViewPrefab;
 		[SerializeField] private Canvas _canvas;
@@ -43,14 +43,16 @@ namespace _Scripts
 			FogTile.FillTheMap(_startPosition, _width, _height, _fogTile, _fogAnchor);
 		}
 
+		public void StartSpawnBigEnemy() => _enemySpawnPointsController.StartSpawnBigEnemy();
+
 		#region Save/Load/Reset
-		
+
 		public void Save(Vector3 playerSpawnPoint)
 		{
 			_playerSpawnPoint = playerSpawnPoint;
 			SaveGame.Save(_gameIdentifier, new SaveData(playerSpawnPoint, _player.Inventory.ItemList, _player.HealthPoints));
 		}
-    
+
 		public void Load()
 		{
 			var data = SaveGame.Load(_gameIdentifier, new SaveData(_playerSpawnPoint, _player.Inventory.ItemList, _player.HealthPoints));
@@ -77,7 +79,7 @@ namespace _Scripts
 			_playerSpawnPoint = data.SpawnPoint;
 			_player.transform.position = _playerSpawnPoint;
 		}
-		
+
 		#endregion Save/Load/Reset
 	}
 }

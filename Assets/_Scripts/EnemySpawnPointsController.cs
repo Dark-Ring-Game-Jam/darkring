@@ -21,6 +21,11 @@ namespace _Scripts
 		public void StopEnemies() => SetEnemiesActive(true);
 		public void RunEnemies() => SetEnemiesActive(false);
 
+		public void StartSpawnBigEnemy()
+		{
+			_isCanSpawnBig = true;
+		}
+
 		private void SetEnemiesActive(bool active)
 		{
 			foreach (var enemy in _enemyList)

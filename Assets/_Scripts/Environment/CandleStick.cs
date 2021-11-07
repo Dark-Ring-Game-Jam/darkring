@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using Spine.Unity;
 using UnityEngine;
 
@@ -27,6 +28,10 @@ namespace _Scripts
 				Active();
 				inventory.RemoveItem(new Item { Type = Item.ItemType.Candle, Amount = 1 });
 			}
+			else
+			{
+				GameManager.Instance.Player.SetText("Мне нужна свечка");
+			}
 		}
 
 		public void Active()
@@ -48,11 +53,6 @@ namespace _Scripts
 
 		private void OnTriggerEnter2D(Collider2D other)
 		{
-			if (other.TryGetComponent(out Player player))
-			{
-				player.UsableEnvironment = this;
-			}
-
 			if ( _isActive && other.TryGetComponent(out Enemy enemy) && enemy is BigEnemy == false)
 			{
 				enemy.TakeDamage(enemy.Health);
@@ -64,9 +64,17 @@ namespace _Scripts
 			}
 		}
 
-		private void OnTriggerExit2D(Collider2D other)
+		private void OnCollisionEnter2D(Collision2D other)
 		{
-			if (other.TryGetComponent(out Player player) && player.UsableEnvironment?.Equals(this) == true)
+			if (other.collider.TryGetComponent(out Player player))
+			{
+				player.UsableEnvironment = this;
+			}
+		}
+
+		private void OnCollisionExit2D(Collision2D other)
+		{
+			if (other.collider.TryGetComponent(out Player player) && player.UsableEnvironment?.Equals(this) == true)
 			{
 				player.UsableEnvironment = null;
 			}

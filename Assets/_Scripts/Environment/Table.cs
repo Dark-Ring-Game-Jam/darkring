@@ -1,10 +1,13 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace _Scripts
 {
 	public class Table : MonoBehaviour, IUsable
 	{
 		[SerializeField] private SpriteRenderer _spriteRenderer;
+
+		public event Action OnUse;
 
 		private bool _isActive;
 
@@ -15,6 +18,11 @@ namespace _Scripts
 				_spriteRenderer.enabled = true;
 				_isActive = true;
 				inventory.RemoveItem(new Item { Type = Item.ItemType.InsulatingTape, Amount = 1 });
+				OnUse?.Invoke();
+			}
+			else
+			{
+				GameManager.Instance.Player.SetText("Мне нужна изолента");
 			}
 			else
 			{
