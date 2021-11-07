@@ -6,6 +6,7 @@ TagManager:
   tags:
   - hero
   - torch
+  - equipment
   layers:
   - Default
   - TransparentFX
