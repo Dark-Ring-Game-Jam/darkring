@@ -15,6 +15,7 @@ namespace _Scripts.Events
 			{
 				var enemy = _spawnPoint.Spawn<BigEnemy>();
 				GameManager.Instance.AddEnemy(enemy);
+				GameManager.Instance.Player.PlayDoorsSound();
 				Destroy(_doors.gameObject);
 				Destroy(_smoke.gameObject);
 				Destroy(gameObject);

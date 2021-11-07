@@ -14,6 +14,7 @@ namespace _Scripts
 				var key = new Key();
 				player.Inventory.AddItem(key);
 				Id = key.Id;
+				player.PlayPickUpSound();
 				gameObject.SetActive(false);
 				//Destroy(gameObject);
 			}

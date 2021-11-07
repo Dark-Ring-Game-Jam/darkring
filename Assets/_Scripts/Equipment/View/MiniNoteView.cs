@@ -7,7 +7,7 @@ namespace _Scripts
 	public class MiniNoteView : MonoBehaviour, IHasId
 	{
 		[SerializeField] private TMP_Text _text;
-		
+
 		public Guid Id { get; private set; }
 
 		private void OnTriggerEnter2D(Collider2D other)
@@ -19,6 +19,7 @@ namespace _Scripts
 				GameManager.Instance.Player.UsableEnvironment = note.NoteView;
 				Time.timeScale = 0;
 				Id = note.Id;
+				player.PlayPickUpSound();
 				gameObject.SetActive(false);
 				//Destroy(gameObject);
 			}

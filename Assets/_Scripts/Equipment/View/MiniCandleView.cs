@@ -14,6 +14,7 @@ namespace _Scripts
 				var candle = new Candle();
 				player.Inventory.AddItem(candle);
 				Id = candle.Id;
+				player.PlayPickUpSound();
 				gameObject.SetActive(false);
 				//Destroy(gameObject);
 			}

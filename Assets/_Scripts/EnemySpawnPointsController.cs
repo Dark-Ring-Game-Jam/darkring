@@ -84,6 +84,7 @@ namespace _Scripts
 		{
 			var enemy = spawnPoint.Spawn<Enemy>();
 
+			enemy.SetHidePlayer(GameManager.Instance.Player.IsHide);
 			enemy.OnDie += DeleteEnemy;
 
 			_enemyList.Add(enemy);

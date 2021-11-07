@@ -14,6 +14,7 @@ namespace _Scripts
 				var insulatingTape = new InsulatingTape();
 				player.Inventory.AddItem(insulatingTape);
 				Id = insulatingTape.Id;
+				player.PlayPickUpSound();
 				gameObject.SetActive(false);
 				//Destroy(gameObject);
 			}

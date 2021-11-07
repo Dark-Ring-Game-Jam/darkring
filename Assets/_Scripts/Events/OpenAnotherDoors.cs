@@ -17,6 +17,7 @@ namespace _Scripts.Events
 				}
 
 				GameManager.Instance.Player.SetText("Похоже что какие-то двери открылись");
+				GameManager.Instance.Player.PlayDoorsSound();
 
 				Destroy(gameObject);
 			}

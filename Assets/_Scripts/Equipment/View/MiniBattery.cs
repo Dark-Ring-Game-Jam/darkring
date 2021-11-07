@@ -14,8 +14,8 @@ namespace _Scripts
 				var battery = new Battery();
 				player.Inventory.AddItem(battery);
 				Id = battery.Id;
+				player.PlayPickUpSound();
 				gameObject.SetActive(false);
-				//Destroy(gameObject);
 			}
 		}
 	}

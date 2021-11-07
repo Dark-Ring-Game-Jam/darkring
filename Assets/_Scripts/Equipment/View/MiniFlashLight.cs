@@ -16,6 +16,7 @@ namespace _Scripts
 					var flashlight = new Flashlight();
 					player.Inventory.AddItem(flashlight);
 					Id = flashlight.Id;
+					player.PlayPickUpSound();
 					gameObject.SetActive(false);
 					//Destroy(gameObject);
 				}

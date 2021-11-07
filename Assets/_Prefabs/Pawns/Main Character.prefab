@@ -466,12 +466,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pitchRandomless: 0.05
-  pickupClip: {fileID: 0}
+  pickupClip: {fileID: 8300000, guid: 343bc6d74642c46c280e79be3dc9297d, type: 3}
   deathClip: {fileID: 8300000, guid: 0fbae3cd38999421f9125184f56b935a, type: 3}
   stepClip: {fileID: 8300000, guid: e9263e0a100c24ed4b91c83fcacb5b91, type: 3}
   attackClip: {fileID: 0}
-  openDoorClip: {fileID: 0}
-  setSoundCooldown: 0.5
+  openDoorClip: {fileID: 8300000, guid: 7f87939c544eb4699af4464ad8b603d6, type: 3}
+  setSoundCooldown: 0.25
 --- !u!114 &8403073106852799247
 MonoBehaviour:
   m_ObjectHideFlags: 0

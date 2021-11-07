@@ -16,6 +16,7 @@ namespace _Scripts
 					var lamp = new Lamp();
 					player.Inventory.AddItem(lamp);
 					Id = lamp.Id;
+					player.PlayPickUpSound();
 					gameObject.SetActive(false);
 					//Destroy(gameObject);
 				}

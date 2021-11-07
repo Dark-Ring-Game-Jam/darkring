@@ -119,9 +119,14 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _healthComponent.SetHealth(health);
     }
 
-    public void SetButtonActive(bool active)
+    public void PlayPickUpSound()
     {
-        _buttonComponent.SetButtonActive(active);
+        _characterSounds.PlayPickupItemSound();
+    }
+
+    public void PlayDoorsSound()
+    {
+        _characterSounds.PlayOpenDoorSound();
     }
 
     public void TakeDamage(int damage)
