@@ -179,6 +179,10 @@ public class Player : MonoBehaviour, ICanBeAttacked
             {
                 _isUsing = true;
                 _usingCooldownCoroutine = StartCoroutine(UsingCooldownCoroutine());
+                if (UsableEnvironment is Doors)
+                {
+                    _characterSounds.PlayOpenDoorSound();
+                }
                 UsableEnvironment.Use(Inventory);
             }
         }
@@ -259,6 +263,8 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _healthComponent.OnDeath -= Die;
         _attackComponent.OnAttack -= _animationComponent.Attack;
         _smokeComponent.OnSmoke -= _animationComponent.Smoke;
+        
+        GameManager.Instance.ShowDeathScreen();
     }
 
     private Vector3 GetPosition()

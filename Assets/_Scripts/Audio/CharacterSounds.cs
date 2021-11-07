@@ -10,6 +10,7 @@ namespace _Scripts.Audio
         [field: SerializeField] private AudioClip deathClip;
         [field: SerializeField] private AudioClip stepClip;
         [field: SerializeField] private AudioClip attackClip;
+        [field: SerializeField] private AudioClip openDoorClip;
         
         [field: SerializeField] private float setSoundCooldown = 0.5f;
 
@@ -38,6 +39,11 @@ namespace _Scripts.Audio
         public void PlayPickupItemSound()
         {
             PlayClip(pickupClip);
+        }
+        
+        public void PlayOpenDoorSound()
+        {
+            PlayClip(openDoorClip);
         }
         
         private void PlayDeathSound()

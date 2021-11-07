@@ -20,6 +20,7 @@ namespace _Scripts
 		[Header("UI")]
 		[SerializeField] private NoteView _noteViewPrefab;
 		[SerializeField] private Canvas _canvas;
+		[SerializeField] private GameObject _deathScreen;
 
 		[Header("Fog")]
 		[SerializeField] private Vector2 _startPosition;
@@ -41,6 +42,7 @@ namespace _Scripts
 			Instance = this;
 
 			FogTile.FillTheMap(_startPosition, _width, _height, _fogTile, _fogAnchor);
+			_deathScreen.SetActive(false);
 		}
 
 		public void StartSpawnBigEnemy() => _enemySpawnPointsController.StartSpawnBigEnemy();
@@ -55,16 +57,24 @@ namespace _Scripts
 
 		public void Load()
 		{
+			_deathScreen.SetActive(false);
+
 			var data = SaveGame.Load(_gameIdentifier, new SaveData(_playerSpawnPoint, _player.Inventory.ItemList, _player.HealthPoints));
 			Initialize(data);
 		}
 
 		public void Reset()
 		{
+			_deathScreen.SetActive(false);
 			// TODO - перезапустить сцену?
 
 			Save(new Vector3(-7, -30, 0));
 			Load();
+		}
+
+		public void ShowDeathScreen()
+		{
+			_deathScreen.SetActive(true);
 		}
 
 		private void Initialize(SaveData data)
