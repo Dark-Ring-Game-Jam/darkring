@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ namespace _Scripts
 				player.Inventory.AddItem(note);
 				GameManager.Instance.Player.UsableEnvironment = note.NoteView;
 				Time.timeScale = 0;
-				Id = note.Id;
+				Id = note.Ids.First();
 				player.PlayPickUpSound();
 				gameObject.SetActive(false);
 				//Destroy(gameObject);

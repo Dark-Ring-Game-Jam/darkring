@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 
 namespace _Scripts
@@ -13,7 +14,7 @@ namespace _Scripts
 			{
 				var candle = new Candle();
 				player.Inventory.AddItem(candle);
-				Id = candle.Id;
+				Id = candle.Ids.First();
 				player.PlayPickUpSound();
 				gameObject.SetActive(false);
 				//Destroy(gameObject);

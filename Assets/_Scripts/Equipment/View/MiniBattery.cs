@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 
 namespace _Scripts
@@ -13,7 +14,7 @@ namespace _Scripts
 			{
 				var battery = new Battery();
 				player.Inventory.AddItem(battery);
-				Id = battery.Id;
+				Id = battery.Ids.First();
 				player.PlayPickUpSound();
 				gameObject.SetActive(false);
 			}

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 
 namespace _Scripts
@@ -13,7 +14,7 @@ namespace _Scripts
 			{
 				var insulatingTape = new InsulatingTape();
 				player.Inventory.AddItem(insulatingTape);
-				Id = insulatingTape.Id;
+				Id = insulatingTape.Ids.First();
 				player.PlayPickUpSound();
 				gameObject.SetActive(false);
 				//Destroy(gameObject);

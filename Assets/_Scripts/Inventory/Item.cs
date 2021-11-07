@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 
 [Serializable]
@@ -17,11 +18,11 @@ public class Item
 
     public ItemType Type;
     public int Amount;
-    public Guid Id;
+    public List<Guid> Ids;
 
     public Item()
     {
-        Id = Guid.NewGuid();
+        Ids = new List<Guid> { Guid.NewGuid() };
     }
     
     public Sprite GetSprite() 

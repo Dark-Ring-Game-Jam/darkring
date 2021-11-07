@@ -25,12 +25,15 @@ public class Inventory
                 if (inventoryItem.Type == item.Type)
                 {
                     inventoryItem.Amount += item.Amount;
+                    inventoryItem.Ids.AddRange(item.Ids);
+                    inventoryItem.Ids = inventoryItem.Ids.Distinct().ToList();
                     itemAlreadyInInventory = true;
                 }
             }
             if (!itemAlreadyInInventory)
             {
                 _itemList.Add(item);
+                
             }
         }
         else
@@ -79,6 +82,7 @@ public class Inventory
                 if (inventoryItem.Type == item.Type)
                 {
                     inventoryItem.Amount -= item.Amount;
+                    inventoryItem.Ids.RemoveAll(x => item.Ids.Contains(x));
                     itemInInventory = inventoryItem;
                 }
             }

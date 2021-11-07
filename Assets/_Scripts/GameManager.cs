@@ -97,7 +97,7 @@ namespace _Scripts
 		{
 			var itemsToRestore = _player.Inventory.ItemList
 				.Where(x => !(x is Note))
-				.Select(x => x.Id).Except(data.Items.Select(y => y.Id))
+				.SelectMany(x => x.Ids).Except(data.Items.SelectMany(y => y.Ids))
 				.ToList();
 			
 			foreach (var itemToRestore in itemsToRestore)
@@ -135,7 +135,6 @@ namespace _Scripts
 			{
 				_player.Inventory.AddItem(new Item { Type = Item.ItemType.Note, Amount = notesDiff });
 			}
-			
 
 			_playerSpawnPoint = data.SpawnPoint;
 			_player.transform.position = _playerSpawnPoint;
