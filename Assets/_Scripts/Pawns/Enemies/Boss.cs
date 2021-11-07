@@ -18,6 +18,7 @@ namespace _Scripts
 		[SerializeField] private AttackComponent _attackComponent;
 		[SerializeField] private SkeletonAnimation _skeletonAnimation;
 		[SerializeField] private List<BossMirror> _bossMirrors;
+		[SerializeField] private FinalDoor _finalDoor;
 
 		private readonly Vector2 _leftSize = new Vector2(-1f, 1f);
 		private readonly Vector2 _rightSize = new Vector2(1f, 1f);
@@ -112,6 +113,8 @@ namespace _Scripts
 			_destinationSetter.enabled = false;
 
 			yield return new WaitForSeconds(_delayToDie);
+
+			Destroy(_finalDoor);
 
 			Destroy(gameObject);
 		}
