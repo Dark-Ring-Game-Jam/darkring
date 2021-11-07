@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2219114303730185558}
   m_Layer: 9
   m_Name: MiniFlashLight
-  m_TagString: Untagged
+  m_TagString: equipment
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

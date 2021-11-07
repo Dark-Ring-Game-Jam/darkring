@@ -1,16 +1,21 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace _Scripts
 {
-	public class MiniCandleView : MonoBehaviour
+	public class MiniCandleView : MonoBehaviour, IHasId
 	{
+		public Guid Id { get; private set; }
+
 		private void OnTriggerEnter2D(Collider2D other)
 		{
-			if (other.TryGetComponent(out Player player))
+			if (gameObject.activeSelf && other.TryGetComponent(out Player player))
 			{
 				var candle = new Candle();
 				player.Inventory.AddItem(candle);
-				Destroy(gameObject);
+				Id = candle.Id;
+				gameObject.SetActive(false);
+				//Destroy(gameObject);
 			}
 		}
 	}

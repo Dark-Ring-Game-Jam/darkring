@@ -1,18 +1,23 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 
 namespace _Scripts
 {
-	public class MiniLamp : MonoBehaviour
+	public class MiniLamp : MonoBehaviour, IHasId
 	{
+		public Guid Id { get; private set; }
+
 		private void OnTriggerEnter2D(Collider2D other)
 		{
 			if (other.TryGetComponent(out Player player))
 			{
-				if (!player.Inventory.ContainItemType(Item.ItemType.KeroseneLamp))
+				if (gameObject.activeSelf && !player.Inventory.ContainItemType(Item.ItemType.KeroseneLamp))
 				{
 					var lamp = new Lamp();
 					player.Inventory.AddItem(lamp);
-					Destroy(gameObject);
+					Id = lamp.Id;
+					gameObject.SetActive(false);
+					//Destroy(gameObject);
 				}
 			}
 		}

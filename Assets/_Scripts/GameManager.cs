@@ -1,5 +1,5 @@
-﻿using System;
-using System.Runtime.CompilerServices;
+﻿using System.Collections.Generic;
+using System.Linq;
 using BayatGames.SaveGameFree;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -12,6 +12,7 @@ namespace _Scripts
 
 		private Vector3 _defaultPlayerSpawnPoint;
 		private int _defaultHealthPoints;
+		private GameObject[] _levelItems;
 
 		[Header("Main")]
 		[SerializeField] private Player _player;
@@ -48,6 +49,11 @@ namespace _Scripts
 
 			FogTile.FillTheMap(_startPosition, _width, _height, _fogTile, _fogAnchor);
 			_deathScreen.SetActive(false);
+
+			if (_levelItems == null)
+			{
+				_levelItems = GameObject.FindGameObjectsWithTag("equipment");
+			}
 		}
 
 		private void Start()
@@ -101,6 +107,10 @@ namespace _Scripts
 			foreach (var item in data.Items)
 			{
 				_player.Inventory.AddItem(item);
+				foreach (var levelItem in _levelItems.Where(x => x.gameObject.TryGetComponent<IHasId>(out var itemWithId) && itemWithId.Id.Equals(item.Id)))
+				{
+					levelItem.SetActive(true);
+				}
 			}
 
 			_playerSpawnPoint = data.SpawnPoint;

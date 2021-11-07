@@ -17,6 +17,12 @@ public class Item
 
     public ItemType Type;
     public int Amount;
+    public Guid Id;
+
+    public Item()
+    {
+        Id = Guid.NewGuid();
+    }
     
     public Sprite GetSprite() 
     {
