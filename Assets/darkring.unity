@@ -43356,6 +43356,22 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 5789375671882226942, guid: 2d421e25099c880418a19d34e8b06393, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.77284336
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789375671882226942, guid: 2d421e25099c880418a19d34e8b06393, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.8334495
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789375671882226942, guid: 2d421e25099c880418a19d34e8b06393, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 7.64
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789375671882226942, guid: 2d421e25099c880418a19d34e8b06393, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -35.98
+      objectReference: {fileID: 0}
     - target: {fileID: 5789375672332932748, guid: 2d421e25099c880418a19d34e8b06393, type: 3}
       propertyPath: m_Name
       value: Smoke (5)
@@ -62965,6 +62981,22 @@ PrefabInstance:
     - target: {fileID: 5789375671882226690, guid: 2d421e25099c880418a19d34e8b06393, type: 3}
       propertyPath: m_Mesh
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789375671882226942, guid: 2d421e25099c880418a19d34e8b06393, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.7968888
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789375671882226942, guid: 2d421e25099c880418a19d34e8b06393, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.7003382
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789375671882226942, guid: 2d421e25099c880418a19d34e8b06393, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 5.1434
+      objectReference: {fileID: 0}
+    - target: {fileID: 5789375671882226942, guid: 2d421e25099c880418a19d34e8b06393, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -34.1277
       objectReference: {fileID: 0}
     - target: {fileID: 5789375672332932748, guid: 2d421e25099c880418a19d34e8b06393, type: 3}
       propertyPath: m_Name
