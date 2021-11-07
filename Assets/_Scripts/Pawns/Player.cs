@@ -28,6 +28,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
     private Vector2 _movementDirection = Vector2.zero;
     private bool _faceLeft = true;
     private readonly Vector2 _distance = new Vector2(5f, 3f);
+    private bool _isReadNote => UsableEnvironment is NoteView;
 
     private HealthComponent _healthComponent;
     private MovementComponent _movementComponent;
@@ -35,10 +36,6 @@ public class Player : MonoBehaviour, ICanBeAttacked
     private AttackComponent _attackComponent;
     private SmokeComponent _smokeComponent;
     private CharacterSounds _characterSounds;
-
-    // TODO - для теста (потом выбирать динамически ближайшего врага или бить всех по области)
-    [Header("For Tests")]
-    [SerializeField] private Enemy _targetEnemy;
 
     [Header("UI")]
     [SerializeField] private UIInventory _UIInventory;
@@ -91,7 +88,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     private void FixedUpdate()
     {
-        if (IsBusy() == false)
+        if (IsBusy() == false && _isReadNote == false && IsHide == false)
         {
             _movementComponent.Move(_movementDirection);
         }
@@ -109,15 +106,18 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _healthComponent.TakeDamage(damage);
     }
 
-    public void SetHidePlayer(bool active)
+    public void SetHidePlayer(bool hide)
     {
-        _spriteRenderer.enabled = active;
-        IsHide = active;
+        _spriteRenderer.enabled = !hide;
+        IsHide = hide;
     }
 
     private bool IsBusy()
     {
-        return _attackComponent.IsAttacking || _smokeComponent.IsSmoking || _healthComponent.IsDead;
+        return 
+            _attackComponent.IsAttacking || 
+            _smokeComponent.IsSmoking ||
+            _healthComponent.IsDead;
     }
 
     private void ProcessInputs()
