@@ -279,6 +279,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aiDestinationSetter: {fileID: 5966204868880962636}
   _aiPath: {fileID: 8878621441252326647}
+  _seeker: {fileID: 7173001960499414532}
   _distanceToAggro: 10
   _percentFromTargetSpeed: 1.15
 --- !u!82 &6553416136315355090

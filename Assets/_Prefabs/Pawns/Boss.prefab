@@ -205,6 +205,7 @@ MonoBehaviour:
   _attackComponent: {fileID: 6045542957540690059}
   _skeletonAnimation: {fileID: 529349445997052212}
   _bossMirrors: []
+  _finalDoor: {fileID: 0}
 --- !u!114 &1437421926829810946
 MonoBehaviour:
   m_ObjectHideFlags: 0

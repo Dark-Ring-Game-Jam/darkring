@@ -9,6 +9,7 @@ namespace Components
 	{
 		[SerializeField] private AIDestinationSetter _aiDestinationSetter;
 		[SerializeField] private AIPath _aiPath;
+		[SerializeField] private Seeker _seeker;
 		[SerializeField] private float _distanceToAggro;
 		[SerializeField] private float _percentFromTargetSpeed;
 
@@ -39,6 +40,7 @@ namespace Components
 		{
 			_aiPath.enabled = active;
 			_aiDestinationSetter.enabled = active;
+			_seeker.enabled = active;
 		}
 
 		private void Update()

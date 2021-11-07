@@ -16,6 +16,8 @@ namespace _Scripts.Events
 					Destroy(door.gameObject);
 				}
 
+				GameManager.Instance.Player.SetText("Похоже что какие-то двери открылись");
+
 				Destroy(gameObject);
 			}
 		}

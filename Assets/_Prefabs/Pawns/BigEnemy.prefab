@@ -46,7 +46,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 46626de5acab8ad41ac85725ef86bd6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _initHealth: 2
+  _initHealth: 100
 --- !u!114 &7663798962630913801
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -97,6 +97,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _aiDestinationSetter: {fileID: 459442339585322851}
   _aiPath: {fileID: 4032335353681556036}
+  _seeker: {fileID: 8310751000038536049}
   _distanceToAggro: 10
   _percentFromTargetSpeed: 0.75
 --- !u!1 &8595218503678298861

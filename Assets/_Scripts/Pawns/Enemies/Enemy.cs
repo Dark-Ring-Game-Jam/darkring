@@ -48,9 +48,9 @@ namespace _Scripts
 			{
 				if (!_target.GetComponent<HealthComponent>().IsDead)
 				{
-					var enemy = new Dictionary<ICanBeAttacked, Vector2>
+					var enemy = new Dictionary<ICanBeAttacked, Transform>
 					{
-						[_targetCanBeAttacked] = _targetTransform.position
+						[_targetCanBeAttacked] = _targetTransform
 					};
 
 					_attackComponent.Attack(enemy);
@@ -90,6 +90,8 @@ namespace _Scripts
 
 		private IEnumerator DeferredDie()
 		{
+			_aiComponent.SetActiveComponent(false);
+			_attackComponent.StopAttack();
 			_attackComponent.enabled = false;
 			_aiComponent.enabled = false;
 			_animationComponent.Die();

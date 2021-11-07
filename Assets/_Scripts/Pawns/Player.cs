@@ -221,7 +221,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
     {
         var results = new Collider2D[5];
         var size = Physics2D.OverlapBoxNonAlloc(transform.position, _distance, 0f, results, LayerMask.NameToLayer("Enemy"));
-        var enemies = new Dictionary<ICanBeAttacked, Vector2>();
+        var enemies = new Dictionary<ICanBeAttacked, Transform>();
 
         _inventory.RemoveItem(new Item { Type = Item.ItemType.Batteriy, Amount = 1 });
 
@@ -237,7 +237,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
                     }
                     else
                     {
-                        enemies[enemy] = enemy.transform.position;
+                        enemies[enemy] = enemy.transform;
                     }
                 }
             }

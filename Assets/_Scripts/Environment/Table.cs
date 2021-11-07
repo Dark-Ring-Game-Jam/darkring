@@ -20,7 +20,7 @@ namespace _Scripts
 				inventory.RemoveItem(new Item { Type = Item.ItemType.InsulatingTape, Amount = 1 });
 				OnUse?.Invoke();
 			}
-			else
+			else if (_isActive == false)
 			{
 				GameManager.Instance.Player.SetText("Мне нужна изолента");
 			}
@@ -46,7 +46,7 @@ namespace _Scripts
 
 		private void OnTriggerExit2D(Collider2D other)
 		{
-			if (_isActive == false && other.TryGetComponent(out Player player) && player.UsableEnvironment?.Equals(this) == true)
+			if (other.TryGetComponent(out Player player) && player.UsableEnvironment?.Equals(this) == true)
 			{
 				player.UsableEnvironment = null;
 			}

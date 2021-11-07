@@ -23,12 +23,12 @@ namespace _Scripts
 
 		public void Use(Inventory inventory)
 		{
-			if (inventory.ContainItemType(Item.ItemType.Candle))
+			if (inventory.ContainItemType(Item.ItemType.Candle) && _isActive == false)
 			{
 				Active();
 				inventory.RemoveItem(new Item { Type = Item.ItemType.Candle, Amount = 1 });
 			}
-			else
+			else if (_isActive == false)
 			{
 				GameManager.Instance.Player.SetText("Мне нужна свечка");
 			}

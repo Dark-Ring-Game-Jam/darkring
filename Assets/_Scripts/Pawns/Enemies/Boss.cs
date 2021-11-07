@@ -63,9 +63,9 @@ namespace _Scripts
 			{
 				if (!_player.GetComponent<HealthComponent>().IsDead)
 				{
-					var enemy = new Dictionary<ICanBeAttacked, Vector2>
+					var enemy = new Dictionary<ICanBeAttacked, Transform>
 					{
-						[_targetCanBeAttacked] = _player.transform.position
+						[_targetCanBeAttacked] = _player.transform
 					};
 
 					_attackComponent.Attack(enemy);

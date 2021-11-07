@@ -246,7 +246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _distanceToAttack: 3
   _delayToAttack: 1
-  _damage: 1
+  _damage: 2
 --- !u!114 &2796195236850067151
 MonoBehaviour:
   m_ObjectHideFlags: 0

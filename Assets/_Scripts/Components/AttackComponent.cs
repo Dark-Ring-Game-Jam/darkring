@@ -23,7 +23,12 @@ namespace Components
 			return Vector2.Distance(transform.position, targetPosition) <= _distanceToAttack;
 		}
 
-		public void Attack(Dictionary<ICanBeAttacked, Vector2> canBeAttacked)
+		public void StopAttack()
+		{
+			StopAllCoroutines();
+		}
+
+		public void Attack(Dictionary<ICanBeAttacked, Transform> canBeAttacked)
 		{
 			if (_currentCoroutine == null)
 			{
@@ -33,7 +38,7 @@ namespace Components
 			}
 		}
 
-		private IEnumerator AttackCoroutine(Dictionary<ICanBeAttacked, Vector2> canBeAttacked)
+		private IEnumerator AttackCoroutine(Dictionary<ICanBeAttacked, Transform> canBeAttacked)
 		{
 			yield return new WaitForSeconds(_delayToAttack);
 
@@ -42,7 +47,7 @@ namespace Components
 				var target = pair.Key;
 				var position = pair.Value;
 
-				if (CanAttack(position))
+				if (CanAttack(position.position))
 				{
 					target.TakeDamage(_damage);
 				}
