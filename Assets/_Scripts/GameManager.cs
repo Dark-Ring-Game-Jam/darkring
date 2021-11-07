@@ -9,7 +9,7 @@ namespace _Scripts
 	public class GameManager : MonoBehaviour
 	{
 		private static string _gameIdentifier = "darkring";
-		
+
 		private Vector3 _defaultPlayerSpawnPoint;
 		private int _defaultHealthPoints;
 
@@ -49,13 +49,15 @@ namespace _Scripts
 			FogTile.FillTheMap(_startPosition, _width, _height, _fogTile, _fogAnchor);
 			_deathScreen.SetActive(false);
 		}
-		
+
 		private void Start()
 		{
 			_defaultHealthPoints = _player.HealthPoints;
 		}
 
 		public void StartSpawnBigEnemy() => _enemySpawnPointsController.StartSpawnBigEnemy();
+
+		public void AddEnemy(Enemy enemy) => _enemySpawnPointsController.AddEnemy(enemy);
 
 		#region Save/Load/Reset
 
@@ -77,6 +79,8 @@ namespace _Scripts
 				_player.Init();
 				var data = SaveGame.Load(_gameIdentifier, new SaveData(_playerSpawnPoint, _player.Inventory.ItemList, _player.HealthPoints));
 				Initialize(data);
+
+				_enemySpawnPointsController.DestroyAllEnemies();
 			}
 		}
 

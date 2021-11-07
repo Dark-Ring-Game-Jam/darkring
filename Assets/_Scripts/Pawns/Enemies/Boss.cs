@@ -108,6 +108,8 @@ namespace _Scripts
 		private IEnumerator DeferredDie()
 		{
 			_bossAnimationComponent.Die();
+			_attackComponent.enabled = false;
+			_destinationSetter.enabled = false;
 
 			yield return new WaitForSeconds(_delayToDie);
 

@@ -26,6 +26,21 @@ namespace _Scripts
 			_isCanSpawnBig = true;
 		}
 
+		public void AddEnemy(Enemy enemy)
+		{
+			_enemyList.Add(enemy);
+		}
+
+		public void DestroyAllEnemies()
+		{
+			foreach (var enemy in _enemyList)
+			{
+				Destroy(enemy.gameObject);
+			}
+
+			_enemyList.Clear();
+		}
+
 		private void SetEnemiesActive(bool active)
 		{
 			foreach (var enemy in _enemyList)

@@ -12,7 +12,8 @@ namespace _Scripts.Events
 		{
 			if (_noteView == null)
 			{
-				_spawnPoint.Spawn<BigEnemy>();
+				var enemy = _spawnPoint.Spawn<BigEnemy>();
+				GameManager.Instance.AddEnemy(enemy);
 				Destroy(_doors.gameObject);
 				Destroy(gameObject);
 			}

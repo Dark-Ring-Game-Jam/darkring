@@ -79,14 +79,14 @@ namespace _Scripts
 
 		private IEnumerator DeferredDie()
 		{
+			_attackComponent.enabled = false;
+			_aiComponent.enabled = false;
 			_animationComponent.Die();
 
 			OnDie?.Invoke(this);
 
 			_healthComponent.OnDeath -= Die;
 			_attackComponent.OnAttack -= _animationComponent.Attack;
-			_attackComponent.enabled = false;
-			_aiComponent.enabled = false;
 
 			yield return new WaitForSeconds(2f);
 

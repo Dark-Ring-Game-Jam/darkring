@@ -28,7 +28,7 @@ namespace _Scripts
 
 		private void OnTriggerEnter2D(Collider2D other)
 		{
-			if (other.TryGetComponent(out Player player))
+			if (other.TryGetComponent(out Player player) && _isActive == false)
 			{
 				player.UsableEnvironment = this;
 			}
@@ -46,7 +46,7 @@ namespace _Scripts
 
 		private void OnTriggerExit2D(Collider2D other)
 		{
-			if (other.TryGetComponent(out Player player) && player.UsableEnvironment?.Equals(this) == true)
+			if (_isActive == false && other.TryGetComponent(out Player player) && player.UsableEnvironment?.Equals(this) == true)
 			{
 				player.UsableEnvironment = null;
 			}
