@@ -35,6 +35,12 @@ namespace Components
 			_characterSounds = GetComponent<CharacterSounds>();
 		}
 
+		public void SetActiveComponent(bool active)
+		{
+			_aiPath.enabled = active;
+			_aiDestinationSetter.enabled = active;
+		}
+
 		private void Update()
 		{
 			var position = transform.position;
