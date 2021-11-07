@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections;
+using System.Collections.Generic;
+using System.Linq;
 using Spine.Unity;
 using UnityEngine;
 
@@ -26,7 +28,9 @@ namespace _Scripts
 			if (inventory.ContainItemType(Item.ItemType.Candle) && _isActive == false)
 			{
 				Active();
-				inventory.RemoveItem(new Item { Type = Item.ItemType.Candle, Amount = 1 });
+				var usedItemId = inventory.ItemList.First(x => x.Type == Item.ItemType.Candle).Ids.First();
+				GameManager.Instance.UsedItemIds.Add(usedItemId);
+				inventory.RemoveItem(new Item { Type = Item.ItemType.Candle, Amount = 1, Ids = new List<Guid> { usedItemId }});
 			}
 			else if (_isActive == false)
 			{

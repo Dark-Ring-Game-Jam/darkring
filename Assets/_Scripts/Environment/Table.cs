@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace _Scripts
@@ -17,7 +19,9 @@ namespace _Scripts
 			{
 				_spriteRenderer.enabled = true;
 				_isActive = true;
-				inventory.RemoveItem(new Item { Type = Item.ItemType.InsulatingTape, Amount = 1 });
+				var usedItemId = inventory.ItemList.First(x => x.Type == Item.ItemType.InsulatingTape).Ids.First();
+				GameManager.Instance.UsedItemIds.Add(usedItemId);
+				inventory.RemoveItem(new Item { Type = Item.ItemType.InsulatingTape, Amount = 1, Ids = new List<Guid> { usedItemId } });
 				OnUse?.Invoke();
 			}
 			else if (_isActive == false)

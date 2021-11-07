@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using BayatGames.SaveGameFree;
 using UnityEngine;
@@ -41,11 +42,13 @@ namespace _Scripts
 		public EnemySpawnPointsController EnemySpawnPointsController => _enemySpawnPointsController;
 		public NoteView NoteViewPrefab => _noteViewPrefab;
 		public Canvas Canvas => _canvas;
-		public int GlobalIdCounter {get; set;}
+		
+		public List<Guid> UsedItemIds { get; private set; }
 
 		private void Awake()
 		{
 			Instance = this;
+			UsedItemIds = new List<Guid>();
 			_defaultPlayerSpawnPoint = _playerSpawnPoint;
 
 			FogTile.FillTheMap(_startPosition, _width, _height, _fogTile, _fogAnchor);
@@ -99,6 +102,7 @@ namespace _Scripts
 			var itemsToRestore = _player.Inventory.ItemList
 				.Where(x => !(x is Note))
 				.SelectMany(x => x.Ids).Except(data.Items.SelectMany(y => y.Ids))
+				.Except(UsedItemIds)
 				.ToList();
 			
 			foreach (var itemToRestore in itemsToRestore)

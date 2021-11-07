@@ -1,4 +1,7 @@
-﻿using UnityEngine;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
 
 namespace _Scripts
 {
@@ -30,7 +33,9 @@ namespace _Scripts
 			{
 				_isActive = true;
 				_candleStick.Active();
-				inventory.RemoveItem(new Item { Type = Item.ItemType.KeroseneLamp, Amount = 1 });
+				var usedItemId = inventory.ItemList.First(x => x.Type == Item.ItemType.KeroseneLamp).Ids.First();
+				GameManager.Instance.UsedItemIds.Add(usedItemId);
+				inventory.RemoveItem(new Item { Type = Item.ItemType.KeroseneLamp, Amount = 1, Ids = new List<Guid> { usedItemId } });
 			}
 			else if (_isActive == false)
 			{
