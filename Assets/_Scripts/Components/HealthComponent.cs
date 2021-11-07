@@ -32,6 +32,7 @@ namespace Components
 		public void SetHealth(int health)
 		{
 			Health = health;
+			_isDead = health == 0;
 		}
 	}
 }

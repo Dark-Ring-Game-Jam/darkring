@@ -60,6 +60,11 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     private void Awake()
     {
+        Init();
+    }
+
+    public void Init()
+    {
         _healthComponent = GetComponent<HealthComponent>();
         _movementComponent = GetComponent<MovementComponent>();
         _animationComponent = GetComponent<MainCharacterAnimationComponent>();
@@ -77,6 +82,9 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _inventory = new Inventory();
         _UIInventory.SetPlayer(this);
         _UIInventory.SetInventory(_inventory);
+        
+        _UIHealthBar.Idle();
+        SetHidePlayer(false);
     }
 
     private void Update()

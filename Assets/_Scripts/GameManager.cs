@@ -68,9 +68,16 @@ namespace _Scripts
 		public void Load()
 		{
 			_deathScreen.SetActive(false);
-
-			var data = SaveGame.Load(_gameIdentifier, new SaveData(_playerSpawnPoint, _player.Inventory.ItemList, _player.HealthPoints));
-			Initialize(data);
+			if (_defaultPlayerSpawnPoint == _playerSpawnPoint)
+			{
+				Reset();
+			}
+			else
+			{
+				_player.Init();
+				var data = SaveGame.Load(_gameIdentifier, new SaveData(_playerSpawnPoint, _player.Inventory.ItemList, _player.HealthPoints));
+				Initialize(data);
+			}
 		}
 
 		public void Reset()

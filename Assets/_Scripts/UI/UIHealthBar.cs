@@ -16,8 +16,13 @@ public class UIHealthBar : MonoBehaviour
         _healthBarAnimationComponent.InitUIHealthBarAnimation(_skeletonGraphic);
     }
 
+    public void Idle()
+    {
+        _healthBarAnimationComponent?.Idle();
+    }
+    
     public void Die()
     {
-        _healthBarAnimationComponent.Die();
+        _healthBarAnimationComponent?.Die();
     }
 }
