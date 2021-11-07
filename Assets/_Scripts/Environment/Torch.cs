@@ -8,7 +8,7 @@ namespace _Scripts
 
 		private Transform _playerTransform;
 
-		private void Awake()
+		private void Start()
 		{
 			_playerTransform = GameManager.Instance.Player.transform;
 		}
