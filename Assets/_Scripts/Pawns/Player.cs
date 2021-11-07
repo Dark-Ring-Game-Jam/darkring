@@ -1,6 +1,6 @@
+using System.Collections.Generic;
 using System;
 using System.Collections;
-using System.Collections.Generic;
 using _Scripts;
 using _Scripts.Audio;
 using Components;
@@ -37,12 +37,14 @@ public class Player : MonoBehaviour, ICanBeAttacked
     private AttackComponent _attackComponent;
     private SmokeComponent _smokeComponent;
     private CharacterSounds _characterSounds;
+    private PhrasesComponent _phrasesComponent;
+
 
     [Header("Common")]
     [SerializeField] private float _delayToUse;
     private Coroutine _usingCooldownCoroutine;
     private bool _isUsing;
-    
+
     [Header("UI")]
     [SerializeField] private UIInventory _UIInventory;
     [SerializeField] private UIHealthBar _UIHealthBar;
@@ -64,6 +66,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _attackComponent = GetComponent<AttackComponent>();
         _smokeComponent = GetComponent<SmokeComponent>();
         _characterSounds = GetComponent<CharacterSounds>();
+        _phrasesComponent = GetComponent<PhrasesComponent>();
 
         _animationComponent.InitMainCharacterAnimation(2f, 2f, _skeletonAnimation);
 
@@ -106,7 +109,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
     {
         _healthComponent.SetHealth(health);
     }
-    
+
     public void TakeDamage(int damage)
     {
         _healthComponent.TakeDamage(damage);
@@ -118,10 +121,15 @@ public class Player : MonoBehaviour, ICanBeAttacked
         IsHide = hide;
     }
 
+    public void SetText(string text)
+    {
+        _phrasesComponent.SetText(text);
+    }
+
     private bool IsBusy()
     {
-        return 
-            _attackComponent.IsAttacking || 
+        return
+            _attackComponent.IsAttacking ||
             _smokeComponent.IsSmoking ||
             _healthComponent.IsDead;
     }
@@ -185,7 +193,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _isUsing = false;
         _usingCooldownCoroutine = null;
     }
-    
+
     private void Attack()
     {
         var results = new Collider2D[5];
@@ -215,12 +223,6 @@ public class Player : MonoBehaviour, ICanBeAttacked
         _attackComponent.Attack(enemies);
     }
 
-    private void OnDrawGizmos()
-    {
-        Gizmos.color = Color.black;
-        Gizmos.DrawWireCube((Vector2)transform.position + new Vector2(Mathf.Sign(-transform.localScale.x) * 1.5f, 1f), new Vector2(5f, 3f));
-    }
-
     private void ProcessAnimation()
     {
         if (IsBusy())
@@ -233,7 +235,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
             _animationComponent.Idle();
             return;
         }
-        
+
         _characterSounds.PlayStepSound();
 
         if (_movementDirection.x >= 0 && _movementDirection.y > 0)
@@ -270,7 +272,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
         {
             GameManager.Instance.Save(spawnPoint.GetPosition());
             spawnPoint.SetUsed();
-            
+
             // TODO - вывести надпись при сохранении
         }
     }

@@ -29,6 +29,10 @@ namespace _Scripts
 			{
 				Destroy(gameObject);
 			}
+			else
+			{
+				GameManager.Instance.Player.SetText($"Мне нужно {_needKeysAmount.ToString()} ключей");
+			}
 		}
 	}
 }

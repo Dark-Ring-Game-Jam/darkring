@@ -1,13 +1,29 @@
-using _Scripts;
 using UnityEngine;
 
-public class Torch : MonoBehaviour
+namespace _Scripts
 {
-	private void OnTriggerEnter2D(Collider2D other)
+	public class Torch : MonoBehaviour
 	{
-		if (other.TryGetComponent(out Enemy enemy) && enemy is BigEnemy == false)
+		[SerializeField] private BoxCollider2D _collider2D;
+
+		private Transform _playerTransform;
+
+		private void Awake()
 		{
-			enemy.TakeDamage(enemy.Health);
+			_playerTransform = GameManager.Instance.Player.transform;
+		}
+
+		private void Update()
+		{
+			_collider2D.enabled = Vector2.Distance(_playerTransform.position, transform.position) <= 3f;
+		}
+
+		private void OnTriggerEnter2D(Collider2D other)
+		{
+			if (other.TryGetComponent(out Enemy enemy) && enemy is BigEnemy == false)
+			{
+				enemy.TakeDamage(enemy.Health);
+			}
 		}
 	}
 }

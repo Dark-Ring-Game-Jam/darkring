@@ -24,9 +24,13 @@ namespace _Scripts
 
 		public void Use(Inventory inventory)
 		{
-			if ( inventory.ContainItemType(Item.ItemType.KeroseneLamp))
+			if (inventory.ContainItemType(Item.ItemType.KeroseneLamp))
 			{
 				_candleStick.Active();
+			}
+			else
+			{
+				GameManager.Instance.Player.SetText("Мне нужна кирасиновая лампа");
 			}
 		}
 	}

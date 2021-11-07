@@ -16,6 +16,10 @@ namespace _Scripts
 				_isActive = true;
 				inventory.RemoveItem(new Item { Type = Item.ItemType.InsulatingTape, Amount = 1 });
 			}
+			else
+			{
+				GameManager.Instance.Player.SetText("Мне нужна изолента");
+			}
 		}
 
 		private void OnTriggerEnter2D(Collider2D other)
