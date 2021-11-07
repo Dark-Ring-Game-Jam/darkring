@@ -149,6 +149,7 @@ namespace _Scripts
 
 			_playerSpawnPoint = data.SpawnPoint;
 			_player.transform.position = _playerSpawnPoint;
+			// TODO - тут не переносится освещение, рассеивающее туман войны вместе с ГГ
 		}
 
 		#endregion Save/Load/Reset
