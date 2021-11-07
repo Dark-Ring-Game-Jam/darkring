@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: c239c965117001e40a8edc9cd25c2e5a
+guid: 0474ddfa1398e2d4ebd7dfdf4b3bb1d0
 TrueTypeFontImporter:
   externalObjects: {}
   serializedVersion: 4
@@ -9,7 +9,7 @@ TrueTypeFontImporter:
   characterPadding: 1
   includeFontData: 1
   fontNames:
-  - Pixel Cyr
+  - Custom Font ttf 12h 1.0
   fallbackFontReferences: []
   customCharacters: 
   fontRenderingMode: 0
