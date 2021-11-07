@@ -13,9 +13,11 @@ namespace _Scripts
 
 		private readonly List<Enemy> _enemyList = new List<Enemy>();
 		private bool _isCanSpawnBig = false;
+		private bool _isStartSpawn;
 
 		private void Start()
 		{
+			_isStartSpawn = true;
 			StartCoroutine(SpawnEnemy());
 		}
 
@@ -52,8 +54,9 @@ namespace _Scripts
 
 		private void Update()
 		{
-			if (_enemyList.Count <= 0)
+			if (_enemyList.Count <= 0 && _isStartSpawn == false)
 			{
+				_isStartSpawn = true;
 				StartCoroutine(SpawnEnemy());
 			}
 		}
@@ -74,7 +77,7 @@ namespace _Scripts
 					SpawnEnemy(spawnPoint);
 				}
 			}
-
+			_isStartSpawn = false;
 		}
 
 		private void SpawnEnemy(SpawnPoint spawnPoint)
