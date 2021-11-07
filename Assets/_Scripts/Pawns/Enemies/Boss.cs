@@ -37,6 +37,7 @@ namespace _Scripts
 
 			_bossAnimationComponent.InitBossAnimation(_attackComponent.DelayToAttack, _abilityDelay, _skeletonAnimation);
 			_attackComponent.OnAttack += _bossAnimationComponent.Attack;
+			gameObject.SetActive(false);
 		}
 
 		private void Update()

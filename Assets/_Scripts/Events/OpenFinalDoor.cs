@@ -6,6 +6,7 @@ namespace _Scripts.Events
 	{
 		[SerializeField] private FinalDoor _finalDoor;
 		[SerializeField] private Table[] _tables;
+		[SerializeField] private Boss _boss;
 
 		private int _tapeCount;
 
@@ -21,12 +22,14 @@ namespace _Scripts.Events
 		{
 			_tapeCount++;
 
-			if (_tapeCount == 5)
+			if (_tapeCount == 5 && GameManager.Instance.Player.Inventory.ItemCount(Item.ItemType.Key) == 3)
 			{
 				foreach (var table in _tables)
 				{
 					table.OnUse -= AddTape;
 				}
+
+				_boss.gameObject.SetActive(true);
 
 				Destroy(_finalDoor.gameObject);
 				Destroy(gameObject);

@@ -14,6 +14,7 @@ namespace _Scripts
 				var note = new Note(_text.text);
 				player.Inventory.AddItem(note);
 				GameManager.Instance.Player.UsableEnvironment = note.NoteView;
+				Time.timeScale = 0;
 				Destroy(gameObject);
 			}
 		}

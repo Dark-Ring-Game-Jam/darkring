@@ -737,7 +737,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7816002377256154017, guid: 3f4bdbcfd79a3014abb0935c9778c137, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3f4bdbcfd79a3014abb0935c9778c137, type: 3}
 --- !u!4 &26607846 stripped
 Transform:
@@ -26852,7 +26853,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7816002377256154017, guid: 3f4bdbcfd79a3014abb0935c9778c137, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3f4bdbcfd79a3014abb0935c9778c137, type: 3}
 --- !u!4 &105070785 stripped
 Transform:
@@ -35808,7 +35810,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7816002377256154017, guid: 3f4bdbcfd79a3014abb0935c9778c137, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3f4bdbcfd79a3014abb0935c9778c137, type: 3}
 --- !u!4 &221641191 stripped
 Transform:
@@ -36983,20 +36986,6 @@ CompositeCollider2D:
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
-  - m_Collider: {fileID: 1263316295}
-    m_ColliderPaths:
-    - - X: 344103392
-        Y: 138626704
-      - X: 343804064
-        Y: 119809040
-      - X: 347953344
-        Y: 115927888
-      - X: 347485952
-        Y: 116435528
-      - X: 353479264
-        Y: 110416824
-      - X: 353709856
-        Y: 129765960
   - m_Collider: {fileID: 1597479657}
     m_ColliderPaths:
     - - X: 323596576
@@ -37025,6 +37014,20 @@ CompositeCollider2D:
         Y: 99683312
       - X: 343590112
         Y: 108865960
+  - m_Collider: {fileID: 1263316295}
+    m_ColliderPaths:
+    - - X: 344103392
+        Y: 138626704
+      - X: 343804064
+        Y: 119809040
+      - X: 347953344
+        Y: 115927888
+      - X: 347485952
+        Y: 116435528
+      - X: 353479264
+        Y: 110416824
+      - X: 353709856
+        Y: 129765960
   - m_Collider: {fileID: 1278918105}
     m_ColliderPaths:
     - - X: 314003424
@@ -37578,7 +37581,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 614bfb649fb94cffb687d2e41db12c66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _doors: {fileID: 766788776}
+  _doors: {fileID: 0}
   _spawnPoint: {fileID: 669021912}
   _noteView: {fileID: 772321719}
 --- !u!1 &506417185
@@ -37667,6 +37670,18 @@ PrefabInstance:
     - target: {fileID: 5671003275775624177, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
       propertyPath: m_Name
       value: Mirror 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6873240855589318813, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
+      propertyPath: _candleStick
+      value: 
+      objectReference: {fileID: 731693275}
+    - target: {fileID: 6965912461641039282, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
+      value: 0.173069
+      objectReference: {fileID: 0}
+    - target: {fileID: 6965912461641039282, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
+      propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].y
+      value: 2.665837
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
@@ -40878,34 +40893,6 @@ CompositeCollider2D:
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
-  - m_Collider: {fileID: 148289364}
-    m_ColliderPaths:
-    - - X: 424003360
-        Y: 228626704
-      - X: 423704032
-        Y: 209809040
-      - X: 427853312
-        Y: 205927888
-      - X: 427385952
-        Y: 206435520
-      - X: 433379264
-        Y: 200416832
-      - X: 433609856
-        Y: 219765968
-  - m_Collider: {fileID: 1383369658}
-    m_ColliderPaths:
-    - - X: 403296576
-        Y: 228726704
-      - X: 403595968
-        Y: 209909040
-      - X: 399446688
-        Y: 206027888
-      - X: 399914048
-        Y: 206535536
-      - X: 393920736
-        Y: 200516816
-      - X: 393690144
-        Y: 219865968
   - m_Collider: {fileID: 1963640891}
     m_ColliderPaths:
     - - X: 433096608
@@ -40936,6 +40923,34 @@ CompositeCollider2D:
         Y: 189950832
       - X: 403909888
         Y: 198865968
+  - m_Collider: {fileID: 148289364}
+    m_ColliderPaths:
+    - - X: 424003360
+        Y: 228626704
+      - X: 423704032
+        Y: 209809040
+      - X: 427853312
+        Y: 205927888
+      - X: 427385952
+        Y: 206435520
+      - X: 433379264
+        Y: 200416832
+      - X: 433609856
+        Y: 219765968
+  - m_Collider: {fileID: 1383369658}
+    m_ColliderPaths:
+    - - X: 403296576
+        Y: 228726704
+      - X: 403595968
+        Y: 209909040
+      - X: 399446688
+        Y: 206027888
+      - X: 399914048
+        Y: 206535536
+      - X: 393920736
+        Y: 200516816
+      - X: 393690144
+        Y: 219865968
   m_CompositePaths:
     m_Paths:
     - - {x: 40.38125, y: 18.995132}
@@ -41070,7 +41085,8 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mirror 2
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6873240855589318813, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
 --- !u!1001 &646375460
 PrefabInstance:
@@ -41553,7 +41569,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7816002377256154017, guid: 3f4bdbcfd79a3014abb0935c9778c137, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3f4bdbcfd79a3014abb0935c9778c137, type: 3}
 --- !u!4 &674278300 stripped
 Transform:
@@ -41714,6 +41731,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4651502742762246313, guid: c135d8af82f587b4898fc421d05a0bf0, type: 3}
   m_PrefabInstance: {fileID: 731693273}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &731693275 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7694879478605376156, guid: c135d8af82f587b4898fc421d05a0bf0, type: 3}
+  m_PrefabInstance: {fileID: 731693273}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a866ce9b464a519030db87616a942d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &738086213
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -41850,17 +41878,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8589334486668953554, guid: b2739d9b4c087e345aed5727ee1af5fc, type: 3}
   m_PrefabInstance: {fileID: 754717100}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &766788776 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 7816002377256154017, guid: 3f4bdbcfd79a3014abb0935c9778c137, type: 3}
-  m_PrefabInstance: {fileID: 674278299}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bc1fce766f8b4a349d1e814cc278326b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &772321719 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8575737138336469863, guid: 163302b3c61262141a3c4b9b89749628, type: 3}
@@ -42379,34 +42396,6 @@ CompositeCollider2D:
   m_GenerationType: 0
   m_EdgeRadius: 0
   m_ColliderPaths:
-  - m_Collider: {fileID: 1793284166}
-    m_ColliderPaths:
-    - - X: 343903424
-        Y: 228626704
-      - X: 343604064
-        Y: 209809040
-      - X: 347753344
-        Y: 205927888
-      - X: 347285952
-        Y: 206435520
-      - X: 353279264
-        Y: 200416832
-      - X: 353509856
-        Y: 219765968
-  - m_Collider: {fileID: 1471365912}
-    m_ColliderPaths:
-    - - X: 323396608
-        Y: 228726704
-      - X: 323695936
-        Y: 209909040
-      - X: 319546688
-        Y: 206027888
-      - X: 320014048
-        Y: 206535536
-      - X: 314020704
-        Y: 200516816
-      - X: 313790144
-        Y: 219865968
   - m_Collider: {fileID: 350815723}
     m_ColliderPaths:
     - - X: 353196576
@@ -42421,6 +42410,20 @@ CompositeCollider2D:
         Y: 190384592
       - X: 343590112
         Y: 199165968
+  - m_Collider: {fileID: 1471365912}
+    m_ColliderPaths:
+    - - X: 323396608
+        Y: 228726704
+      - X: 323695936
+        Y: 209909040
+      - X: 319546688
+        Y: 206027888
+      - X: 320014048
+        Y: 206535536
+      - X: 314020704
+        Y: 200516816
+      - X: 313790144
+        Y: 219865968
   - m_Collider: {fileID: 1660662514}
     m_ColliderPaths:
     - - X: 314303424
@@ -42437,6 +42440,20 @@ CompositeCollider2D:
         Y: 189817072
       - X: 323909888
         Y: 198865968
+  - m_Collider: {fileID: 1793284166}
+    m_ColliderPaths:
+    - - X: 343903424
+        Y: 228626704
+      - X: 343604064
+        Y: 209809040
+      - X: 347753344
+        Y: 205927888
+      - X: 347285952
+        Y: 206435520
+      - X: 353279264
+        Y: 200416832
+      - X: 353509856
+        Y: 219765968
   m_CompositePaths:
     m_Paths:
     - - {x: 31.40081, y: 20.157455}
@@ -44107,6 +44124,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4651502742762246313, guid: c135d8af82f587b4898fc421d05a0bf0, type: 3}
   m_PrefabInstance: {fileID: 1036464574}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1036464576 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7694879478605376156, guid: c135d8af82f587b4898fc421d05a0bf0, type: 3}
+  m_PrefabInstance: {fileID: 1036464574}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96a866ce9b464a519030db87616a942d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1042638621
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -45189,6 +45217,7 @@ MonoBehaviour:
   - {fileID: 238367414}
   - {fileID: 833752963}
   - {fileID: 1158185254}
+  _boss: {fileID: 1531290187}
 --- !u!1001 &1171213005
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -53398,7 +53427,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4581114341709065555, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
       propertyPath: m_RootOrder
-      value: 10
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4581114341709065555, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -53488,7 +53517,8 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
       value: 2.201746
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6873240855589318813, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
 --- !u!4 &1312125320 stripped
 Transform:
@@ -55855,6 +55885,17 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3001e5dec0415934dbf2334e39c9ca07, type: 3}
+--- !u!114 &1531290187 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2136804235775301794, guid: 3001e5dec0415934dbf2334e39c9ca07, type: 3}
+  m_PrefabInstance: {fileID: 1531290186}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d736c58ff94d481abb8512154424f5a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1547200363
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -58570,20 +58611,6 @@ CompositeCollider2D:
         Y: 110416824
       - X: 393690144
         Y: 129765960
-  - m_Collider: {fileID: 602643766}
-    m_ColliderPaths:
-    - - X: 433096608
-        Y: 117726704
-      - X: 433262176
-        Y: 109343032
-      - X: 430851904
-        Y: 106799600
-      - X: 429714048
-        Y: 105434472
-      - X: 423586944
-        Y: 99950840
-      - X: 423490144
-        Y: 108865960
   - m_Collider: {fileID: 651121664}
     m_ColliderPaths:
     - - X: 394303424
@@ -58598,6 +58625,20 @@ CompositeCollider2D:
         Y: 100353440
       - X: 403909888
         Y: 108465952
+  - m_Collider: {fileID: 602643766}
+    m_ColliderPaths:
+    - - X: 433096608
+        Y: 117726704
+      - X: 433262176
+        Y: 109343032
+      - X: 430851904
+        Y: 106799600
+      - X: 429714048
+        Y: 105434472
+      - X: 423586944
+        Y: 99950840
+      - X: 423490144
+        Y: 108865960
   m_CompositePaths:
     m_Paths:
     - - {x: 39.3922, y: 11.043267}
@@ -58709,7 +58750,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 7816002377256154017, guid: 3f4bdbcfd79a3014abb0935c9778c137, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3f4bdbcfd79a3014abb0935c9778c137, type: 3}
 --- !u!4 &1790313769 stripped
 Transform:
@@ -62605,7 +62647,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4581114341709065555, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 4581114341709065555, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
       propertyPath: m_LocalScale.x
@@ -62655,6 +62697,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Mirror 21
       objectReference: {fileID: 0}
+    - target: {fileID: 6873240855589318813, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
+      propertyPath: _candleStick
+      value: 
+      objectReference: {fileID: 1036464576}
     - target: {fileID: 6965912461641039282, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[0].x
       value: 0.027355194
@@ -62848,7 +62894,8 @@ PrefabInstance:
       propertyPath: m_Points.m_Paths.Array.data[0].Array.data[5].y
       value: 1.5343233
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 6873240855589318813, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c6b112e62fe33d54c9db74021b49f89a, type: 3}
 --- !u!1 &2011570122
 GameObject:

@@ -15,6 +15,7 @@ namespace _Scripts
 		public void Use(Inventory inventory)
 		{
 			GameManager.Instance.Player.UsableEnvironment = null;
+			Time.timeScale = 1;
 			Destroy(gameObject);
 		}
 	}
