@@ -5,7 +5,7 @@ namespace _Scripts
 {
 	public class MiniKey : MonoBehaviour, IHasId
 	{
-		public Guid Id { get; private set; }
+		public int Id { get; private set; }
 
 		private void OnTriggerEnter2D(Collider2D other)
 		{
@@ -13,7 +13,7 @@ namespace _Scripts
 			{
 				var key = new Key();
 				player.Inventory.AddItem(key);
-				Id = key.Id;
+				Id = GameManager.Instance.GlobalIdCounter++;
 				player.PlayPickUpSound();
 				gameObject.SetActive(false);
 				//Destroy(gameObject);

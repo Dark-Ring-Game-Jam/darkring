@@ -8,7 +8,7 @@ namespace _Scripts
 	{
 		[SerializeField] private TMP_Text _text;
 
-		public Guid Id { get; private set; }
+		public int Id { get; private set; }
 
 		private void OnTriggerEnter2D(Collider2D other)
 		{
@@ -18,7 +18,7 @@ namespace _Scripts
 				player.Inventory.AddItem(note);
 				GameManager.Instance.Player.UsableEnvironment = note.NoteView;
 				Time.timeScale = 0;
-				Id = note.Id;
+				Id = GameManager.Instance.GlobalIdCounter++;
 				player.PlayPickUpSound();
 				gameObject.SetActive(false);
 				//Destroy(gameObject);

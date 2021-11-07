@@ -5,7 +5,7 @@ namespace _Scripts
 {
 	public class MiniLamp : MonoBehaviour, IHasId
 	{
-		public Guid Id { get; private set; }
+		public int Id { get; private set; }
 
 		private void OnTriggerEnter2D(Collider2D other)
 		{
@@ -15,7 +15,7 @@ namespace _Scripts
 				{
 					var lamp = new Lamp();
 					player.Inventory.AddItem(lamp);
-					Id = lamp.Id;
+					Id = GameManager.Instance.GlobalIdCounter++;
 					player.PlayPickUpSound();
 					gameObject.SetActive(false);
 					//Destroy(gameObject);

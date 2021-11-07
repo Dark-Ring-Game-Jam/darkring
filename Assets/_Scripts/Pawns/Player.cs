@@ -181,12 +181,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     private void ProcessInteractions()
     {
-        if (Input.GetKey(KeyCode.Escape))
-        {
-            // TODO - показывать/скрывать меню (надо поменять надпись)
-            GameManager.Instance.ShowDeathScreen();
-        }
-        else if (Input.GetKey(KeyCode.E) && _inventory.ContainItemType(Item.ItemType.Batteriy) && _inventory.ContainItemType(Item.ItemType.Flashlight))
+        if (Input.GetKey(KeyCode.E) && _inventory.ContainItemType(Item.ItemType.Batteriy) && _inventory.ContainItemType(Item.ItemType.Flashlight))
         {
             Attack();
         }

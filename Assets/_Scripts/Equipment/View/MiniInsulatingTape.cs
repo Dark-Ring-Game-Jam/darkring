@@ -5,7 +5,7 @@ namespace _Scripts
 {
 	public class MiniInsulatingTape : MonoBehaviour, IHasId
 	{
-		public Guid Id { get; private set; }
+		public int Id { get; private set; }
 
 		private void OnTriggerEnter2D(Collider2D other)
 		{
@@ -13,7 +13,7 @@ namespace _Scripts
 			{
 				var insulatingTape = new InsulatingTape();
 				player.Inventory.AddItem(insulatingTape);
-				Id = insulatingTape.Id;
+				Id = GameManager.Instance.GlobalIdCounter++;
 				player.PlayPickUpSound();
 				gameObject.SetActive(false);
 				//Destroy(gameObject);

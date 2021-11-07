@@ -32,16 +32,6 @@ namespace _Scripts
 			{
 				player.UsableEnvironment = this;
 			}
-
-			if ( _isActive && other.TryGetComponent(out Enemy enemy) && enemy is BigEnemy == false)
-			{
-				enemy.TakeDamage(enemy.Health);
-			}
-
-			if ( _isActive && other.TryGetComponent(out Smoke smoke))
-			{
-				smoke.Destroy();
-			}
 		}
 
 		private void OnTriggerExit2D(Collider2D other)

@@ -41,6 +41,7 @@ namespace _Scripts
 		public EnemySpawnPointsController EnemySpawnPointsController => _enemySpawnPointsController;
 		public NoteView NoteViewPrefab => _noteViewPrefab;
 		public Canvas Canvas => _canvas;
+		public int GlobalIdCounter {get; set;}
 
 		private void Awake()
 		{
@@ -84,9 +85,9 @@ namespace _Scripts
 			{
 				var data = SaveGame.Load(_gameIdentifier, new SaveData(_playerSpawnPoint, _player.Inventory.ItemList, _player.HealthPoints));
 				var inventoryNotes = RestoreItems(data);
-				
+
 				_player.Init();
-				
+
 				Initialize(data, inventoryNotes);
 
 				_enemySpawnPointsController.DestroyAllEnemies();
@@ -95,21 +96,29 @@ namespace _Scripts
 
 		private int RestoreItems(SaveData data)
 		{
-			var itemsToRestore = _player.Inventory.ItemList
-				.Where(x => !(x is Note))
-				.Select(x => x.Id).Except(data.Items.Select(y => y.Id))
-				.ToList();
-			
-			foreach (var itemToRestore in itemsToRestore)
+			foreach (var item in _levelItems)
 			{
-				var item = _levelItems.FirstOrDefault(x =>
-					x.gameObject.TryGetComponent<IHasId>(out var itemWithId) && itemWithId.Id.Equals(itemToRestore));
-				item?.SetActive(true);
+				var hasId = item.GetComponent<IHasId>();
+				var isInventoryHas = false;
+
+				foreach (var inventoryItem in data.Items)
+				{
+					if (inventoryItem.Id == hasId.Id || inventoryItem.Type == Item.ItemType.Note)
+					{
+						isInventoryHas = true;
+						break;
+					}
+				}
+
+				if (isInventoryHas == false)
+				{
+					item.SetActive(true);
+				}
 			}
 
 			return _player.Inventory.ItemCount(Item.ItemType.Note);
 		}
-		
+
 		public void Reset()
 		{
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -122,6 +131,8 @@ namespace _Scripts
 
 		private void Initialize(SaveData data, int inventoryNotes)
 		{
+			var notesDiff = inventoryNotes - _player.Inventory.ItemCount(Item.ItemType.Note);
+
 			_player.SetHealthPoints(data.PlayerHealthPoints);
 
 			_player.Inventory.ItemList.Clear();
@@ -130,12 +141,11 @@ namespace _Scripts
 				_player.Inventory.AddItem(savedItem);
 			}
 
-			var notesDiff = inventoryNotes - _player.Inventory.ItemCount(Item.ItemType.Note);
 			if (notesDiff > 0)
 			{
 				_player.Inventory.AddItem(new Item { Type = Item.ItemType.Note, Amount = notesDiff });
 			}
-			
+
 
 			_playerSpawnPoint = data.SpawnPoint;
 			_player.transform.position = _playerSpawnPoint;

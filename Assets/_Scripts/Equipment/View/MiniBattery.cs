@@ -5,7 +5,7 @@ namespace _Scripts
 {
 	public class MiniBattery : MonoBehaviour, IHasId
 	{
-		public Guid Id { get; private set; }
+		public int Id { get; private set; }
 
 		private void OnTriggerEnter2D(Collider2D other)
 		{
@@ -13,7 +13,7 @@ namespace _Scripts
 			{
 				var battery = new Battery();
 				player.Inventory.AddItem(battery);
-				Id = battery.Id;
+				Id = GameManager.Instance.GlobalIdCounter++;
 				player.PlayPickUpSound();
 				gameObject.SetActive(false);
 			}
