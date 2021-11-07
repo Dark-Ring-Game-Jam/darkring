@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using _Scripts;
 using _Scripts.Audio;
@@ -37,6 +38,11 @@ public class Player : MonoBehaviour, ICanBeAttacked
     private SmokeComponent _smokeComponent;
     private CharacterSounds _characterSounds;
 
+    [Header("Common")]
+    [SerializeField] private float _delayToUse;
+    private Coroutine _usingCooldownCoroutine;
+    private bool _isUsing;
+    
     [Header("UI")]
     [SerializeField] private UIInventory _UIInventory;
     [SerializeField] private UIHealthBar _UIHealthBar;
@@ -159,14 +165,27 @@ public class Player : MonoBehaviour, ICanBeAttacked
                 _smokeComponent.Smoke();
             }
         }
-        else if (Input.GetKey(KeyCode.F) && UsableEnvironment != null)
+        else if (Input.GetKey(KeyCode.F) && UsableEnvironment != null && _isUsing == false)
         {
-            UsableEnvironment.Use(Inventory);
+            if (_usingCooldownCoroutine == null)
+            {
+                _isUsing = true;
+                _usingCooldownCoroutine = StartCoroutine(UsingCooldownCoroutine());
+                UsableEnvironment.Use(Inventory);
+            }
         }
 
         ProcessAnimation();
     }
 
+    private IEnumerator UsingCooldownCoroutine()
+    {
+        yield return new WaitForSeconds(_delayToUse);
+
+        _isUsing = false;
+        _usingCooldownCoroutine = null;
+    }
+    
     private void Attack()
     {
         var results = new Collider2D[5];

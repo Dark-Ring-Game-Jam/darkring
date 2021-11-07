@@ -209,7 +209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9605ed29df431bc42b7d42ec1e6dee40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _targetEnemy: {fileID: 468711869770476518, guid: a9945195504acb542814471f20de7abe, type: 3}
+  _delayToUse: 0.5
   _UIInventory: {fileID: 0}
   _UIHealthBar: {fileID: 0}
   _skeletonAnimation: {fileID: 2796195236850067137}
