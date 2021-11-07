@@ -60,8 +60,7 @@ namespace _Scripts
 		public void Reset()
 		{
 			// TODO - перезапустить сцену?
-			
-			Player.Inventory.ItemList.Clear();
+
 			Save(new Vector3(-7, -30, 0));
 			Load();
 		}
@@ -76,8 +75,7 @@ namespace _Scripts
 			}
 
 			_playerSpawnPoint = data.SpawnPoint;
-
-			// TODO - заспавнить ГГ на нужном месте (перенести)
+			_player.transform.position = _playerSpawnPoint;
 		}
 		
 		#endregion Save/Load/Reset
