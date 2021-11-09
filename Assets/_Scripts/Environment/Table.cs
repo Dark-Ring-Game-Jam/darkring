@@ -26,7 +26,7 @@ namespace _Scripts
 			}
 			else if (_isActive == false)
 			{
-				GameManager.Instance.Player.SetText("Мне нужна изолента");
+				GameManager.Instance.Player.SetText("По-моему, здесь нужна изолента", Color.yellow);
 			}
 		}
 

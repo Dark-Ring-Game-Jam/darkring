@@ -34,7 +34,7 @@ namespace _Scripts
 			}
 			else if (_isActive == false)
 			{
-				GameManager.Instance.Player.SetText("Мне нужна свечка");
+				GameManager.Instance.Player.SetText("Чтобы зажечь, нужна свечка", Color.yellow);
 			}
 		}
 

@@ -39,7 +39,7 @@ namespace _Scripts
 			}
 			else if (_isActive == false)
 			{
-				GameManager.Instance.Player.SetText("Мне нужна кирасиновая лампа");
+				GameManager.Instance.Player.SetText("Для это мне нужна керосиновая лампа", Color.yellow);
 			}
 		}
 	}
