@@ -140,9 +140,9 @@ public class Player : MonoBehaviour, ICanBeAttacked
         IsHide = hide;
     }
 
-    public void SetText(string text)
+    public void SetText(string text, Color color = default)
     {
-        _phrasesComponent.SetText(text);
+        _phrasesComponent.SetText(text, color);
     }
 
     private bool IsBusy()
@@ -302,7 +302,7 @@ public class Player : MonoBehaviour, ICanBeAttacked
             GameManager.Instance.Save(spawnPoint.GetPosition());
             spawnPoint.SetUsed();
 
-            // TODO - вывести надпись при сохранении
+            SetText("Кажется, здесь безопасно", Color.green);
         }
     }
 }

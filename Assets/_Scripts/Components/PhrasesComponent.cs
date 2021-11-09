@@ -50,15 +50,25 @@ namespace _Scripts
 			_text.transform.position = transform.position + _offset;
 		}
 
-		public void SetText(string text)
+		public void SetText(string text, Color color = default)
 		{
 			_text.text = text;
+			if (color != default)
+			{
+				_text.color = color;
+			}
+			else
+			{
+				_text.color = new Color(1f, 1f, 1f, 1f);
+			}
+			
 			_currentTime = 0;
 		}
 
 		private string GetRandomPhrase()
 		{
 			var number = Random.Range(0, _phrases.Count);
+			_text.color = new Color(1f, 1f, 1f, 1f);
 			return _phrases[number];
 		}
 	}
