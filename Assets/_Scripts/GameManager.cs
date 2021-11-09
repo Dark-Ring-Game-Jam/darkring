@@ -123,6 +123,11 @@ namespace _Scripts
 			SceneManager.LoadScene(SceneManager.GetActiveScene().name);
 		}
 
+		public void Exit()
+		{
+			Application.Quit();
+		}
+
 		public void ShowMenuScreen(bool isMenu = false)
 		{
 			_deathTitle.SetActive(!isMenu);
