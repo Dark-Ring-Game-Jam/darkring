@@ -45,6 +45,7 @@ namespace _Scripts
 		public EnemySpawnPointsController EnemySpawnPointsController => _enemySpawnPointsController;
 		public NoteView NoteViewPrefab => _noteViewPrefab;
 		public Canvas Canvas => _canvas;
+		public bool MenuIsActive => _menuScreen.gameObject.activeSelf;
 		
 		public List<Guid> UsedItemIds { get; private set; }
 
@@ -55,7 +56,7 @@ namespace _Scripts
 			_defaultPlayerSpawnPoint = _playerSpawnPoint;
 
 			FogTile.FillTheMap(_startPosition, _width, _height, _fogTile, _fogAnchor);
-			_menuScreen.SetActive(false);
+			HideMenuScreen();
 
 			if (_levelItems == null)
 			{
@@ -82,7 +83,7 @@ namespace _Scripts
 
 		public void Load()
 		{
-			_menuScreen.SetActive(false);
+			HideMenuScreen();
 			if (_defaultPlayerSpawnPoint == _playerSpawnPoint)
 			{
 				Reset();
@@ -134,6 +135,11 @@ namespace _Scripts
 			_menuTitle.SetActive(isMenu);
 
 			_menuScreen.SetActive(true);
+		}
+		
+		public void HideMenuScreen()
+		{
+			_menuScreen.SetActive(false);
 		}
 
 		private void Initialize(SaveData data, int inventoryNotes)

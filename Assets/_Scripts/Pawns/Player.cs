@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using System;
 using System.Collections;
 using _Scripts;
 using _Scripts.Audio;
@@ -44,6 +43,8 @@ public class Player : MonoBehaviour, ICanBeAttacked
     [SerializeField] private float _delayToUse;
     private Coroutine _usingCooldownCoroutine;
     private bool _isUsing;
+    private Coroutine _menuCooldownCoroutine;
+    private bool _canUseEsc = true;
 
     [Header("UI")]
     [SerializeField] private UIInventory _UIInventory;
@@ -181,9 +182,21 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
     private void ProcessInteractions()
     {
-        if (Input.GetKey(KeyCode.Escape))
+        if (_canUseEsc && Input.GetKey(KeyCode.Escape))
         {
-            GameManager.Instance.ShowMenuScreen(true);
+            if (_menuCooldownCoroutine == null)
+            {
+                _canUseEsc = true;
+                _menuCooldownCoroutine = StartCoroutine(MenuCooldownCoroutine());
+                if (GameManager.Instance.MenuIsActive)
+                {
+                    GameManager.Instance.HideMenuScreen();
+                }
+                else
+                {
+                    GameManager.Instance.ShowMenuScreen(true);
+                }
+            }
         }
         else if (Input.GetKey(KeyCode.E) && _inventory.ContainItemType(Item.ItemType.Batteriy) && _inventory.ContainItemType(Item.ItemType.Flashlight))
         {
@@ -219,6 +232,14 @@ public class Player : MonoBehaviour, ICanBeAttacked
 
         _isUsing = false;
         _usingCooldownCoroutine = null;
+    }
+    
+    private IEnumerator MenuCooldownCoroutine()
+    {
+        yield return new WaitForSeconds(0.2f);
+
+        _canUseEsc = true;
+        _menuCooldownCoroutine = null;
     }
 
     private void Attack()
