@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using _Scripts.Events;
 using BayatGames.SaveGameFree;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -19,6 +20,7 @@ namespace _Scripts
 		[Header("Main")]
 		[SerializeField] private Player _player;
 		[SerializeField] private Vector3 _playerSpawnPoint;
+		[SerializeField] private OpenFinalDoor _openFinalDoor;
 
 		[Header("AI")]
 		[SerializeField] private PatrolPointsController _patrolPointsController;
@@ -149,6 +151,11 @@ namespace _Scripts
 			_player.Inventory.ItemList.Clear();
 			foreach (var savedItem in data.Items)
 			{
+				if ((savedItem.Type == Item.ItemType.InsulatingTape || savedItem.Type == Item.ItemType.Key) && _openFinalDoor.CanOpen)
+				{
+					continue;
+				}
+				
 				_player.Inventory.AddItem(savedItem);
 			}
 
