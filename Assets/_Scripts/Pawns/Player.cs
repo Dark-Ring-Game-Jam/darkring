@@ -311,11 +311,6 @@ public class Player : MonoBehaviour, ICanBeAttacked
         GameManager.Instance.ShowMenuScreen();
     }
 
-    private Vector3 GetPosition()
-    {
-        return transform.position;
-    }
-
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.gameObject.TryGetComponent(out PlayerSpawnPoint spawnPoint) && !spawnPoint.IsUsed)

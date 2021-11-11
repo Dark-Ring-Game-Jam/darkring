@@ -20,7 +20,7 @@ namespace _Scripts
 				_boss.gameObject.SetActive(true);
 				GameManager.Instance.Player.PlayDoorsSound();
 				Destroy(_openFinalDoor.gameObject);
-				Destroy(gameObject);
+				gameObject.SetActive(false);
 			}
 			else
 			{

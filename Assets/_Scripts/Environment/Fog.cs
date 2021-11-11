@@ -29,4 +29,14 @@ public class Fog : MonoBehaviour
     {
         _animationComponent.Off();
     }
+    
+    public void Destroy()
+    {
+        DestroySelf();
+    }
+    
+    private void DestroySelf()
+    {
+        Destroy(gameObject);
+    }
 }

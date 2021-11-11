@@ -10,6 +10,7 @@ namespace _Scripts
 		{
 			if (other.TryGetComponent(out Player _))
 			{
+				GameManager.Instance.Player.SetHealthPoints(0);
 				_finalSlide.gameObject.SetActive(true);
 			}
 		}
